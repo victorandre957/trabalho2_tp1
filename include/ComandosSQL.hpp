@@ -1,0 +1,4 @@
+#ifndef COMANDOSSQL_HPP
+#define COMANDOSSQL_HPP
+
+#endif  //  COMANDOSSQL_HPP

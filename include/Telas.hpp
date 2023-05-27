@@ -1,0 +1,4 @@
+#ifndef TELAS_HPP_INCLUDED
+#define TELAS_HPP_INCLUDED
+
+#endif  //  TELAS_HPP_INCLUDED
