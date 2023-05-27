@@ -87,15 +87,21 @@ void Data::validar(string dado) {
 };
 
 void Matricula::validar(string dado) {
-    if (dado.length() != 10) {
+    if (dado.length() != 7) {
         throw invalid_argument("Número com quantidade de dígitos inválida.");
     }
-    
+
     int soma = 0;
     int tamanho = dado.length();
     int multiplicador = 2;
+
+    for (int i = 0; i < tamanho; i++) {
+        if (!isdigit(dado[i])) {
+            throw invalid_argument("Todos os caracteres devem ser um dígito.");
+        }
+    }
     
-    for (int i = tamanho - 1; i >= 0; i--) {
+    for (int i = tamanho - 2; i >= 0; i--) {
         int digito = dado[i] - '0';
         int resultado = digito * multiplicador;
         multiplicador = (multiplicador == 2) ? 1 : 2;
@@ -109,7 +115,7 @@ void Matricula::validar(string dado) {
     
     int resto = soma % 10;
     int digitoVerificador = (resto == 0) ? 0 : 10 - resto;
-    
+
     if (digitoVerificador != (dado[tamanho - 1] - '0')) {
         throw invalid_argument("Dígito verificador inválido.");
     }
