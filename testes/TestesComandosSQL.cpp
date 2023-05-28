@@ -265,6 +265,30 @@ TEST(testComandoSQL, editarTeste) {
   EXPECT_STREQ(testeEditado.getClasse().getDado().c_str(), "ACEITACAO");
 }
 
+// deletar teste
+
+TEST(testComandoSQL, deletarTeste) {
+
+  Codigo codigo;
+  codigo.setDado("ASD123");
+
+  ComandoDescadastrarTeste comandoDescadastrar(codigo);
+  try {
+    comandoDescadastrar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  ComandoConsultarTeste comandoConsultar(codigo);
+  try {
+    comandoConsultar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  ASSERT_THROW(comandoConsultar.getResultado(), EErroPersistencia);
+}
+
 // Descadastrar um desenvolvedor do banco
 
 TEST(testComandoSQL, descadastrarDesenvolvedor) {

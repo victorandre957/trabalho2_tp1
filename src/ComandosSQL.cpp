@@ -218,11 +218,11 @@ ComandoEditarTeste::ComandoEditarTeste(Teste teste) {
 }
 
 ComandoDescadastrarTeste::ComandoDescadastrarTeste(Codigo codigo) {
-    comandoSQL = "DELETE FROM CasosDeTeste WHERE Teste = ";
-    comandoSQL += codigo.getDado() + ";";
+    comandoSQL = "DELETE FROM CasosDeTeste WHERE Teste = '";
+    comandoSQL += codigo.getDado() + "';";
 
-    comandoSQL += "DELETE FROM Testes WHERE Codigo = ";
-    comandoSQL += codigo.getDado() + ";";
+    comandoSQL += "DELETE FROM Testes WHERE Codigo = '";
+    comandoSQL += codigo.getDado() + "';";
 }
 
 ComandoCadastrarCasoDeTeste::ComandoCadastrarCasoDeTeste(CasoDeTeste casoDeTeste, Codigo codigo) {
@@ -237,8 +237,8 @@ ComandoCadastrarCasoDeTeste::ComandoCadastrarCasoDeTeste(CasoDeTeste casoDeTeste
 }
 
 ComandoConsultarCasoDeTeste::ComandoConsultarCasoDeTeste(Codigo codigo) {
-    comandoSQL = "SELECT * FROM CasosDeTeste WHERE Codigo = ";
-    comandoSQL += codigo.getDado() + ";";
+    comandoSQL = "SELECT * FROM CasosDeTeste WHERE Codigo = '";
+    comandoSQL += codigo.getDado() + "';";
 }
 
 CasoDeTeste ComandoConsultarCasoDeTeste::getResultado() {
@@ -341,7 +341,6 @@ list<CasoDeTeste> ComandoListarCasosDeTeste::getResultado() {
         casoDeTeste.setResultado(resultado);
 
         // codigo do teste associado.
-        resultadoSql = listaResultado.back();
         listaResultado.pop_back();
 
         casosDeTeste.push_back(casoDeTeste);
@@ -357,10 +356,10 @@ ComandoEditarCasoDeTeste::ComandoEditarCasoDeTeste(CasoDeTeste casoDeTeste) {
     comandoSQL += "', Acao = '" + casoDeTeste.getAcao().getDado();
     comandoSQL += "', Resposta = '" + casoDeTeste.getResposta().getDado();
     comandoSQL += "', Resultado = '" + casoDeTeste.getResultado().getDado();
-    comandoSQL += "' WHERE Codigo = " + casoDeTeste.getCodigo().getDado();
+    comandoSQL += "' WHERE Codigo = '" + casoDeTeste.getCodigo().getDado() + "'";
 }
 
 ComandoDescadastrarCasoDeTeste::ComandoDescadastrarCasoDeTeste(Codigo codigo) {
-    comandoSQL = "DELETE FROM CasosDeTeste WHERE Codigo = ";
-    comandoSQL += codigo.getDado() + ";";
+    comandoSQL = "DELETE FROM CasosDeTeste WHERE Codigo = '";
+    comandoSQL += codigo.getDado() + "';";
 }
