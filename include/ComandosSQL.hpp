@@ -5,9 +5,8 @@
 #include <string>
 #include <iostream>
 
-#include "sqlite3.h"
+#include "sqlite3.hpp"
 #include "Entidades.hpp"
-#include "Dominios.hpp"
 
 using namespace std;
 

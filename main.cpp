@@ -1,5 +1,10 @@
 #include <iostream>
-#include <ncurses.h>
+
+#ifdef WIN32
+    #include "curses.hpp"
+#else
+    #include <ncurses.h>
+#endif  // WIN32
 
 #include "Interfaces.hpp"
 #include "Controladoras.hpp"
