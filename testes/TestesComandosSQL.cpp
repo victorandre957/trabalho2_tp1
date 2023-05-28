@@ -66,7 +66,6 @@ TEST(testComandoSQL, consultarDesenvolvedor) {
 // Editar um desenvolvedor no banco
 
 TEST(testComandoSQL, editarDesenvolvedor) {
-  Desenvolvedor desenvolvedor;
 
   Matricula matricula;
   matricula.setDado("1234566");
@@ -118,6 +117,152 @@ TEST(testComandoSQL, editarDesenvolvedor) {
   EXPECT_STREQ(desenvolvedorEditado.getNome().getDado().c_str(), "Luan Guedes");
   EXPECT_STREQ(desenvolvedorEditado.getSenha().getDado().c_str(), "C3B2A1");
   EXPECT_STREQ(desenvolvedorEditado.getTelefone().getDado().c_str(), "+61993121401");
+}
+
+// Cadastrar um Teste no banco
+
+TEST(testComandoSQL, cadastrarTeste) {
+  Teste teste;
+
+  Codigo codigo;
+  codigo.setDado("ASD123");
+  teste.setCodigo(codigo);
+
+  Texto nome;
+  nome.setDado("Teste do teste");
+  teste.setNome(nome);
+
+  Classe classe;
+  classe.setDado("FUMACA");
+  teste.setClasse(classe);
+
+  Matricula matricula;
+  matricula.setDado("1234566");
+
+  ComandoCadastrarTeste comandoCadastrar(teste, matricula);
+  try {
+    comandoCadastrar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+}
+
+// Consultar um Teste no banco
+
+TEST(testComandoSQL, consultarTeste) {
+
+  Codigo codigo;
+  codigo.setDado("ASD123");
+
+  ComandoConsultarTeste comandoConsultar(codigo);
+  try {
+    comandoConsultar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  Teste testeConsultado;
+  
+  try {
+      testeConsultado = comandoConsultar.getResultado();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro em getResultado\n" << e.what();
+  } catch (invalid_argument &e) {
+      FAIL() << e.what();
+  }
+
+  EXPECT_STREQ(testeConsultado.getCodigo().getDado().c_str(), "ASD123");
+  EXPECT_STREQ(testeConsultado.getNome().getDado().c_str(), "Teste do teste");
+  EXPECT_STREQ(testeConsultado.getClasse().getDado().c_str(), "FUMACA");
+
+  Matricula matricula;
+  matricula.setDado("1234566");
+
+  ComandoListarTestes comandoConsultarLista(matricula);
+  try {
+      comandoConsultarLista.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  list<Teste> listaDeTestesConsultados;
+  
+  try {
+      listaDeTestesConsultados = comandoConsultarLista.getResultado();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro em getResultado\n" << e.what();
+  } catch (invalid_argument &e) {
+      FAIL() << e.what();
+  }
+
+  EXPECT_STREQ(
+    listaDeTestesConsultados.back().getCodigo().getDado().c_str(), 
+    testeConsultado.getCodigo().getDado().c_str()
+  );
+  EXPECT_STREQ(
+    listaDeTestesConsultados.back().getNome().getDado().c_str(), 
+    testeConsultado.getNome().getDado().c_str()
+  );
+  EXPECT_STREQ(
+    listaDeTestesConsultados.back().getClasse().getDado().c_str(), 
+    testeConsultado.getClasse().getDado().c_str()
+  );
+}
+
+// Editar um Teste no banco
+
+TEST(testComandoSQL, editarTeste) {
+  Teste teste;
+
+  Codigo codigo;
+  codigo.setDado("ASD123");
+
+  ComandoConsultarTeste comandoConsultar(codigo);
+  try {
+    comandoConsultar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  Teste testeEditar;
+  
+  try {
+      testeEditar = comandoConsultar.getResultado();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro em getResultado\n" << e.what();
+  } catch (invalid_argument &e) {
+      FAIL() << e.what();
+  }
+
+  Texto nome;
+  nome.setDado("Teste Editado");
+  testeEditar.setNome(nome);
+
+  Classe classe;
+  classe.setDado("ACEITACAO");
+  testeEditar.setClasse(classe);
+
+  ComandoEditarTeste comandoEditar(testeEditar);
+  try {
+    comandoEditar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  Teste testeEditado;
+
+  try {
+      comandoConsultar.executar();
+      testeEditado = comandoConsultar.getResultado();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro em getResultado\n" << e.what();
+  } catch (invalid_argument &e) {
+      FAIL() << e.what();
+  }
+
+  EXPECT_STREQ(testeEditado.getCodigo().getDado().c_str(), "ASD123");
+  EXPECT_STREQ(testeEditado.getNome().getDado().c_str(), "Teste Editado");
+  EXPECT_STREQ(testeEditado.getClasse().getDado().c_str(), "ACEITACAO");
 }
 
 // Descadastrar um desenvolvedor do banco

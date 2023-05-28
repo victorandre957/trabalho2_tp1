@@ -64,7 +64,7 @@ ComandoCadastrarDesenvolvedor::ComandoCadastrarDesenvolvedor(Desenvolvedor desen
 
 ComandoConsultarDesenvolvedor::ComandoConsultarDesenvolvedor(Matricula matricula) {
     comandoSQL = "SELECT * FROM Desenvolvedores WHERE Matricula = ";
-    comandoSQL += matricula.getDado();
+    comandoSQL += matricula.getDado() + ";";
 }
 
 Desenvolvedor ComandoConsultarDesenvolvedor::getResultado() {
@@ -131,8 +131,8 @@ ComandoCadastrarTeste::ComandoCadastrarTeste(Teste teste, Matricula matricula) {
 }
 
 ComandoConsultarTeste::ComandoConsultarTeste(Codigo codigo) {
-    comandoSQL = "SELECT * FROM Testes WHERE Codigo = ";
-    comandoSQL += codigo.getDado();
+    comandoSQL = "SELECT * FROM Testes WHERE Codigo = '";
+    comandoSQL += codigo.getDado() + "';";
 }
 
 Teste ComandoConsultarTeste::getResultado() {
@@ -145,6 +145,7 @@ Teste ComandoConsultarTeste::getResultado() {
 
     resultado = listaResultado.back();
     listaResultado.pop_back();
+
     Codigo codigo;
     codigo.setDado(resultado.getValorColuna());
     teste.setCodigo(codigo);
@@ -161,12 +162,14 @@ Teste ComandoConsultarTeste::getResultado() {
     classe.setDado(resultado.getValorColuna());
     teste.setClasse(classe);
 
+    listaResultado.pop_back();
+
     return teste;
 }
 
 ComandoListarTestes::ComandoListarTestes(Matricula matricula) {
-    comandoSQL = "SELECT * FROM Testes WHERE Desenvolvedor = ";
-    comandoSQL += matricula.getDado() + ";";
+    comandoSQL = "SELECT * FROM Testes WHERE Desenvolvedor = '";
+    comandoSQL += matricula.getDado() + "';";
 }
 
 list<Teste> ComandoListarTestes::getResultado() {
@@ -179,7 +182,7 @@ list<Teste> ComandoListarTestes::getResultado() {
 
     while (!listaResultado.empty()) {
         Teste teste;
-        
+
         resultado = listaResultado.back();
         listaResultado.pop_back();
         Codigo codigo;
@@ -198,6 +201,9 @@ list<Teste> ComandoListarTestes::getResultado() {
         classe.setDado(resultado.getValorColuna());
         teste.setClasse(classe);
 
+        // remover matricula
+        listaResultado.pop_back();
+
         testes.push_back(teste);
     }
 
@@ -208,7 +214,7 @@ ComandoEditarTeste::ComandoEditarTeste(Teste teste) {
     comandoSQL = "UPDATE Testes ";
     comandoSQL += "SET Nome = '" + teste.getNome().getDado();
     comandoSQL += "', Classe = '" + teste.getClasse().getDado();
-    comandoSQL += "' WHERE Codigo = " + teste.getCodigo().getDado();
+    comandoSQL += "' WHERE Codigo = '" + teste.getCodigo().getDado() + "';";
 }
 
 ComandoDescadastrarTeste::ComandoDescadastrarTeste(Codigo codigo) {
@@ -232,7 +238,7 @@ ComandoCadastrarCasoDeTeste::ComandoCadastrarCasoDeTeste(CasoDeTeste casoDeTeste
 
 ComandoConsultarCasoDeTeste::ComandoConsultarCasoDeTeste(Codigo codigo) {
     comandoSQL = "SELECT * FROM CasosDeTeste WHERE Codigo = ";
-    comandoSQL += codigo.getDado();
+    comandoSQL += codigo.getDado() + ";";
 }
 
 CasoDeTeste ComandoConsultarCasoDeTeste::getResultado() {
@@ -333,6 +339,10 @@ list<CasoDeTeste> ComandoListarCasosDeTeste::getResultado() {
         Resultado resultado;
         resultado.setDado(resultadoSql.getValorColuna());
         casoDeTeste.setResultado(resultado);
+
+        // codigo do teste associado.
+        resultadoSql = listaResultado.back();
+        listaResultado.pop_back();
 
         casosDeTeste.push_back(casoDeTeste);
     }
