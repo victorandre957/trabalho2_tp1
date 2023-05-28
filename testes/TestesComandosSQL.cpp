@@ -212,8 +212,6 @@ TEST(testComandoSQL, consultarTeste) {
 // Editar um Teste no banco
 
 TEST(testComandoSQL, editarTeste) {
-  Teste teste;
-
   Codigo codigo;
   codigo.setDado("ASD123");
 
@@ -263,6 +261,213 @@ TEST(testComandoSQL, editarTeste) {
   EXPECT_STREQ(testeEditado.getCodigo().getDado().c_str(), "ASD123");
   EXPECT_STREQ(testeEditado.getNome().getDado().c_str(), "Teste Editado");
   EXPECT_STREQ(testeEditado.getClasse().getDado().c_str(), "ACEITACAO");
+}
+
+// Cadastrar um Caso de Teste no banco
+
+TEST(testComandoSQL, cadastrarCasoTeste) {
+  CasoDeTeste casoDeTeste;
+
+  Codigo codigo;
+  codigo.setDado("ASD321");
+  casoDeTeste.setCodigo(codigo);
+
+  Texto nome;
+  nome.setDado("caso que da certo");
+  casoDeTeste.setNome(nome);
+
+  Texto acao;
+  acao.setDado("testar tudo");
+  casoDeTeste.setAcao(acao);
+
+  Data data;
+  data.setDado("26/JAN/2060");
+  casoDeTeste.setData(data);
+
+  Texto resposta;
+  resposta.setDado("Funciona sempre");
+  casoDeTeste.setResposta(resposta);
+
+  Resultado resultado;
+  resultado.setDado("REPROVADO");
+  casoDeTeste.setResultado(resultado);
+
+  Codigo codigoTeste;
+  codigoTeste.setDado("ASD123");
+
+  ComandoCadastrarCasoDeTeste comandoCadastrar(casoDeTeste, codigoTeste);
+  try {
+    comandoCadastrar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+}
+
+// Consultar um Caso de Teste no banco
+
+TEST(testComandoSQL, consultarCasoDeTeste) {
+
+  Codigo codigo;
+  codigo.setDado("ASD321");
+
+  ComandoConsultarCasoDeTeste comandoConsultar(codigo);
+  try {
+    comandoConsultar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  CasoDeTeste casoDeTesteConsultado;
+  
+  try {
+      casoDeTesteConsultado = comandoConsultar.getResultado();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro em getResultado\n" << e.what();
+  } catch (invalid_argument &e) {
+      FAIL() << e.what();
+  }
+
+  EXPECT_STREQ(casoDeTesteConsultado.getCodigo().getDado().c_str(), "ASD321");
+  EXPECT_STREQ(casoDeTesteConsultado.getNome().getDado().c_str(), "caso que da certo");
+  EXPECT_STREQ(casoDeTesteConsultado.getAcao().getDado().c_str(), "testar tudo");
+  EXPECT_STREQ(casoDeTesteConsultado.getData().getDado().c_str(), "26/JAN/2060");
+  EXPECT_STREQ(casoDeTesteConsultado.getResposta().getDado().c_str(), "Funciona sempre");
+  EXPECT_STREQ(casoDeTesteConsultado.getResultado().getDado().c_str(), "REPROVADO");
+
+  Codigo codigoTeste;
+  codigoTeste.setDado("ASD123");
+
+  ComandoListarCasosDeTeste comandoConsultarLista(codigoTeste);
+  try {
+      comandoConsultarLista.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  list<CasoDeTeste> listaDeCasosDeTesteConsultados;
+  
+  try {
+      listaDeCasosDeTesteConsultados = comandoConsultarLista.getResultado();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro em getResultado\n" << e.what();
+  } catch (invalid_argument &e) {
+      FAIL() << e.what();
+  }
+
+  EXPECT_STREQ(
+    listaDeCasosDeTesteConsultados.back().getCodigo().getDado().c_str(), 
+    casoDeTesteConsultado.getCodigo().getDado().c_str()
+  );
+  EXPECT_STREQ(
+    listaDeCasosDeTesteConsultados.back().getNome().getDado().c_str(), 
+    casoDeTesteConsultado.getNome().getDado().c_str()
+  );
+  EXPECT_STREQ(
+    listaDeCasosDeTesteConsultados.back().getAcao().getDado().c_str(), 
+    casoDeTesteConsultado.getAcao().getDado().c_str()
+  );
+  EXPECT_STREQ(
+    listaDeCasosDeTesteConsultados.back().getData().getDado().c_str(), 
+    casoDeTesteConsultado.getData().getDado().c_str()
+  );
+  EXPECT_STREQ(
+    listaDeCasosDeTesteConsultados.back().getResposta().getDado().c_str(), 
+    casoDeTesteConsultado.getResposta().getDado().c_str()
+  );
+  EXPECT_STREQ(
+    listaDeCasosDeTesteConsultados.back().getResultado().getDado().c_str(), 
+    casoDeTesteConsultado.getResultado().getDado().c_str()
+  );
+}
+
+// Editar um Caso de Teste no Banco
+
+TEST(testComandoSQL, editarCasoDeTeste) {
+
+  Codigo codigo;
+  codigo.setDado("ASD321");
+
+  ComandoConsultarCasoDeTeste comandoConsultar(codigo);
+  try {
+    comandoConsultar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  CasoDeTeste casoDeTesteEditar;
+  
+  try {
+      casoDeTesteEditar = comandoConsultar.getResultado();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro em getResultado\n" << e.what();
+  } catch (invalid_argument &e) {
+      FAIL() << e.what();
+  }
+
+  Texto nome;
+  nome.setDado("Teste Editado");
+  casoDeTesteEditar.setNome(nome);
+
+  Texto acao;
+  acao.setDado("continuar testando");
+  casoDeTesteEditar.setAcao(acao);
+
+  Data data;
+  data.setDado("26/JAN/2030");
+  casoDeTesteEditar.setData(data);
+
+  Resultado resultado;
+  resultado.setDado("APROVADO");
+  casoDeTesteEditar.setResultado(resultado);
+
+  ComandoEditarCasoDeTeste comandoEditar(casoDeTesteEditar);
+  try {
+    comandoEditar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  CasoDeTeste casoDeTesteEditado;
+
+  try {
+      comandoConsultar.executar();
+      casoDeTesteEditado = comandoConsultar.getResultado();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro em getResultado\n" << e.what();
+  } catch (invalid_argument &e) {
+      FAIL() << e.what();
+  }
+
+  EXPECT_STREQ(casoDeTesteEditado.getCodigo().getDado().c_str(), "ASD321");
+  EXPECT_STREQ(casoDeTesteEditado.getNome().getDado().c_str(), "Teste Editado");
+  EXPECT_STREQ(casoDeTesteEditado.getAcao().getDado().c_str(), "continuar testando");
+  EXPECT_STREQ(casoDeTesteEditado.getData().getDado().c_str(), "26/JAN/2030");
+  EXPECT_STREQ(casoDeTesteEditado.getResposta().getDado().c_str(), "Funciona sempre");
+  EXPECT_STREQ(casoDeTesteEditado.getResultado().getDado().c_str(), "APROVADO");
+}
+
+// deletar caso de teste
+
+TEST(testComandoSQL, deletarCasoDeTeste) {
+
+  Codigo codigo;
+  codigo.setDado("ASD321");
+
+  ComandoDescadastrarCasoDeTeste comandoDescadastrar(codigo);
+  try {
+    comandoDescadastrar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  ComandoConsultarCasoDeTeste comandoConsultar(codigo);
+  try {
+    comandoConsultar.executar();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro ao executar\n" << e.what();
+  }
+
+  ASSERT_THROW(comandoConsultar.getResultado(), EErroPersistencia);
 }
 
 // deletar teste

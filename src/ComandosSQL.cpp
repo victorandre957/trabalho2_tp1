@@ -128,7 +128,7 @@ ComandoCadastrarTeste::ComandoCadastrarTeste(Teste teste, Matricula matricula) {
     comandoSQL += "'" + (teste.getNome().getDado()) + "', ";
     comandoSQL += "'" + (teste.getClasse().getDado()) + "', ";
     comandoSQL += "'" + (matricula.getDado()) + "'); COMMIT";
-}
+} 
 
 ComandoConsultarTeste::ComandoConsultarTeste(Codigo codigo) {
     comandoSQL = "SELECT * FROM Testes WHERE Codigo = '";
@@ -162,7 +162,7 @@ Teste ComandoConsultarTeste::getResultado() {
     classe.setDado(resultado.getValorColuna());
     teste.setClasse(classe);
 
-    listaResultado.pop_back();
+    listaResultado.clear();
 
     return teste;
 }
@@ -207,6 +207,8 @@ list<Teste> ComandoListarTestes::getResultado() {
         testes.push_back(teste);
     }
 
+    listaResultado.clear();
+
     return testes;
 }
 
@@ -242,109 +244,112 @@ ComandoConsultarCasoDeTeste::ComandoConsultarCasoDeTeste(Codigo codigo) {
 }
 
 CasoDeTeste ComandoConsultarCasoDeTeste::getResultado() {
-    ElementoResultado resultadoSql;
+    ElementoResultado resultado;
     CasoDeTeste casoDeTeste;
 
     if(listaResultado.size() < 7) {
         throw EErroPersistencia("Lista de resultados vazia.");
     }
 
-    resultadoSql = listaResultado.back();
+    resultado = listaResultado.back();
     listaResultado.pop_back();
     Codigo codigo;
-    codigo.setDado(resultadoSql.getValorColuna());
+    codigo.setDado(resultado.getValorColuna());
     casoDeTeste.setCodigo(codigo);
 
-    resultadoSql = listaResultado.back();
+    resultado = listaResultado.back();
     listaResultado.pop_back();
     Texto nome;
-    nome.setDado(resultadoSql.getValorColuna());
+    nome.setDado(resultado.getValorColuna());
     casoDeTeste.setNome(nome);
 
-    resultadoSql = listaResultado.back();
+    resultado = listaResultado.back();
     listaResultado.pop_back();
     Data data;
-    data.setDado(resultadoSql.getValorColuna());
+    data.setDado(resultado.getValorColuna());
     casoDeTeste.setData(data);
 
-    resultadoSql = listaResultado.back();
+    resultado = listaResultado.back();
     listaResultado.pop_back();
     Texto acao;
-    acao.setDado(resultadoSql.getValorColuna());
+    acao.setDado(resultado.getValorColuna());
     casoDeTeste.setAcao(acao);
 
-    resultadoSql = listaResultado.back();
+    resultado = listaResultado.back();
     listaResultado.pop_back();
     Texto resposta;
-    resposta.setDado(resultadoSql.getValorColuna());
+    resposta.setDado(resultado.getValorColuna());
     casoDeTeste.setResposta(resposta);
 
-    resultadoSql = listaResultado.back();
+    resultado = listaResultado.back();
     listaResultado.pop_back();
-    Resultado resultado;
-    resultado.setDado(resultadoSql.getValorColuna());
-    casoDeTeste.setResultado(resultado);
+    Resultado resultadoDoCaso;
+    resultadoDoCaso.setDado(resultado.getValorColuna());
+    casoDeTeste.setResultado(resultadoDoCaso);
+
+    listaResultado.clear();
 
     return casoDeTeste;
 }
 
 ComandoListarCasosDeTeste::ComandoListarCasosDeTeste(Codigo codigo) {
-    comandoSQL = "SELECT * FROM CasosDeTeste WHERE Teste = ";
-    comandoSQL += codigo.getDado() + ";";
+    comandoSQL = "SELECT * FROM CasosDeTeste WHERE Teste = '";
+    comandoSQL += codigo.getDado() + "';";
 }
 
 list<CasoDeTeste> ComandoListarCasosDeTeste::getResultado() {
-    ElementoResultado resultadoSql;
+    ElementoResultado resultado;
     list<CasoDeTeste> casosDeTeste;
 
-    if(listaResultado.empty()) {
+    if (listaResultado.empty()) {
         throw EErroPersistencia("Lista de resultados vazia.");
     }
 
     while (!listaResultado.empty()) {
-        CasoDeTeste casoDeTeste;
+        CasoDeTeste casoDeteste;
 
-        resultadoSql = listaResultado.back();
+        resultado = listaResultado.back();
         listaResultado.pop_back();
         Codigo codigo;
-        codigo.setDado(resultadoSql.getValorColuna());
-        casoDeTeste.setCodigo(codigo);
+        codigo.setDado(resultado.getValorColuna());
+        casoDeteste.setCodigo(codigo);
 
-        resultadoSql = listaResultado.back();
+        resultado = listaResultado.back();
         listaResultado.pop_back();
         Texto nome;
-        nome.setDado(resultadoSql.getValorColuna());
-        casoDeTeste.setNome(nome);
+        nome.setDado(resultado.getValorColuna());
+        casoDeteste.setNome(nome);
 
-        resultadoSql = listaResultado.back();
+        resultado = listaResultado.back();
         listaResultado.pop_back();
         Data data;
-        data.setDado(resultadoSql.getValorColuna());
-        casoDeTeste.setData(data);
+        data.setDado(resultado.getValorColuna());
+        casoDeteste.setData(data);
 
-        resultadoSql = listaResultado.back();
+        resultado = listaResultado.back();
         listaResultado.pop_back();
         Texto acao;
-        acao.setDado(resultadoSql.getValorColuna());
-        casoDeTeste.setAcao(acao);
+        acao.setDado(resultado.getValorColuna());
+        casoDeteste.setAcao(acao);
 
-        resultadoSql = listaResultado.back();
+        resultado = listaResultado.back();
         listaResultado.pop_back();
         Texto resposta;
-        resposta.setDado(resultadoSql.getValorColuna());
-        casoDeTeste.setResposta(resposta);
+        resposta.setDado(resultado.getValorColuna());
+        casoDeteste.setResposta(resposta);
 
-        resultadoSql = listaResultado.back();
+        resultado = listaResultado.back();
         listaResultado.pop_back();
-        Resultado resultado;
-        resultado.setDado(resultadoSql.getValorColuna());
-        casoDeTeste.setResultado(resultado);
+        Resultado resultadoDoCaso;
+        resultadoDoCaso.setDado(resultado.getValorColuna());
+        casoDeteste.setResultado(resultadoDoCaso);
 
-        // codigo do teste associado.
         listaResultado.pop_back();
 
-        casosDeTeste.push_back(casoDeTeste);
+        casosDeTeste.push_back(casoDeteste);
     }
+
+    listaResultado.clear();
 
     return casosDeTeste;
 }

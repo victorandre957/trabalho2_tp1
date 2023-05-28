@@ -153,6 +153,6 @@ void Texto::validar(string dado){
     regex pattern("^(?=.{10,20}$)[a-zA-Z0-9.,;?!:\\-@#$%&]*(\\s+[a-zA-Z0-9.,;?!:\\-@#$%&]+)*\\s*$");
 
     if (!regex_match(dado, pattern)){
-        throw invalid_argument("Texto inválido.");
+        throw invalid_argument("Texto inválido." + dado);
     }
 }
