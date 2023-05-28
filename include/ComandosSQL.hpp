@@ -171,6 +171,20 @@ class ComandoConsultarTeste:public ComandoSQL {
         Teste getResultado();
 };
 
+
+///@brief Comando SQL utilizado para listar Testes criados no banco de dados.
+
+class ComandoListarTestes:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para listar turmas do banco de dados.
+        ///@param Matricula do Desenvolvedor que está associado aos testes buscados para filtrar.
+        ComandoListarTestes(Matricula);
+
+        /// @brief Retorna um objeto lista com Testes encontrados no dados no banco.
+        /// @return list<Teste>
+        list<Teste> getResultado();
+};
+
 ///@brief Comando SQL utilizado para editar um teste no banco.
 class ComandoEditarTeste:public ComandoSQL {
     public:
@@ -206,6 +220,19 @@ class ComandoConsultarCasoDeTeste:public ComandoSQL {
         ///@brief Retorna um objeto caso de teste com os dados obtidos na consulta.
         ///@return Retorna o caso de teste encontrado (caso de teste)
         CasoDeTeste getResultado();
+};
+
+///@brief Comando SQL utilizado para listar os Casos de Teste criados no banco de dados.
+
+class ComandoListarCasosDeTeste:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para listar turmas do banco de dados.
+        ///@param Codigo do Teste que está associado aos casos de teste buscados para filtrar.
+        ComandoListarCasosDeTeste(Codigo);
+
+        /// @brief Retorna um objeto lista de Casos de teste com os dados no banco.
+        /// @return list<CasoDeTeste>
+        list<CasoDeTeste> getResultado();
 };
 
 ///@brief Comando SQL utilizado para editar um caso de teste no banco.

@@ -71,8 +71,9 @@ Desenvolvedor ComandoConsultarDesenvolvedor::getResultado() {
     ElementoResultado resultado;
     Desenvolvedor desenvolvedor;
 
-    if(listaResultado.size() < 4)
+    if(listaResultado.size() < 4) {
         throw EErroPersistencia("Lista de resultados vazia.");
+    }
 
     resultado = listaResultado.back();
     listaResultado.pop_back();
@@ -138,8 +139,9 @@ Teste ComandoConsultarTeste::getResultado() {
     ElementoResultado resultado;
     Teste teste;
 
-    if(listaResultado.size() < 4)
+    if(listaResultado.size() < 4) {
         throw EErroPersistencia("Lista de resultados vazia.");
+    }
 
     resultado = listaResultado.back();
     listaResultado.pop_back();
@@ -160,6 +162,46 @@ Teste ComandoConsultarTeste::getResultado() {
     teste.setClasse(classe);
 
     return teste;
+}
+
+ComandoListarTestes::ComandoListarTestes(Matricula matricula) {
+    comandoSQL = "SELECT * FROM Testes WHERE Desenvolvedor = ";
+    comandoSQL += matricula.getDado() + ";";
+}
+
+list<Teste> ComandoListarTestes::getResultado() {
+    ElementoResultado resultado;
+    list<Teste> testes;
+
+    if (listaResultado.empty()) {
+        throw EErroPersistencia("Lista de resultados vazia.");
+    }
+
+    while (!listaResultado.empty()) {
+        Teste teste;
+        
+        resultado = listaResultado.back();
+        listaResultado.pop_back();
+        Codigo codigo;
+        codigo.setDado(resultado.getValorColuna());
+        teste.setCodigo(codigo);
+
+        resultado = listaResultado.back();
+        listaResultado.pop_back();
+        Texto nome;
+        nome.setDado(resultado.getValorColuna());
+        teste.setNome(nome);
+
+        resultado = listaResultado.back();
+        listaResultado.pop_back();
+        Classe classe;
+        classe.setDado(resultado.getValorColuna());
+        teste.setClasse(classe);
+
+        testes.push_back(teste);
+    }
+
+    return testes;
 }
 
 ComandoEditarTeste::ComandoEditarTeste(Teste teste) {
@@ -197,8 +239,9 @@ CasoDeTeste ComandoConsultarCasoDeTeste::getResultado() {
     ElementoResultado resultadoSql;
     CasoDeTeste casoDeTeste;
 
-    if(listaResultado.size() < 7)
+    if(listaResultado.size() < 7) {
         throw EErroPersistencia("Lista de resultados vazia.");
+    }
 
     resultadoSql = listaResultado.back();
     listaResultado.pop_back();
@@ -237,6 +280,64 @@ CasoDeTeste ComandoConsultarCasoDeTeste::getResultado() {
     casoDeTeste.setResultado(resultado);
 
     return casoDeTeste;
+}
+
+ComandoListarCasosDeTeste::ComandoListarCasosDeTeste(Codigo codigo) {
+    comandoSQL = "SELECT * FROM CasosDeTeste WHERE Teste = ";
+    comandoSQL += codigo.getDado() + ";";
+}
+
+list<CasoDeTeste> ComandoListarCasosDeTeste::getResultado() {
+    ElementoResultado resultadoSql;
+    list<CasoDeTeste> casosDeTeste;
+
+    if(listaResultado.empty()) {
+        throw EErroPersistencia("Lista de resultados vazia.");
+    }
+
+    while (!listaResultado.empty()) {
+        CasoDeTeste casoDeTeste;
+
+        resultadoSql = listaResultado.back();
+        listaResultado.pop_back();
+        Codigo codigo;
+        codigo.setDado(resultadoSql.getValorColuna());
+        casoDeTeste.setCodigo(codigo);
+
+        resultadoSql = listaResultado.back();
+        listaResultado.pop_back();
+        Texto nome;
+        nome.setDado(resultadoSql.getValorColuna());
+        casoDeTeste.setNome(nome);
+
+        resultadoSql = listaResultado.back();
+        listaResultado.pop_back();
+        Data data;
+        data.setDado(resultadoSql.getValorColuna());
+        casoDeTeste.setData(data);
+
+        resultadoSql = listaResultado.back();
+        listaResultado.pop_back();
+        Texto acao;
+        acao.setDado(resultadoSql.getValorColuna());
+        casoDeTeste.setAcao(acao);
+
+        resultadoSql = listaResultado.back();
+        listaResultado.pop_back();
+        Texto resposta;
+        resposta.setDado(resultadoSql.getValorColuna());
+        casoDeTeste.setResposta(resposta);
+
+        resultadoSql = listaResultado.back();
+        listaResultado.pop_back();
+        Resultado resultado;
+        resultado.setDado(resultadoSql.getValorColuna());
+        casoDeTeste.setResultado(resultado);
+
+        casosDeTeste.push_back(casoDeTeste);
+    }
+
+    return casosDeTeste;
 }
 
 ComandoEditarCasoDeTeste::ComandoEditarCasoDeTeste(CasoDeTeste casoDeTeste) {
