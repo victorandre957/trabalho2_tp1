@@ -147,4 +147,81 @@ class ComandoDescadastrarDesenvolvedor:public ComandoSQL {
         ComandoDescadastrarDesenvolvedor(Matricula);
 };
 
+
+
+
+///@brief Comando SQL utilizado para cadastrar um teste no banco.
+class ComandoCadastrarTeste:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para cadastrar teste.
+        ///@param Teste a ser cadastrado
+        ///@param Matricula do Desenvolvedor que está criando o teste
+        ComandoCadastrarTeste(Teste, Matricula);
+};
+
+///@brief Comando SQL utilizado para consultar um teste no banco.
+class ComandoConsultarTeste:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para consultar um teste pelo codigo.
+        ///@param Codigo: codigo do teste que se quer consultar
+        ComandoConsultarTeste(Codigo);
+
+        ///@brief Retorna um objeto teste com os dados obtidos na consulta.
+        ///@return Retorna o teste encontrado (teste)
+        Teste getResultado();
+};
+
+///@brief Comando SQL utilizado para editar um teste no banco.
+class ComandoEditarTeste:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para editar um teste.
+        ///@param Teste: um objeto com as informações do teste a serem atualizadas.
+        ComandoEditarTeste(Teste);
+};
+
+///@brief Comando SQL utilizado para descadastrar um teste no banco.
+class ComandoDescadastrarTeste:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para descadastrar um teste pela codigo.
+        ///@param Codigo: codigo do teste que se quer descadastrar.
+        ComandoDescadastrarTeste(Codigo);
+};
+
+///@brief Comando SQL utilizado para cadastrar um caso de teste no banco.
+class ComandoCadastrarCasoDeTeste:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para cadastrar caso de teste.
+        ///@param CasoDeTeste a ser cadastrado
+        ///@param Codigo do teste do qual esse caso de teste pertence
+        ComandoCadastrarCasoDeTeste(CasoDeTeste, Codigo);
+};
+
+///@brief Comando SQL utilizado para consultar um caso de teste no banco.
+class ComandoConsultarCasoDeTeste:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para consultar um caso de teste pelo codigo.
+        ///@param Codigo: codigo do caso de teste que se quer consultar
+        ComandoConsultarCasoDeTeste(Codigo);
+
+        ///@brief Retorna um objeto caso de teste com os dados obtidos na consulta.
+        ///@return Retorna o caso de teste encontrado (caso de teste)
+        CasoDeTeste getResultado();
+};
+
+///@brief Comando SQL utilizado para editar um caso de teste no banco.
+class ComandoEditarCasoDeTeste:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para editar um caso de teste.
+        ///@param CasoDeTeste: um objeto com as informações do caso de teste a serem atualizadas.
+        ComandoEditarCasoDeTeste(CasoDeTeste);
+};
+
+///@brief Comando SQL utilizado para descadastrar um caso de teste no banco.
+class ComandoDescadastrarCasoDeTeste:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para descadastrar um caso de teste pela codigo.
+        ///@param Codigo: codigo do caso de teste que se quer descadastrar.
+        ComandoDescadastrarCasoDeTeste(Codigo);
+};
+
 #endif  //  COMANDOSSQL_HPP

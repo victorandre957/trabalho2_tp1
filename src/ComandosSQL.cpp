@@ -17,13 +17,13 @@ void ElementoResultado::setValorColuna(const string& valorColuna){
 void ComandoSQL::conectar() {
     rc = sqlite3_open(nomeBancoDados, &bd);
     if( rc != SQLITE_OK )
-      throw EErroPersistencia("Erro na conexao ao banco de dados");
+        throw EErroPersistencia("Erro na conexao ao banco de dados");
 }
 
 void ComandoSQL::desconectar() {
     rc =  sqlite3_close(bd);
     if( rc != SQLITE_OK )
-      throw EErroPersistencia("Erro na desconexao ao banco de dados");
+        throw EErroPersistencia("Erro na desconexao ao banco de dados");
 }
 
 void ComandoSQL::executar() {
@@ -68,48 +68,188 @@ ComandoConsultarDesenvolvedor::ComandoConsultarDesenvolvedor(Matricula matricula
 }
 
 Desenvolvedor ComandoConsultarDesenvolvedor::getResultado() {
-        ElementoResultado resultado;
-        Desenvolvedor desenvolvedor;
+    ElementoResultado resultado;
+    Desenvolvedor desenvolvedor;
 
-        if(listaResultado.size() < 4)
-            throw EErroPersistencia("Lista de resultados vazia.");
+    if(listaResultado.size() < 4)
+        throw EErroPersistencia("Lista de resultados vazia.");
 
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Matricula matricula;
-        matricula.setDado(resultado.getValorColuna());
-        desenvolvedor.setMatricula(matricula);
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    Matricula matricula;
+    matricula.setDado(resultado.getValorColuna());
+    desenvolvedor.setMatricula(matricula);
 
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Texto nome;
-        nome.setDado(resultado.getValorColuna());
-        desenvolvedor.setNome(nome);
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    Texto nome;
+    nome.setDado(resultado.getValorColuna());
+    desenvolvedor.setNome(nome);
 
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Senha senha;
-        senha.setDado(resultado.getValorColuna());
-        desenvolvedor.setSenha(senha);
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    Senha senha;
+    senha.setDado(resultado.getValorColuna());
+    desenvolvedor.setSenha(senha);
 
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Telefone telefone;
-        telefone.setDado(resultado.getValorColuna());
-        desenvolvedor.setTelefone(telefone);
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    Telefone telefone;
+    telefone.setDado(resultado.getValorColuna());
+    desenvolvedor.setTelefone(telefone);
 
-        return desenvolvedor;
+    return desenvolvedor;
 }
 
 ComandoEditarDesenvolvedor::ComandoEditarDesenvolvedor(Desenvolvedor desenvolvedor) {
-        comandoSQL = "UPDATE Desenvolvedores ";
-        comandoSQL += "SET Nome = '" + desenvolvedor.getNome().getDado();
-        comandoSQL += "', Senha = '" + desenvolvedor.getSenha().getDado();
-        comandoSQL += "', Telefone = '" + desenvolvedor.getTelefone().getDado();
-        comandoSQL += "' WHERE Matricula = " + desenvolvedor.getMatricula().getDado();
+    comandoSQL = "UPDATE Desenvolvedores ";
+    comandoSQL += "SET Nome = '" + desenvolvedor.getNome().getDado();
+    comandoSQL += "', Senha = '" + desenvolvedor.getSenha().getDado();
+    comandoSQL += "', Telefone = '" + desenvolvedor.getTelefone().getDado();
+    comandoSQL += "' WHERE Matricula = " + desenvolvedor.getMatricula().getDado();
 }
 
 ComandoDescadastrarDesenvolvedor::ComandoDescadastrarDesenvolvedor(Matricula matricula) {
-        comandoSQL = "DELETE FROM Desenvolvedores WHERE Matricula = ";
-        comandoSQL += matricula.getDado() + ";";
+    comandoSQL = "DELETE FROM CasosDeTeste WHERE Teste IN (SELECT Teste FROM Testes WHERE Desenvolvedor = ";
+    comandoSQL += matricula.getDado() + ");";
+
+    comandoSQL = "DELETE FROM Testes WHERE Desenvolvedor = ";
+    comandoSQL += matricula.getDado() + ";";
+
+    comandoSQL += "DELETE FROM Desenvolvedores WHERE Matricula = ";
+    comandoSQL += matricula.getDado() + ";";
+}
+
+
+ComandoCadastrarTeste::ComandoCadastrarTeste(Teste teste, Matricula matricula) {
+    comandoSQL = "BEGIN; INSERT INTO Testes (Codigo, Nome, Classe, Desenvolvedor) VALUES(";
+    comandoSQL += "'" + (teste.getCodigo().getDado()) + "', ";
+    comandoSQL += "'" + (teste.getNome().getDado()) + "', ";
+    comandoSQL += "'" + (teste.getClasse().getDado()) + "', ";
+    comandoSQL += "'" + (matricula.getDado()) + "'); COMMIT";
+}
+
+ComandoConsultarTeste::ComandoConsultarTeste(Codigo codigo) {
+    comandoSQL = "SELECT * FROM Testes WHERE Codigo = ";
+    comandoSQL += codigo.getDado();
+}
+
+Teste ComandoConsultarTeste::getResultado() {
+    ElementoResultado resultado;
+    Teste teste;
+
+    if(listaResultado.size() < 4)
+        throw EErroPersistencia("Lista de resultados vazia.");
+
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    Codigo codigo;
+    codigo.setDado(resultado.getValorColuna());
+    teste.setCodigo(codigo);
+
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    Texto nome;
+    nome.setDado(resultado.getValorColuna());
+    teste.setNome(nome);
+
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    Classe classe;
+    classe.setDado(resultado.getValorColuna());
+    teste.setClasse(classe);
+
+    return teste;
+}
+
+ComandoEditarTeste::ComandoEditarTeste(Teste teste) {
+    comandoSQL = "UPDATE Testes ";
+    comandoSQL += "SET Nome = '" + teste.getNome().getDado();
+    comandoSQL += "', Classe = '" + teste.getClasse().getDado();
+    comandoSQL += "' WHERE Codigo = " + teste.getCodigo().getDado();
+}
+
+ComandoDescadastrarTeste::ComandoDescadastrarTeste(Codigo codigo) {
+    comandoSQL = "DELETE FROM CasosDeTeste WHERE Teste = ";
+    comandoSQL += codigo.getDado() + ";";
+
+    comandoSQL += "DELETE FROM Testes WHERE Codigo = ";
+    comandoSQL += codigo.getDado() + ";";
+}
+
+ComandoCadastrarCasoDeTeste::ComandoCadastrarCasoDeTeste(CasoDeTeste casoDeTeste, Codigo codigo) {
+    comandoSQL = "BEGIN; INSERT INTO CasosDeTeste (Codigo, Nome, Data, Acao, Resposta, Resultado, Teste) VALUES(";
+    comandoSQL += "'" + (casoDeTeste.getCodigo().getDado()) + "', ";
+    comandoSQL += "'" + (casoDeTeste.getNome().getDado()) + "', ";
+    comandoSQL += "'" + (casoDeTeste.getData().getDado()) + "', ";
+    comandoSQL += "'" + (casoDeTeste.getAcao().getDado()) + "', ";
+    comandoSQL += "'" + (casoDeTeste.getResposta().getDado()) + "', ";
+    comandoSQL += "'" + (casoDeTeste.getResultado().getDado()) + "', ";
+    comandoSQL += "'" + (codigo.getDado()) + "'); COMMIT";
+}
+
+ComandoConsultarCasoDeTeste::ComandoConsultarCasoDeTeste(Codigo codigo) {
+    comandoSQL = "SELECT * FROM CasosDeTeste WHERE Codigo = ";
+    comandoSQL += codigo.getDado();
+}
+
+CasoDeTeste ComandoConsultarCasoDeTeste::getResultado() {
+    ElementoResultado resultadoSql;
+    CasoDeTeste casoDeTeste;
+
+    if(listaResultado.size() < 7)
+        throw EErroPersistencia("Lista de resultados vazia.");
+
+    resultadoSql = listaResultado.back();
+    listaResultado.pop_back();
+    Codigo codigo;
+    codigo.setDado(resultadoSql.getValorColuna());
+    casoDeTeste.setCodigo(codigo);
+
+    resultadoSql = listaResultado.back();
+    listaResultado.pop_back();
+    Texto nome;
+    nome.setDado(resultadoSql.getValorColuna());
+    casoDeTeste.setNome(nome);
+
+    resultadoSql = listaResultado.back();
+    listaResultado.pop_back();
+    Data data;
+    data.setDado(resultadoSql.getValorColuna());
+    casoDeTeste.setData(data);
+
+    resultadoSql = listaResultado.back();
+    listaResultado.pop_back();
+    Texto acao;
+    acao.setDado(resultadoSql.getValorColuna());
+    casoDeTeste.setAcao(acao);
+
+    resultadoSql = listaResultado.back();
+    listaResultado.pop_back();
+    Texto resposta;
+    resposta.setDado(resultadoSql.getValorColuna());
+    casoDeTeste.setResposta(resposta);
+
+    resultadoSql = listaResultado.back();
+    listaResultado.pop_back();
+    Resultado resultado;
+    resultado.setDado(resultadoSql.getValorColuna());
+    casoDeTeste.setResultado(resultado);
+
+    return casoDeTeste;
+}
+
+ComandoEditarCasoDeTeste::ComandoEditarCasoDeTeste(CasoDeTeste casoDeTeste) {
+    comandoSQL = "UPDATE CasosDeTeste ";
+    comandoSQL += "SET Nome = '" + casoDeTeste.getNome().getDado();
+    comandoSQL += "', Data = '" + casoDeTeste.getData().getDado();
+    comandoSQL += "', Acao = '" + casoDeTeste.getAcao().getDado();
+    comandoSQL += "', Resposta = '" + casoDeTeste.getResposta().getDado();
+    comandoSQL += "', Resultado = '" + casoDeTeste.getResultado().getDado();
+    comandoSQL += "' WHERE Codigo = " + casoDeTeste.getCodigo().getDado();
+}
+
+ComandoDescadastrarCasoDeTeste::ComandoDescadastrarCasoDeTeste(Codigo codigo) {
+    comandoSQL = "DELETE FROM CasosDeTeste WHERE Codigo = ";
+    comandoSQL += codigo.getDado() + ";";
 }
