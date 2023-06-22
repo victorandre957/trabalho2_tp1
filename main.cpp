@@ -1,10 +1,6 @@
 #include <iostream>
 
-#ifdef WIN32
-    #include "curses.hpp"
-#else
-    #include <ncurses.h>
-#endif  // WIN32
+#include <ncurses.h>
 
 #include "Interfaces.hpp"
 #include "Controladoras.hpp"
@@ -13,16 +9,11 @@
 #include "Dominios.hpp"
 #include "ComandosSQL.hpp"
 
+TelaMensagem telaMensagem;
+
 using namespace std;
 
 int main() {
-    initscr();
-
-    refresh();
-
-    getch();
-
-    endwin();
-    
+    telaMensagem.apresentar("Dado em formato incorreto");
     return 0;
 }
