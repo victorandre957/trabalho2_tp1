@@ -1,27 +1,42 @@
 #include "Controladoras.hpp"
 
-//Controladoras de Serviço
+#include "ComandosSQL.hpp"
+#include "Entidades.hpp"
+#include "Dominios.hpp"
 
-// ERRO - NÃO CONSEGUI RESOLVER
-bool CntrServicoAutenticacao::autenticar(Matricula *matricula, Senha senha ) {
-    Desenvolvedor desenvolvedor;
-    desenvolvedor.setMatricula(*matricula);
-    desenvolvedor.setSenha(senha);
+Desenvolvedor CntrServicoAutenticacao::autenticar(Matricula matricula, Senha senha ) {
+    ComandoConsultarDesenvolvedor comandoConsultar(matricula);
+    try {
+        comandoConsultar.executar();
+    } catch (EErroPersistencia &e) {
+        throw invalid_argument("Erro ao consultar Desenvolvedor");
+    }
 
-    //Comando do banco de dados
-    //return autenticar(desenvolvedor);
+    Desenvolvedor desenvolvedorConsultado;
+    
+    try {
+        desenvolvedorConsultado = comandoConsultar.getResultado();
+    } catch (EErroPersistencia &e) {
+        throw invalid_argument("Desenvolvedor não encontrado");
+    } catch (invalid_argument &e) {
+        throw invalid_argument(e.what());
+    }
+
+    if (desenvolvedorConsultado.getSenha().getDado() == senha.getDado()) {
+        return desenvolvedorConsultado;
+    }
+
+    Desenvolvedor desenvolvedorVazio;
+
+    return desenvolvedorVazio;
 };
 
-// ERRO - NÃO CONSEGUI RESOLVER
 bool CntrServicoDesenvolvedor::cadastrar(Desenvolvedor desenvolvedor){
-    //Aparecer tela
-
-    // ERRO 
-    CadastrarDesenvolvedor cmdCadastrar;
+    ComandoCadastrarDesenvolvedor cmdCadastrar(desenvolvedor);
     int consulta;
 
     try {
-        consulta = cmdCadastrar.executar(desenvolvedor);
+        cmdCadastrar.executar();
     } catch (const EErroPersistencia &exp) {
         return false;
     }
@@ -30,8 +45,6 @@ bool CntrServicoDesenvolvedor::cadastrar(Desenvolvedor desenvolvedor){
 };
 
 bool CntrServicoDesenvolvedor::descadastrar(Matricula matricula){
-    //Aparecer tela
-
     ComandoDescadastrarDesenvolvedor cmdDescadastrar(matricula);
 
     try {
@@ -44,7 +57,6 @@ bool CntrServicoDesenvolvedor::descadastrar(Matricula matricula){
 };
 
 bool CntrServicoDesenvolvedor::editar(Desenvolvedor desenvolvedor){
-    //Aparecer tela
     ComandoEditarDesenvolvedor cmdEditar(desenvolvedor);
 
     try {
@@ -79,10 +91,9 @@ bool CntrServicoDesenvolvedor::visualizar(Desenvolvedor* desenvolvedor){
 };
 
 
-// ERRO - NÃO CONSEGUI RESOLVER
-bool CntrServicoTeste::visualizar(Codigo* codigo){
-    ComandoConsultarTeste cmdConsultar(codigo->getDado());
-    Teste visualizar;
+bool CntrServicoTeste::visualizar(Teste* teste){
+    ComandoConsultarTeste cmdConsultar(teste->getCodigo());
+    Teste testeConsultado;
 
     try {
         cmdConsultar.executar();
@@ -91,19 +102,18 @@ bool CntrServicoTeste::visualizar(Codigo* codigo){
     }
     
     try {
-        visualizar = cmdConsultar.getResultado();
+        testeConsultado = cmdConsultar.getResultado();
     } catch (const EErroPersistencia &exp) {
         return false;
     }
-    
-    codigo = visualizar;
+
+    teste = &testeConsultado;
 
     return true;
 
 };
 
 bool CntrServicoTeste::cadastrar(Teste teste, Matricula matricula){
-    //Aparecer tela
     ComandoCadastrarTeste cmdCadastrar(teste, matricula);
     int consulta;
 
@@ -112,6 +122,8 @@ bool CntrServicoTeste::cadastrar(Teste teste, Matricula matricula){
     } catch (const EErroPersistencia &exp) {
         return false;
     }
+
+    return false;
 };
 
 bool CntrServicoTeste::editar(Teste teste){
@@ -138,13 +150,10 @@ bool CntrServicoTeste::descadastrar(Codigo codigo){
     return true;
 };
 
-//ERRO - Não consegui resolver
-bool CntrServicoCasoDeTeste::visualizar(Codigo* codigo){
-    //Aparecer tela
+bool CntrServicoCasoDeTeste::visualizar(CasoDeTeste* casoDeTeste){
+    ComandoConsultarCasoDeTeste cmdConsultar(casoDeTeste->getCodigo());
+    CasoDeTeste casoTesteConsultado;
 
-    ComandoConsultarCasoDeTeste cmdConsultar(*codigo->getDado());
-
-    CasoDeTeste visualizar;
     try {
         cmdConsultar.executar();
     } catch (const EErroPersistencia &exp) {
@@ -152,27 +161,26 @@ bool CntrServicoCasoDeTeste::visualizar(Codigo* codigo){
     }
     
     try {
-        visualizar = cmdConsultar.getResultado();
+        casoTesteConsultado = cmdConsultar.getResultado();
     } catch (const EErroPersistencia &exp) {
         return false;
     }
     
-    *codigo = visualizar;
+    casoDeTeste = &casoTesteConsultado;
 
     return true;
 };
 
 bool CntrServicoCasoDeTeste::cadastrar(CasoDeTeste casodeteste, Codigo codigo){
-    //Aparecer tela
-
     ComandoCadastrarCasoDeTeste cmdCadastrar(casodeteste, codigo);
-    int consulta;
 
     try {
         cmdCadastrar.executar();
     } catch (const EErroPersistencia &exp) {
         return false;
     }
+
+    return true;
 };
 
 bool CntrServicoCasoDeTeste::descadastrar(Codigo codigo){

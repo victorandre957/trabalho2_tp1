@@ -2,29 +2,26 @@
 #define CONTROLADORAS_HPP
 
 #include "Interfaces.hpp"
-#include "./curses.hpp"
+#include "curses.hpp"
 #include "ComandosSQL.hpp"
 #include "Telas.hpp"
 
-//Controladoras de Servico
-
 class CntrServicoAutenticacao: public IServicoAutenticacao{
     public:
-        bool autenticar(Matricula, Senha);
+        Desenvolvedor autenticar(Matricula, Senha);
 };
 
 class CntrServicoDesenvolvedor: public IServicoDesenvolvedor{
     public:
+        bool visualizar(Desenvolvedor*);
         bool cadastrar(Desenvolvedor);
         bool descadastrar(Matricula);
         bool editar(Desenvolvedor);
-        bool visualizar(Desenvolvedor*);
 
 };
-
 class CntrServicoTeste: public IServicoTeste{
     public:
-        bool visualizar(Codigo*);
+        bool visualizar(Teste*);
         bool cadastrar(Teste, Matricula);
         bool editar(Teste);
         bool descadastrar(Codigo);
@@ -32,8 +29,9 @@ class CntrServicoTeste: public IServicoTeste{
 };
 
 class CntrServicoCasoDeTeste: public IServicoCasoDeTeste{
-        bool visualizar(CasoDeTeste);
+        bool visualizar(CasoDeTeste*);
         bool cadastrar(CasoDeTeste, Codigo);
+        bool editar(CasoDeTeste);
         bool descadastrar(Codigo);
         //listar casos de teste
 };

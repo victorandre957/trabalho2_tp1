@@ -1,11 +1,14 @@
 #ifndef INTERFACES_HPP_INCLUDED
 #define INTERFACES_HPP_INCLUDED
 
+#include "Entidades.hpp"
+#include "Dominios.hpp"
+
 // Interfaces de serviço
 
 class IServicoAutenticacao {
     public:
-        virtual bool autenticar(Matricula, Senha) = 0;
+        virtual Desenvolvedor autenticar(Matricula, Senha) = 0;
         virtual ~IServicoAutenticacao(){}
 };
 
