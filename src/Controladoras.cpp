@@ -68,8 +68,7 @@ bool CntrServicoDesenvolvedor::editar(Desenvolvedor desenvolvedor){
     return true;
 };
 
-bool CntrServicoDesenvolvedor::visualizar(Desenvolvedor* desenvolvedor){
-    //Aparecer tela
+bool CntrServicoDesenvolvedor::consultar(Desenvolvedor* desenvolvedor){
     ComandoConsultarDesenvolvedor cmdConsultar(desenvolvedor->getMatricula());
 
     Desenvolvedor visualizar;
@@ -91,7 +90,7 @@ bool CntrServicoDesenvolvedor::visualizar(Desenvolvedor* desenvolvedor){
 };
 
 
-bool CntrServicoTeste::visualizar(Teste* teste){
+bool CntrServicoTeste::consultar(Teste* teste){
     ComandoConsultarTeste cmdConsultar(teste->getCodigo());
     Teste testeConsultado;
 
@@ -150,7 +149,7 @@ bool CntrServicoTeste::descadastrar(Codigo codigo){
     return true;
 };
 
-bool CntrServicoCasoDeTeste::visualizar(CasoDeTeste* casoDeTeste){
+bool CntrServicoCasoDeTeste::consultar(CasoDeTeste* casoDeTeste){
     ComandoConsultarCasoDeTeste cmdConsultar(casoDeTeste->getCodigo());
     CasoDeTeste casoTesteConsultado;
 

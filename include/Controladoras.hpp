@@ -13,7 +13,7 @@ class CntrServicoAutenticacao: public IServicoAutenticacao{
 
 class CntrServicoDesenvolvedor: public IServicoDesenvolvedor{
     public:
-        bool visualizar(Desenvolvedor*);
+        bool consultar(Desenvolvedor*);
         bool cadastrar(Desenvolvedor);
         bool descadastrar(Matricula);
         bool editar(Desenvolvedor);
@@ -21,7 +21,7 @@ class CntrServicoDesenvolvedor: public IServicoDesenvolvedor{
 };
 class CntrServicoTeste: public IServicoTeste{
     public:
-        bool visualizar(Teste*);
+        bool consultar(Teste*);
         bool cadastrar(Teste, Matricula);
         bool editar(Teste);
         bool descadastrar(Codigo);
@@ -29,7 +29,7 @@ class CntrServicoTeste: public IServicoTeste{
 };
 
 class CntrServicoCasoDeTeste: public IServicoCasoDeTeste{
-        bool visualizar(CasoDeTeste*);
+        bool consultar(CasoDeTeste*);
         bool cadastrar(CasoDeTeste, Codigo);
         bool editar(CasoDeTeste);
         bool descadastrar(Codigo);
