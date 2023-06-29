@@ -3,39 +3,9 @@
 
 #include "Entidades.hpp"
 #include "Dominios.hpp"
-class IApresentacaoAutenticacao {
-    public:
-        virtual bool autenticar(Desenvolvedor*) = 0;
-        virtual void setCntrServicoAutenticacao(IServicoAutenticacao*) = 0;
-        virtual ~IApresentacaoAutenticacao(){}
-};
-
-class IApresentacaoDesenvolvedor {
-    public:
-        virtual void executar(Desenvolvedor*) = 0;
-        virtual void cadastrar() = 0;
-        virtual void setCntrServicoDesenvolvedor(IServicoDesenvolvedor*) = 0;
-
-        virtual ~IApresentacaoDesenvolvedor(){}
-};
-
-class IApresentacaoTeste {
-    public:
-        virtual void executar(Codigo*) = 0;
-        virtual void setCntrServicoTeste(IServicoTeste*) = 0;
-        virtual ~IApresentacaoTeste(){}
-};
-
-class IApresentacaoCasoDeTeste {
-    public:
-        virtual void executar(Codigo*) = 0;
-        virtual void setCntrServicoCasoDeTeste(IServicoCasoDeTeste*) = 0;
-        virtual ~IApresentacaoCasoDeTeste(){}
-};
-
 class IServicoAutenticacao {
     public:
-        virtual Desenvolvedor autenticar(Matricula, Senha) = 0;
+        virtual Desenvolvedor autenticar(Desenvolvedor) = 0;
         virtual ~IServicoAutenticacao(){}
 };
 
@@ -64,6 +34,36 @@ class IServicoCasoDeTeste{
         virtual bool editar(CasoDeTeste) = 0;
         virtual bool descadastrar(Codigo) = 0;
         virtual ~IServicoCasoDeTeste(){}
+};
+
+class IApresentacaoAutenticacao {
+    public:
+        virtual bool autenticar(Desenvolvedor*) = 0;
+        virtual void setCntrServicoAutenticacao(IServicoAutenticacao*) = 0;
+        virtual ~IApresentacaoAutenticacao(){}
+};
+
+class IApresentacaoDesenvolvedor {
+    public:
+        virtual void executar(Desenvolvedor*) = 0;
+        virtual void cadastrar() = 0;
+        virtual void setCntrServicoDesenvolvedor(IServicoDesenvolvedor*) = 0;
+
+        virtual ~IApresentacaoDesenvolvedor(){}
+};
+
+class IApresentacaoTeste {
+    public:
+        virtual void executar(Desenvolvedor*) = 0;
+        virtual void setCntrServicoTeste(IServicoTeste*) = 0;
+        virtual ~IApresentacaoTeste(){}
+};
+
+class IApresentacaoCasoDeTeste {
+    public:
+        virtual void executar(Desenvolvedor*) = 0;
+        virtual void setCntrServicoCasoDeTeste(IServicoCasoDeTeste*) = 0;
+        virtual ~IApresentacaoCasoDeTeste(){}
 };
 
 #endif  //  INTERFACES_HPP_INCLUDED

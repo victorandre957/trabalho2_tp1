@@ -4,8 +4,101 @@
 #include "Entidades.hpp"
 #include "Dominios.hpp"
 
-Desenvolvedor CntrServicoAutenticacao::autenticar(Matricula matricula, Senha senha ) {
-    ComandoConsultarDesenvolvedor comandoConsultar(matricula);
+void CntrApresentacaoControle::executar(){
+
+    TelaControle telaControle;
+    TelaMensagem telaMensagem;
+    char opcaoControle;
+    char opcaoMenu;
+
+    while(true){
+        opcaoControle = telaControle.apresentar();
+
+        if(opcaoControle == '1') {
+            if (cntrApresentacaoAutenticacao->autenticar(&desenvolvedor)) {
+                this->menuAutenticado(&desenvolvedor);
+            }
+            else {
+                telaMensagem.apresentar("Falha na autenticacao");
+            }
+        }
+        else if (opcaoControle == '2') {
+            cntrApresentacaoDesenvolvedor->cadastrar();
+        }
+        else if (opcaoControle == '3') {
+            return;
+        }
+        else {
+            telaMensagem.apresentar("Opcao invalida.");
+        }
+    }
+    return;
+}
+
+void CntrApresentacaoControle::menuAutenticado(Desenvolvedor *desenvolvedor) {
+
+    TelaMenu telaMenu;
+    char opcao;
+    const vector<string> campos({
+        "1 - Meu Usuário", 
+        "2 - Testes e Casos de Teste",
+        "3 - Sair",
+    });
+
+    while(true) {
+        opcao = (telaMenu.apresentar("Bem Vindo!", campos)).c_str()[0];
+
+        switch(opcao) {
+        case '1':
+            cntrApresentacaoDesenvolvedor->executar(desenvolvedor);
+            break;
+        case '2':
+            cntrApresentacaoTeste->executar(desenvolvedor);
+            break;
+        case '3':
+            return;
+        default:
+            TelaMensagem telaMensagem;
+            telaMensagem.apresentar("Opcao Invalida");
+        }
+    }
+}
+
+bool CntrApresentacaoAutenticacao::autenticar(Desenvolvedor* desenvolvedor){
+
+    Desenvolvedor resultado;
+
+    while(true) {
+
+        try {
+            TelaAutenticacao telaAutenticacao;
+            telaAutenticacao.apresentar(desenvolvedor);
+            break;
+        }
+        catch (const invalid_argument &exp) {
+            TelaMensagem telaMensagem;
+            telaMensagem.apresentar("Dado em formato incorreto.");
+        }
+    }
+
+    *desenvolvedor = cntrServicoAutenticacao->autenticar(*desenvolvedor);
+    if (desenvolvedor->getNome().getDado() != "") {
+        return true;
+    }
+    return false;
+};
+
+
+
+
+
+
+
+
+
+
+Desenvolvedor CntrServicoAutenticacao::autenticar(Desenvolvedor desenvolvedor) {
+    ComandoConsultarDesenvolvedor comandoConsultar(desenvolvedor.getMatricula());
     try {
         comandoConsultar.executar();
     } catch (EErroPersistencia &e) {
@@ -13,7 +106,7 @@ Desenvolvedor CntrServicoAutenticacao::autenticar(Matricula matricula, Senha sen
     }
 
     Desenvolvedor desenvolvedorConsultado;
-    
+
     try {
         desenvolvedorConsultado = comandoConsultar.getResultado();
     } catch (EErroPersistencia &e) {
@@ -22,7 +115,7 @@ Desenvolvedor CntrServicoAutenticacao::autenticar(Matricula matricula, Senha sen
         throw invalid_argument(e.what());
     }
 
-    if (desenvolvedorConsultado.getSenha().getDado() == senha.getDado()) {
+    if (desenvolvedorConsultado.getSenha().getDado() == desenvolvedor.getSenha().getDado()) {
         return desenvolvedorConsultado;
     }
 

@@ -6,7 +6,7 @@
 #include "ComandosSQL.hpp"
 #include "Telas.hpp"
 
-class CntrApresentacaoControle{
+class CntrApresentacaoControle {
     private:
         Desenvolvedor desenvolvedor;
         IApresentacaoAutenticacao* cntrApresentacaoAutenticacao;
@@ -69,7 +69,7 @@ class CntrApresentacaoTeste:public IApresentacaoTeste {
     private:
         IServicoTeste* cntrServicoTeste;
     public:
-        void executar(Codigo*);
+        void executar(Desenvolvedor*);
         void setCntrServicoTeste(IServicoTeste*);
 };
 
@@ -81,7 +81,7 @@ class CntrApresentacaoCasoDeTeste:public IApresentacaoCasoDeTeste {
     private:
         IServicoCasoDeTeste* cntrServicoCasoDeTeste;
     public:
-        void executar(Codigo*);
+        void executar(Desenvolvedor*);
         void setCntrServicoCasoDeTeste(IServicoCasoDeTeste*);
 };
 
@@ -91,7 +91,7 @@ void inline CntrApresentacaoCasoDeTeste::setCntrServicoCasoDeTeste(IServicoCasoD
 
 class CntrServicoAutenticacao: public IServicoAutenticacao{
     public:
-        Desenvolvedor autenticar(Matricula, Senha);
+        Desenvolvedor autenticar(Desenvolvedor);
 };
 
 class CntrServicoDesenvolvedor: public IServicoDesenvolvedor{

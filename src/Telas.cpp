@@ -28,7 +28,7 @@ string TelaMenu::apresentar(string titulo, vector<string> opcoes) {
     getstr(dado);
     clear();
     endwin();
- 
+
     return dado;
 }
 
@@ -45,6 +45,33 @@ void TelaCampo::apresentar(string titulo, string campo, string *valor) {
 
     clear();
     endwin();
+}
+
+void TelaAutenticacao::apresentar(Desenvolvedor* desenvolvedor) {
+
+    char campo1[]="Digite a matricula : ";
+    char campo2[]="Digite a senha     : ";
+    char dado1[80];
+    char dado2[80];
+    int linha,coluna;
+
+    initscr();
+    getmaxyx(stdscr,linha,coluna);
+    mvprintw(linha/2,(coluna-strlen(campo1))/2,"%s",campo1);
+    getstr(dado1);
+    mvprintw(linha/2 + 2,(coluna-strlen(campo2))/2,"%s",campo2);
+    getstr(dado2);
+    clear();
+    endwin();
+
+    Matricula matricula;
+    matricula.setDado(dado1);
+
+    Senha senha;
+    senha.setDado(dado2);
+
+    desenvolvedor->setMatricula(matricula);
+    desenvolvedor->setSenha(senha);
 }
 
 void TelaFormulario::apresentar(string titulo, vector<string> campos, string * entradas) {
@@ -119,8 +146,8 @@ bool TelaConfirmarDescadastrar::apresentar() {
 char TelaControle::apresentar() {
 
     char campo1[]="Seja bem-vindo";
-    char campo2[]="1 - Acessar Testes.";
-    char campo3[]="2 - Meus Dados.";
+    char campo2[]="1 - Acessar sistema.";
+    char campo3[]="2 - Cadastrar usuario.";
     char campo4[]="3 - Sair.";
     char campo5[]="Selecione uma opcao: ";
     char dado1[10];
