@@ -122,7 +122,7 @@ bool CntrServicoTeste::cadastrar(Teste teste, Matricula matricula){
         return false;
     }
 
-    return false;
+    return true;
 };
 
 bool CntrServicoTeste::editar(Teste teste){

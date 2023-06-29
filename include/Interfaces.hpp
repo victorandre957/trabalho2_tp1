@@ -3,8 +3,35 @@
 
 #include "Entidades.hpp"
 #include "Dominios.hpp"
+class IApresentacaoAutenticacao {
+    public:
+        virtual bool autenticar(Desenvolvedor*) = 0;
+        virtual void setCntrServicoAutenticacao(IServicoAutenticacao*) = 0;
+        virtual ~IApresentacaoAutenticacao(){}
+};
 
-// Interfaces de serviço
+class IApresentacaoDesenvolvedor {
+    public:
+        virtual void executar(Desenvolvedor*) = 0;
+        virtual void cadastrar() = 0;
+        virtual void setCntrServicoDesenvolvedor(IServicoDesenvolvedor*) = 0;
+
+        virtual ~IApresentacaoDesenvolvedor(){}
+};
+
+class IApresentacaoTeste {
+    public:
+        virtual void executar(Codigo*) = 0;
+        virtual void setCntrServicoTeste(IServicoTeste*) = 0;
+        virtual ~IApresentacaoTeste(){}
+};
+
+class IApresentacaoCasoDeTeste {
+    public:
+        virtual void executar(Codigo*) = 0;
+        virtual void setCntrServicoCasoDeTeste(IServicoCasoDeTeste*) = 0;
+        virtual ~IApresentacaoCasoDeTeste(){}
+};
 
 class IServicoAutenticacao {
     public:
@@ -24,17 +51,18 @@ class IServicoDesenvolvedor {
 class IServicoTeste {
     public:
         virtual bool consultar(Teste*) = 0;
-        virtual bool cadastrar(Teste) = 0;
+        virtual bool cadastrar(Teste, Matricula) = 0;
         virtual bool editar(Teste) = 0;
-        virtual bool descadastrar(Teste) = 0;
+        virtual bool descadastrar(Codigo) = 0;
         virtual ~IServicoTeste(){}
 };
 
 class IServicoCasoDeTeste{
     public:
         virtual bool consultar(CasoDeTeste*) = 0;
-        virtual bool cadastrar(CasoDeTeste) = 0;
-        virtual bool descadastrar(CasoDeTeste) = 0;
+        virtual bool cadastrar(CasoDeTeste, Codigo);
+        virtual bool editar(CasoDeTeste) = 0;
+        virtual bool descadastrar(Codigo) = 0;
         virtual ~IServicoCasoDeTeste(){}
 };
 
