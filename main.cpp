@@ -1,19 +1,23 @@
-#include <iostream>
-
-#include <ncurses.h>
+#include <string.h>
+#include <stdexcept>
 
 #include "Interfaces.hpp"
 #include "Controladoras.hpp"
 #include "Builders.hpp"
-#include "Telas.hpp"
-#include "Dominios.hpp"
-#include "ComandosSQL.hpp"
-
-TelaMensagem telaMensagem;
 
 using namespace std;
 
 int main() {
-    telaMensagem.apresentar("Dado em formato incorreto");
+
+    BuilderSistema* builder;
+    builder = new BuilderSistema();
+
+    CntrApresentacaoControle* cntrApresentacaoControle;
+    cntrApresentacaoControle = builder->construir();
+
+    cntrApresentacaoControle->executar();
+    
+    delete builder;
+
     return 0;
 }
