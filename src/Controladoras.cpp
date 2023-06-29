@@ -40,9 +40,9 @@ void CntrApresentacaoControle::menuAutenticado(Desenvolvedor *desenvolvedor) {
     TelaMenu telaMenu;
     char opcao;
     const vector<string> campos({
-        "1 - Meu Usuário", 
+        "1 - Meus Dados", 
         "2 - Testes e Casos de Teste",
-        "3 - Sair",
+        "3 - Sair da Plataforma",
     });
 
     while(true) {
@@ -51,10 +51,8 @@ void CntrApresentacaoControle::menuAutenticado(Desenvolvedor *desenvolvedor) {
         switch(opcao) {
         case '1':
             cntrApresentacaoDesenvolvedor->executar(desenvolvedor);
-            break;
         case '2':
             cntrApresentacaoTeste->executar(desenvolvedor);
-            break;
         case '3':
             return;
         default:
