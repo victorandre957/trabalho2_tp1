@@ -68,6 +68,12 @@
     "valarray": "cpp",
     "variant": "cpp",
     "regex": "cpp",
-    "bitset": "cpp"
+    "bitset": "cpp",
+    "any": "cpp",
+    "charconv": "cpp",
+    "forward_list": "cpp",
+    "format": "cpp",
+    "span": "cpp",
+    "stdfloat": "cpp"
   }
 }

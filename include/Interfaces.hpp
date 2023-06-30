@@ -55,13 +55,17 @@ class IApresentacaoDesenvolvedor {
 class IApresentacaoTeste {
     public:
         virtual void executar(Desenvolvedor*) = 0;
+        virtual void editar(Teste*) = 0;
+        virtual void cadastrar(Matricula) = 0;
         virtual void setCntrServicoTeste(IServicoTeste*) = 0;
         virtual ~IApresentacaoTeste(){}
 };
 
 class IApresentacaoCasoDeTeste {
     public:
-        virtual void executar(Desenvolvedor*) = 0;
+        virtual void executar(Teste*) = 0;
+        virtual void editar(CasoDeTeste*) = 0;
+        virtual void cadastrar(Codigo) = 0;
         virtual void setCntrServicoCasoDeTeste(IServicoCasoDeTeste*) = 0;
         virtual ~IApresentacaoCasoDeTeste(){}
 };

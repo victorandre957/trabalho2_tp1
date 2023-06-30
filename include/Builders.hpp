@@ -6,7 +6,7 @@
 
 class BuilderSistema {
     private:
-        CntrApresentacaoControle* cntrApresentacaoControle;
+        CntrApresentacaoPrincipal* cntrApresentacaoControle;
         IApresentacaoAutenticacao* cntrApresentacaoAutenticacao;
         IApresentacaoDesenvolvedor* cntrApresentacaoDesenvolvedor;
         IApresentacaoTeste* cntrApresentacaoTeste;
@@ -18,7 +18,7 @@ class BuilderSistema {
         IServicoCasoDeTeste* cntrServicoCasoDeTeste;
 
     public:
-        CntrApresentacaoControle* construir();
+        CntrApresentacaoPrincipal* construir();
         ~BuilderSistema();
 };
 

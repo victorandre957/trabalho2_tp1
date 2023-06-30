@@ -1,11 +1,11 @@
 #include "Builders.hpp"
 
 
-CntrApresentacaoControle* BuilderSistema::construir(){
+CntrApresentacaoPrincipal* BuilderSistema::construir(){
 
     // Instanciar controladoras da camada de apresentacao.
 
-    cntrApresentacaoControle = new CntrApresentacaoControle();
+    cntrApresentacaoControle = new CntrApresentacaoPrincipal();
     cntrApresentacaoAutenticacao = new CntrApresentacaoAutenticacao();
     cntrApresentacaoDesenvolvedor = new CntrApresentacaoDesenvolvedor();
     cntrApresentacaoTeste = new CntrApresentacaoTeste();
@@ -33,7 +33,7 @@ CntrApresentacaoControle* BuilderSistema::construir(){
 
     cntrApresentacaoCasoDeTeste->setCntrServicoCasoDeTeste(cntrServicoCasoDeTeste);
 
-    // Retornar refer�ncia para inst�ncia de CntrApresentacaoControle.
+    // Retornar refer�ncia para inst�ncia de CntrApresentacaoPrincipal.
 
     return cntrApresentacaoControle;
 }

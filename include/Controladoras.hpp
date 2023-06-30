@@ -6,7 +6,7 @@
 #include "ComandosSQL.hpp"
 #include "Telas.hpp"
 
-class CntrApresentacaoControle {
+class CntrApresentacaoPrincipal {
     private:
         Desenvolvedor desenvolvedor;
         IApresentacaoAutenticacao* cntrApresentacaoAutenticacao;
@@ -23,20 +23,20 @@ class CntrApresentacaoControle {
         void setCntrlApresentacaoCasoDeTeste(IApresentacaoCasoDeTeste*);
 };
 
-inline void CntrApresentacaoControle::setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao* cntr){
-    cntrApresentacaoAutenticacao = cntr;
+void inline CntrApresentacaoPrincipal::setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao* cntr){
+    this->cntrApresentacaoAutenticacao = cntr;
 }
 
-inline void CntrApresentacaoControle::setCntrApresentacaoDesenvolvedor(IApresentacaoDesenvolvedor* cntr){
-    cntrApresentacaoDesenvolvedor = cntr;
+void inline CntrApresentacaoPrincipal::setCntrApresentacaoDesenvolvedor(IApresentacaoDesenvolvedor* cntr){
+    this->cntrApresentacaoDesenvolvedor = cntr;
 }
 
-inline void CntrApresentacaoControle::setCntrlApresentacaoTeste(IApresentacaoTeste* cntr){
-    cntrApresentacaoTeste = cntr;
+void inline CntrApresentacaoPrincipal::setCntrlApresentacaoTeste(IApresentacaoTeste* cntr){
+    this->cntrApresentacaoTeste = cntr;
 }
 
-inline void CntrApresentacaoControle::setCntrlApresentacaoCasoDeTeste(IApresentacaoCasoDeTeste* cntr){
-    cntrApresentacaoCasoDeTeste = cntr;
+void inline CntrApresentacaoPrincipal::setCntrlApresentacaoCasoDeTeste(IApresentacaoCasoDeTeste* cntr){
+    this->cntrApresentacaoCasoDeTeste = cntr;
 }
 
 class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao {
@@ -58,6 +58,7 @@ private:
 public:
     void executar(Desenvolvedor*);
     void cadastrar();
+    void editar(Desenvolvedor*);
     void setCntrServicoDesenvolvedor(IServicoDesenvolvedor*);
 };
 
@@ -68,20 +69,31 @@ void inline CntrApresentacaoDesenvolvedor::setCntrServicoDesenvolvedor(IServicoD
 class CntrApresentacaoTeste:public IApresentacaoTeste {
     private:
         IServicoTeste* cntrServicoTeste;
+        IApresentacaoCasoDeTeste* cntrApresentacaoCasoDeTeste;
     public:
         void executar(Desenvolvedor*);
+        void cadastrar(Matricula);
+        void editar(Teste*);
+
         void setCntrServicoTeste(IServicoTeste*);
+        void setCntrlApresentacaoCasoDeTeste(IApresentacaoCasoDeTeste*);
 };
 
 void inline CntrApresentacaoTeste::setCntrServicoTeste(IServicoTeste* cntrServicoTeste){
     this->cntrServicoTeste = cntrServicoTeste;
 }
 
+void inline CntrApresentacaoTeste::setCntrlApresentacaoCasoDeTeste(IApresentacaoCasoDeTeste* cntr){
+    this->cntrApresentacaoCasoDeTeste = cntr;
+}
+
 class CntrApresentacaoCasoDeTeste:public IApresentacaoCasoDeTeste {
     private:
         IServicoCasoDeTeste* cntrServicoCasoDeTeste;
     public:
-        void executar(Desenvolvedor*);
+        void executar(Teste*);
+        void cadastrar(Codigo);
+        void editar(CasoDeTeste*);
         void setCntrServicoCasoDeTeste(IServicoCasoDeTeste*);
 };
 

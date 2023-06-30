@@ -12,7 +12,7 @@ int main() {
     BuilderSistema* builder;
     builder = new BuilderSistema();
 
-    CntrApresentacaoControle* cntrApresentacaoControle;
+    CntrApresentacaoPrincipal* cntrApresentacaoControle;
     cntrApresentacaoControle = builder->construir();
 
     cntrApresentacaoControle->executar();
