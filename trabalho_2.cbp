@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="trabalho_2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/trabalho_2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+					<Add directory="src" />
+				</Compiler>
+				<Linker>
+					<Add library="ncurses-6.4/lib/libncurses.a" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/trabalho_2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="ncurses-6.4/lib/libncurses.a" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="ncurses-6.4/lib/libncurses.a" />
+		</Linker>
+		<Unit filename="include/Builders.hpp" />
+		<Unit filename="include/ComandosSQL.hpp" />
+		<Unit filename="include/Controladoras.hpp" />
+		<Unit filename="include/Dominios.hpp" />
+		<Unit filename="include/Entidades.hpp" />
+		<Unit filename="include/Interfaces.hpp" />
+		<Unit filename="include/Telas.hpp" />
+		<Unit filename="include/curses.hpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Builders.cpp" />
+		<Unit filename="src/ComandosSQL.cpp" />
+		<Unit filename="src/Controladoras.cpp" />
+		<Unit filename="src/Dominios.cpp" />
+		<Unit filename="src/Entidades.cpp" />
+		<Unit filename="src/Telas.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

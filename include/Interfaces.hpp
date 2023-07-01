@@ -70,7 +70,7 @@ class IServicoTeste {
 class IServicoCasoDeTeste {
     public:
         virtual bool consultar(CasoDeTeste*) = 0;
-        virtual bool cadastrar(CasoDeTeste, Codigo);
+        virtual bool cadastrar(CasoDeTeste, Codigo) = 0;
         virtual bool editar(CasoDeTeste) = 0;
         virtual bool descadastrar(Codigo) = 0;
         virtual ~IServicoCasoDeTeste(){}
