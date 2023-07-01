@@ -21,7 +21,7 @@ class Dominio {
 
     public:
         /**
-         * @brief Retorna a string formatada que está armazenada em "dado".
+         * @brief Retorna a string formatada que esta armazenada em "dado".
          * @return string dado
          */
         string getDado() const;
@@ -32,7 +32,7 @@ class Dominio {
          * @return  -string dado: string que será armazenada no atributo. 
          *  Esse dado deverá seguir as regras de formatação da classe.
          * 
-         * @throw -invalid_argument : se o dado passado não estiver de 
+         * @throw -invalid_argument : se o dado passado nao estiver de 
          * acordo com as regras de formatação.
          */
         void setDado(string dado);
@@ -153,8 +153,8 @@ class Telefone: public Dominio {
  *          Cada caractere deve ser letra (de A-Z ou a-z), dígito (0-9) 
  *          ou sinal de pontuação (. , ; ? ! : - ) ou simbulos (@,#,$,%,&) 
  *     </li>
- *     <li> Não podem haver espaços em branco em sequência. </li>
- *     <li> Não há sinal de acentuação</li>
+ *     <li> Nao podem haver espaços em branco em sequência. </li>
+ *     <li> Nao há sinal de acentuação</li>
  * </ul>
  * por: Victor André 211026664
  */

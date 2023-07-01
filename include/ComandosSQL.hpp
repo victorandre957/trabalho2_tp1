@@ -154,7 +154,7 @@ class ComandoCadastrarTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para cadastrar teste.
         ///@param Teste a ser cadastrado
-        ///@param Matricula do Desenvolvedor que está criando o teste
+        ///@param Matricula do Desenvolvedor que esta criando o teste
         ComandoCadastrarTeste(Teste, Matricula);
 };
 
@@ -176,7 +176,7 @@ class ComandoConsultarTeste:public ComandoSQL {
 class ComandoListarTestes:public ComandoSQL {
     public:
         ///@brief Construtor da classe para listar turmas do banco de dados.
-        ///@param Matricula do Desenvolvedor que está associado aos testes buscados para filtrar.
+        ///@param Matricula do Desenvolvedor que esta associado aos testes buscados para filtrar.
         ComandoListarTestes(Matricula);
 
         /// @brief Retorna um objeto lista com Testes encontrados no dados no banco.
@@ -226,7 +226,7 @@ class ComandoConsultarCasoDeTeste:public ComandoSQL {
 class ComandoListarCasosDeTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para listar turmas do banco de dados.
-        ///@param Codigo do Teste que está associado aos casos de teste buscados para filtrar.
+        ///@param Codigo do Teste que esta associado aos casos de teste buscados para filtrar.
         ComandoListarCasosDeTeste(Codigo);
 
         /// @brief Retorna um objeto lista de Casos de teste com os dados no banco.

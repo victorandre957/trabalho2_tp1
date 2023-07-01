@@ -40,7 +40,7 @@ class TelaMenu:public Tela {
 
 class TelaCampo:public Tela {
   public:
-  void apresentar(string, string, string *);
+  string apresentar(string, string);
 };
 
 class TelaFormulario:public Tela {
@@ -71,6 +71,11 @@ public:
 class TelaAutenticacao: public Tela {
   public:
     void apresentar(Desenvolvedor*);
+};
+
+class TelaConsultaCodigo: public Tela {
+  public:
+    void apresentar(Codigo*);
 };
 
 class TelaConsultarDesenvolvedor: public Tela {

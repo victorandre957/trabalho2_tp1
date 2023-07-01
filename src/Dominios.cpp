@@ -26,13 +26,13 @@ void Classe::validar(string dado) {
     };
 
     if (opcoes.count(dado) == 0) {
-        throw invalid_argument("Opção inválida.");
+        throw invalid_argument("Opção invalida.");
     }
 };
 
 void Codigo::validar(string dado) {
     if (dado.length() != 6) {
-        throw invalid_argument("Código com tamanho inválido.");
+        throw invalid_argument("Código com tamanho Invalido.");
     }
     
     for (int i = 0; i < 3; i++) {
@@ -56,7 +56,7 @@ void Data::validar(string dado) {
     {"JUL", 7}, {"AGO", 8}, {"SET", 9}, {"OUT", 10}, {"NOV", 11}, {"DEZ", 12}};
 
     if (dado.length() != 11) {
-        throw invalid_argument("Data com tamanho inválido.");
+        throw invalid_argument("Data com tamanho Invalido.");
     }
     
     int dia = stoi(dado.substr(0, 2));
@@ -64,17 +64,17 @@ void Data::validar(string dado) {
     int ano = stoi(dado.substr(7, 4));
     
     if (dia < 1 || dia > 31) {
-        throw invalid_argument("Dia inválido.");
+        throw invalid_argument("Dia Invalido.");
     }
     
     auto it = meses.find(mesStr);
     if (it == meses.end()) {
-        throw invalid_argument("Mês inválido.");
+        throw invalid_argument("Mês Invalido.");
     }
     int mes = it->second;
     
     if (ano < 2000 || ano > 2999) {
-        throw invalid_argument("Ano inválido.");
+        throw invalid_argument("Ano Invalido.");
     }
 
     bool ehBissexto = (ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0;
@@ -82,7 +82,7 @@ void Data::validar(string dado) {
     if ((mes == 2 && ehBissexto && dia > 29) || (mes == 2 && !ehBissexto && dia > 28)
         || ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30)
         || ((mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) && dia > 31)) {
-        throw invalid_argument("Dia inválido para o mês correspondente.");
+        throw invalid_argument("Dia Invalido para o mês correspondente.");
     }
 };
 
@@ -117,7 +117,7 @@ void Matricula::validar(string dado) {
     int digitoVerificador = (resto == 0) ? 0 : 10 - resto;
 
     if (digitoVerificador != (dado[tamanho - 1] - '0')) {
-        throw invalid_argument("Dígito verificador inválido.");
+        throw invalid_argument("Dígito verificador Invalido.");
     }
 };
 
@@ -144,7 +144,7 @@ void Telefone::validar(string dado){
     regex pattern("\\+\\d{7,15}"); 
 
     if(!regex_match(dado, pattern)){
-        throw invalid_argument("Número inválido.");
+        throw invalid_argument("Número Invalido.");
     }
 };
 
@@ -153,6 +153,6 @@ void Texto::validar(string dado){
     regex pattern("^(?=.{10,20}$)[a-zA-Z0-9.,;?!:\\-@#$%&]*(\\s+[a-zA-Z0-9.,;?!:\\-@#$%&]+)*\\s*$");
 
     if (!regex_match(dado, pattern)){
-        throw invalid_argument("Texto inválido." + dado);
+        throw invalid_argument("Texto Invalido." + dado);
     }
 }

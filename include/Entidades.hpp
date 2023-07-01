@@ -21,7 +21,7 @@ class Desenvolvedor {
 
         ///@brief Armazena a matrícula do Desenvolvedor caso o parâmetro esteja corretamente passado.
         ///@param - Matricula matricula.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setMatricula(const Matricula &);
         
         /// @brief Retorna o nome do Desenvolvedor.
@@ -30,7 +30,7 @@ class Desenvolvedor {
 
         ///@brief Armazena o nome do Desenvolvedor caso o parâmetro esteja corretamente passado.
         ///@param - Texto nome.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setNome(const Texto &);
 
         ///@brief Retorna a senha do Desenvolvedor.
@@ -39,7 +39,7 @@ class Desenvolvedor {
 
         ///@brief Armazena a senha do Desenvolvedor caso o parâmetro esteja corretamente passado.
         ///@param - Senha senha.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setSenha(const Senha &);
 
         /// @brief Retorna o telefone do Desenvolvedor.
@@ -48,7 +48,7 @@ class Desenvolvedor {
 
         ///@brief Armazena o telefone do Desenvolvedor caso o parâmetro esteja corretamente passado.
         ///@param - Telefone telefone.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setTelefone(const Telefone &);
 };
 
@@ -99,7 +99,7 @@ class Teste {
 
         /// @brief Armazena o código caso o parâmetro esteja corretamente passado.
         /// @param - Codigo codigo.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setCodigo(const Codigo &);
 
         /// @brief Retorna o nome do Teste.
@@ -108,7 +108,7 @@ class Teste {
 
         /// @brief Armazena o nome do Teste caso o parâmetro esteja corretamente passado.
         /// @param - Texto nome.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setNome(const Texto &);
 
         /// @brief Retorna a classe do Teste.
@@ -117,7 +117,7 @@ class Teste {
 
         // @brief Armazena a classe do Teste caso o parâmetro esteja corretamente passado.
         /// @param - Classe classe.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setClasse(const Classe &);
 };
 
@@ -164,7 +164,7 @@ class CasoDeTeste {
 
         /// @brief Armazena o codigo do CasoDeTeste caso o parâmetro esteja corretamente passado.
         /// @param - Codigo codigo.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setCodigo(const Codigo &);
 
         /// @brief Retorna o nome do CasoDeTeste.
@@ -173,7 +173,7 @@ class CasoDeTeste {
 
         /// @brief Armazena o nome do CasoDeTeste caso o parâmetro esteja corretamente passado.
         /// @param - Texto nome.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setNome(const Texto &);
 
         /// @brief Retorna a data do CasoDeTeste.
@@ -182,7 +182,7 @@ class CasoDeTeste {
 
         /// @brief Armazena a data do CasoDeTeste caso o parâmetro esteja corretamente passado.
         /// @param - Data data.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setData(const Data &);
 
         /// @brief Retorna a acao do CasoDeTeste.
@@ -191,7 +191,7 @@ class CasoDeTeste {
 
         /// @brief Armazena a acao do CasoDeTeste caso o parâmetro esteja corretamente passado.
         /// @param - Texto acao.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setAcao(const Texto &);
 
         /// @brief Retorna a resposta do CasoDeTeste.
@@ -200,7 +200,7 @@ class CasoDeTeste {
 
         /// @brief Armazena a resposta do CasoDeTeste caso o parâmetro esteja corretamente passado.
         /// @param - Texto resposta.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setResposta(const Texto &);
 
         /// @brief Retorna o resultado do CasoDeTeste.
@@ -209,7 +209,7 @@ class CasoDeTeste {
 
         /// @brief Armazena o resultado do CasoDeTeste caso o parâmetro esteja corretamente passado.
         /// @param - Resultado resultado.
-        ///@throw - invalid_argument: caso o argumento passado não esteja no padrão definido.
+        ///@throw - invalid_argument: caso o argumento passado nao esteja no padrão definido.
         void setResultado(const Resultado &);
 };
 

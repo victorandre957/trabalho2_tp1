@@ -2,6 +2,7 @@
 #define CONTROLADORAS_HPP
 
 #include "Interfaces.hpp"
+#include "Dominios.hpp"
 #include "curses.hpp"
 
 class CntrApresentacaoPrincipal {
@@ -96,7 +97,7 @@ void inline CntrApresentacaoCasoDeTeste::setCntrServicoCasoDeTeste(IServicoCasoD
 
 class CntrServicoAutenticacao: public IServicoAutenticacao{
     public:
-        Desenvolvedor autenticar(Desenvolvedor);
+        bool autenticar(Desenvolvedor*);
 };
 
 class CntrServicoDesenvolvedor: public IServicoDesenvolvedor{

@@ -37,7 +37,7 @@ string TelaMenu::apresentar(string titulo, vector<string> opcoes) {
     return dado;
 }
 
-void TelaCampo::apresentar(string titulo, string campo, string *valor) {
+string TelaCampo::apresentar(string titulo, string campo) {
     int linha, coluna;
     char dado[LIMITE_CHAR];
     initscr();
@@ -46,11 +46,12 @@ void TelaCampo::apresentar(string titulo, string campo, string *valor) {
     mvprintw(linha/3,(coluna-strlen(campo.c_str()))/2,"%s", campo.c_str());
     getstr(dado);
 
-    *valor = dado;
-
     clear();
     endwin();
+
+    return dado;
 }
+
 
 void TelaAutenticacao::apresentar(Desenvolvedor* desenvolvedor) {
 
@@ -177,11 +178,13 @@ void TelaConsultarDesenvolvedor::apresentar(Desenvolvedor desenvolvedor) {
     char campo1[] ="Consultar Desenvolvedor";
     char campo2[]="Matricula: ";
     char campo3[]="Nome: ";
-    char campo4[]="Telefone: ";
-    char campo5[]="Aperte qualquer tecla para retornar";
+    char campo4[]="Senha: ";
+    char campo5[]="Telefone: ";
+    char campo6[]="Aperte qualquer tecla para retornar";
 
     string matricula = desenvolvedor.getMatricula().getDado();
     string nome = desenvolvedor.getNome().getDado();
+    string senha = desenvolvedor.getSenha().getDado();
     string telefone = desenvolvedor.getTelefone().getDado();
 
     int linha,coluna;
@@ -193,8 +196,9 @@ void TelaConsultarDesenvolvedor::apresentar(Desenvolvedor desenvolvedor) {
     mvprintw(linha/2 - 4,(coluna-strlen(campo1))/2, campo1);
     mvprintw(linha/2 - 2,(coluna-strlen(campo2)-matricula.length())/2, "Matricula: %s", matricula.c_str());
     mvprintw(linha/2,(coluna-strlen(campo3)-nome.length())/2, "Nome: %s", nome.c_str());
-    mvprintw(linha/2,(coluna-strlen(campo4)-telefone.length())/2, "Telefone: %s", telefone.c_str());
-    mvprintw(linha/2 + 4,(coluna-strlen(campo5))/2, campo5);
+    mvprintw(linha/2 + 2,(coluna-strlen(campo4)-senha.length())/2, "Senha: %s", senha.c_str());
+    mvprintw(linha/2 + 4,(coluna-strlen(campo5)-telefone.length())/2, "Telefone: %s", telefone.c_str());
+    mvprintw(linha/2 + 6,(coluna-strlen(campo6))/2, campo6);
     getch();
     clear();
     endwin();
@@ -220,7 +224,7 @@ void TelaConsultarTeste::apresentar(Teste teste) {
     mvprintw(linha/2 - 4,(coluna-strlen(campo1))/2, campo1);
     mvprintw(linha/2 - 2,(coluna-strlen(campo2)-codigo.length())/2, "Codigo: %s", codigo.c_str());
     mvprintw(linha/2,(coluna-strlen(campo3)-nome.length())/2, "Nome: %s", nome.c_str());
-    mvprintw(linha/2,(coluna-strlen(campo4)-classe.length())/2, "Classe: %s", classe.c_str());
+    mvprintw(linha/2 + 2,(coluna-strlen(campo4)-classe.length())/2, "Classe: %s", classe.c_str());
     mvprintw(linha/2 + 4,(coluna-strlen(campo5))/2, campo5);
     getch();
     clear();
@@ -253,11 +257,11 @@ void TelaConsultarCasoDeTeste::apresentar(CasoDeTeste casoDeTeste) {
     mvprintw(linha/2 - 4,(coluna-strlen(campo1))/2, campo1);
     mvprintw(linha/2 - 2,(coluna-strlen(campo2)-codigo.length())/2, "Codigo: %s", codigo.c_str());
     mvprintw(linha/2,(coluna-strlen(campo3)-nome.length())/2, "Nome: %s", nome.c_str());
-    mvprintw(linha/2,(coluna-strlen(campo4)-data.length())/2, "Classe: %s", data.c_str());
-    mvprintw(linha/2,(coluna-strlen(campo4)-acao.length())/2, "Classe: %s", acao.c_str());
-    mvprintw(linha/2,(coluna-strlen(campo4)-resposta.length())/2, "Classe: %s", resposta.c_str());
-    mvprintw(linha/2,(coluna-strlen(campo4)-resultado.length())/2, "Classe: %s", resultado.c_str());
-    mvprintw(linha/2 + 4,(coluna-strlen(campo8))/2, campo8);
+    mvprintw(linha/2 + 2,(coluna-strlen(campo4)-data.length())/2, "Data: %s", data.c_str());
+    mvprintw(linha/2 + 4,(coluna-strlen(campo4)-acao.length())/2, "Acao: %s", acao.c_str());
+    mvprintw(linha/2 + 6,(coluna-strlen(campo4)-resposta.length())/2, "Resposta: %s", resposta.c_str());
+    mvprintw(linha/2 + 8,(coluna-strlen(campo4)-resultado.length())/2, "Resultado: %s", resultado.c_str());
+    mvprintw(linha/2 + 12,(coluna-strlen(campo8))/2, campo8);
 
     getch();
     clear();

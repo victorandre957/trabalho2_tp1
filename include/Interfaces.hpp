@@ -45,7 +45,7 @@ class IApresentacaoTeste {
 
 class IServicoAutenticacao {
     public:
-        virtual Desenvolvedor autenticar(Desenvolvedor) = 0;
+        virtual bool autenticar(Desenvolvedor*) = 0;
         virtual ~IServicoAutenticacao(){}
 };
 
