@@ -23,20 +23,18 @@ CntrApresentacaoPrincipal* BuilderSistema::construir(){
     cntrApresentacaoControle->setCntrApresentacaoAutenticacao(cntrApresentacaoAutenticacao);
     cntrApresentacaoControle->setCntrApresentacaoDesenvolvedor(cntrApresentacaoDesenvolvedor);
     cntrApresentacaoControle->setCntrlApresentacaoTeste(cntrApresentacaoTeste);
-    cntrApresentacaoControle->setCntrlApresentacaoCasoDeTeste(cntrApresentacaoCasoDeTeste);
 
     cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(cntrServicoAutenticacao);
 
     cntrApresentacaoDesenvolvedor->setCntrServicoDesenvolvedor(cntrServicoDesenvolvedor);
 
     cntrApresentacaoTeste->setCntrServicoTeste(cntrServicoTeste);
+    cntrApresentacaoTeste->setCntrlApresentacaoCasoDeTeste(cntrApresentacaoCasoDeTeste);
 
     cntrApresentacaoCasoDeTeste->setCntrServicoCasoDeTeste(cntrServicoCasoDeTeste);
 
-    // Retornar refer�ncia para inst�ncia de CntrApresentacaoPrincipal.
-
     return cntrApresentacaoControle;
-}
+} 
 
 BuilderSistema::~BuilderSistema(){
         delete cntrApresentacaoControle;
@@ -44,7 +42,9 @@ BuilderSistema::~BuilderSistema(){
         delete cntrApresentacaoDesenvolvedor;
         delete cntrApresentacaoTeste;
         delete cntrApresentacaoCasoDeTeste;
+
         delete cntrServicoAutenticacao;
         delete cntrServicoDesenvolvedor;
+        delete cntrServicoTeste;
         delete cntrServicoCasoDeTeste;
 }

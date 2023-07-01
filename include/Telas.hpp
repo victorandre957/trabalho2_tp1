@@ -10,7 +10,11 @@
 #include "Entidades.hpp"
 #include "Dominios.hpp"
 
-#include <ncurses.h>
+#ifdef WIN32
+    #include "curses.hpp"
+#else
+    #include <ncurses.h>
+#endif  // WIN32
 
 
 using namespace std;

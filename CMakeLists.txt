@@ -33,7 +33,7 @@ add_executable(trabalho_2
         src/Telas.cpp
         )
 
-target_link_libraries(trabalho_2 ${CURSES_LIBRARIES} sqlite3)
+target_link_libraries(trabalho_2 ${CURSES_LIBRARIES} sqlite3 ncurses)
 target_include_directories(trabalho_2 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 enable_testing()

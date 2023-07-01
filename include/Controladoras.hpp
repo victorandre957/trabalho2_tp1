@@ -12,7 +12,6 @@ class CntrApresentacaoPrincipal {
         IApresentacaoAutenticacao* cntrApresentacaoAutenticacao;
         IApresentacaoDesenvolvedor* cntrApresentacaoDesenvolvedor;
         IApresentacaoTeste* cntrApresentacaoTeste;
-        IApresentacaoCasoDeTeste* cntrApresentacaoCasoDeTeste;
         void menuAutenticado(Desenvolvedor*);
 
     public:
@@ -20,23 +19,18 @@ class CntrApresentacaoPrincipal {
         void setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao*);
         void setCntrApresentacaoDesenvolvedor(IApresentacaoDesenvolvedor*);
         void setCntrlApresentacaoTeste(IApresentacaoTeste*);
-        void setCntrlApresentacaoCasoDeTeste(IApresentacaoCasoDeTeste*);
 };
 
-void inline CntrApresentacaoPrincipal::setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao* cntr){
+inline void CntrApresentacaoPrincipal::setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao* cntr){
     this->cntrApresentacaoAutenticacao = cntr;
 }
 
-void inline CntrApresentacaoPrincipal::setCntrApresentacaoDesenvolvedor(IApresentacaoDesenvolvedor* cntr){
+inline void CntrApresentacaoPrincipal::setCntrApresentacaoDesenvolvedor(IApresentacaoDesenvolvedor* cntr){
     this->cntrApresentacaoDesenvolvedor = cntr;
 }
 
-void inline CntrApresentacaoPrincipal::setCntrlApresentacaoTeste(IApresentacaoTeste* cntr){
+inline void CntrApresentacaoPrincipal::setCntrlApresentacaoTeste(IApresentacaoTeste* cntr){
     this->cntrApresentacaoTeste = cntr;
-}
-
-void inline CntrApresentacaoPrincipal::setCntrlApresentacaoCasoDeTeste(IApresentacaoCasoDeTeste* cntr){
-    this->cntrApresentacaoCasoDeTeste = cntr;
 }
 
 class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao {
@@ -47,8 +41,8 @@ class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao {
         void setCntrServicoAutenticacao(IServicoAutenticacao*);
 };
 
-void inline CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao* cntrServicoAutenticacao){
-    this->cntrServicoAutenticacao = cntrServicoAutenticacao;
+void inline CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao* cntr){
+    this->cntrServicoAutenticacao = cntr;
 }
 
 class CntrApresentacaoDesenvolvedor:public IApresentacaoDesenvolvedor {
@@ -62,11 +56,11 @@ public:
     void setCntrServicoDesenvolvedor(IServicoDesenvolvedor*);
 };
 
-void inline CntrApresentacaoDesenvolvedor::setCntrServicoDesenvolvedor(IServicoDesenvolvedor* cntrServicoDesenvolvedor){
-    this->cntrServicoDesenvolvedor = cntrServicoDesenvolvedor;
+void inline CntrApresentacaoDesenvolvedor::setCntrServicoDesenvolvedor(IServicoDesenvolvedor* cntr){
+    this->cntrServicoDesenvolvedor = cntr;
 }
 
-class CntrApresentacaoTeste:public IApresentacaoTeste {
+class CntrApresentacaoTeste: public IApresentacaoTeste {
     private:
         IServicoTeste* cntrServicoTeste;
         IApresentacaoCasoDeTeste* cntrApresentacaoCasoDeTeste;
@@ -87,18 +81,19 @@ void inline CntrApresentacaoTeste::setCntrlApresentacaoCasoDeTeste(IApresentacao
     this->cntrApresentacaoCasoDeTeste = cntr;
 }
 
-class CntrApresentacaoCasoDeTeste:public IApresentacaoCasoDeTeste {
+class CntrApresentacaoCasoDeTeste: public IApresentacaoCasoDeTeste {
     private:
         IServicoCasoDeTeste* cntrServicoCasoDeTeste;
     public:
         void executar(Teste*);
         void cadastrar(Codigo);
         void editar(CasoDeTeste*);
+
         void setCntrServicoCasoDeTeste(IServicoCasoDeTeste*);
 };
 
-void inline CntrApresentacaoCasoDeTeste::setCntrServicoCasoDeTeste(IServicoCasoDeTeste* cntrServicoCasoDeTeste){
-    this->cntrServicoCasoDeTeste = cntrServicoCasoDeTeste;
+void inline CntrApresentacaoCasoDeTeste::setCntrServicoCasoDeTeste(IServicoCasoDeTeste* cntr){
+    this->cntrServicoCasoDeTeste = cntr;
 }
 
 class CntrServicoAutenticacao: public IServicoAutenticacao{
@@ -120,15 +115,13 @@ class CntrServicoTeste: public IServicoTeste {
         bool cadastrar(Teste, Matricula);
         bool editar(Teste);
         bool descadastrar(Codigo);
-        //listar testes
 };
 
-class CntrServicoCasoDeTeste: public IServicoCasoDeTeste{
+class CntrServicoCasoDeTeste: public IServicoCasoDeTeste {
         bool consultar(CasoDeTeste*);
         bool cadastrar(CasoDeTeste, Codigo);
         bool editar(CasoDeTeste);
         bool descadastrar(Codigo);
-        //listar casos de teste
 };
 
 #endif  //  CONTROLADORAS_HPP

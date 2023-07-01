@@ -280,7 +280,7 @@ void CntrApresentacaoTeste::executar(Desenvolvedor* desenvolvedor) {
     const vector<string> menuTeste({
         "1 - Informações do Teste", 
         "2 - Editar Dados do Teste",
-        "3 - Listar Casos de Teste",
+        "3 - Consultar Casos de Teste",
         "4 - Descadastrar",
         "5 - Voltar",
     });
@@ -387,7 +387,7 @@ void CntrApresentacaoTeste::cadastrar(Matricula matricula) {
         } catch (const invalid_argument) {
             string* newCode;
             telaMensagem.apresentar("0 Codigo não está em um formato valido");
-            telaCampo.apresentar("Cadastrar Teste", "2 - Codigo", newCode);
+            telaCampo.apresentar("Cadastrar Teste", "1 - Codigo", newCode);
             novosDados[0] = *newCode;
             continue;
         }
@@ -440,7 +440,7 @@ void CntrApresentacaoTeste::editar(Teste* teste) {
 
     string novosDados[campos.size()];
 
-    telaForm.apresentar("Cadastrar Teste", campos, novosDados);
+    telaForm.apresentar("Editar Teste", campos, novosDados);
 
     while(true) {
         try {
@@ -477,12 +477,294 @@ void CntrApresentacaoTeste::editar(Teste* teste) {
     }
 }
 
+void CntrApresentacaoCasoDeTeste::executar(Teste* teste) {
+    TelaMenu telaMenu;
+    TelaCampo telaCampo;
+    TelaConsultarCasoDeTeste showCasoDeTeste;
+    TelaConfirmarDescadastrar telaDescadastrar;
+    TelaMensagem telaMensagem;
+    char opcaoMenuPricipal;
+    char opcaoMenuCasoDeTeste;
 
+    const vector<string> menuPricipal({
+        "1 - Cadastrar Caso de Teste", 
+        "2 - Consultar Caso de Teste",
+        "3 - Voltar",
+    });
+    const vector<string> menuTeste({
+        "1 - Informações do Caso de Teste", 
+        "2 - Editar Dados do Case de Teste",
+        "3 - Descadastrar",
+        "4 - Voltar",
+    });
+    
+    Codigo codigo;
+    CasoDeTeste* casoDeTeste;
 
+    while(true) {
+        opcaoMenuPricipal = (
+            telaMenu.apresentar(
+                "Menu do Teste", 
+                menuTeste
+            )
+        ).c_str()[0];
 
+        switch(opcaoMenuPricipal) {
+            case '1':
+                this->cadastrar(teste->getCodigo());
+            case '2':
+                while(true) {
+                    string* code;
+                    telaCampo.apresentar(
+                        "Consultar Caso de Teste",
+                        "Informe o Codigo do Caso de Teste ou digite 0 para voltar", 
+                        code
+                    );
 
+                    if(code->length() == 1 && code->c_str()[0] == '0') {
+                        break;
+                    }
 
+                    try {
+                        codigo.setDado(*code);
+                        casoDeTeste->setCodigo(codigo);
+                        if(!cntrServicoCasoDeTeste->consultar(casoDeTeste)) {
+                            telaMensagem.apresentar("Codigo Não Encontrado");
+                            continue;
+                        }
+                    }
+                    catch(const invalid_argument) {
+                        telaMensagem.apresentar("Codigo Inválido");
+                        continue;
+                    }
 
+                    while(true) {
+                        opcaoMenuCasoDeTeste = (
+                            telaMenu.apresentar(
+                                "Caso de Teste " + casoDeTeste->getCodigo().getDado(), 
+                                menuTeste
+                            )
+                        ).c_str()[0];
+
+                        switch(opcaoMenuCasoDeTeste) {
+                            case '1':
+                                showCasoDeTeste.apresentar(*casoDeTeste);
+                            case '2':
+                                this->editar(casoDeTeste);
+                            case '3':
+                                if (telaDescadastrar.apresentar()) {
+                                    cntrServicoCasoDeTeste->descadastrar(casoDeTeste->getCodigo());
+                                    casoDeTeste = new CasoDeTeste();
+                                    break;
+                                }
+                                continue;
+                            case '4':
+                                break;
+                            default:
+                                telaMensagem.apresentar("Opcao Invalida");
+                        }
+                    }
+                }
+            case '3':
+                return;
+            default:
+                telaMensagem.apresentar("Opcao Invalida");
+        }
+    }
+}
+
+void CntrApresentacaoCasoDeTeste::editar(CasoDeTeste* casoDeTeste) {
+    TelaFormulario telaForm;
+    TelaCampo telaCampo;
+    TelaMensagem telaMensagem;
+
+    Texto nome;
+    Data data;
+    Texto acao;
+    Texto resposta;
+    Resultado resultado;
+
+    const vector<string> campos({
+        "1 - Nome",
+        "2 - Data",
+        "3 - Acao",
+        "4 - Resposta",
+        "5 - Resultado",
+    });
+
+    string novosDados[campos.size()];
+
+    telaForm.apresentar("Editar Caso de Teste", campos, novosDados);
+
+    while(true) {
+        try {
+            nome.setDado(novosDados[0]);
+        } catch (const invalid_argument) {
+            string* newName;
+            telaMensagem.apresentar("O Nome não está em um formato valido");
+            telaCampo.apresentar("Editar Caso de Teste", "1 - Nome", newName);
+            novosDados[1] = *newName;
+            continue;
+        }
+
+        try {
+            data.setDado(novosDados[1]);
+        } catch (const invalid_argument) {
+            string* newDate;
+            telaMensagem.apresentar("A Data não está em um formato valido");
+            telaCampo.apresentar("Editar Caso de Teste", "2 - Data", newDate);
+            novosDados[1] = *newDate;
+            continue;
+        }
+
+        try {
+            acao.setDado(novosDados[2]);
+        } catch (const invalid_argument) {
+            string* newAcao;
+            telaMensagem.apresentar("A Acao não está em um formato valido");
+            telaCampo.apresentar("Editar Caso de Teste", "3 - Acao", newAcao);
+            novosDados[2] = *newAcao;
+            continue;
+        }
+
+        try {
+            resposta.setDado(novosDados[3]);
+        } catch (const invalid_argument) {
+            string* newResposta;
+            telaMensagem.apresentar("A Resposta não está em um formato valido");
+            telaCampo.apresentar("Editar Caso de Teste", "4 - Resposta", newResposta);
+            novosDados[3] = *newResposta;
+            continue;
+        }
+
+        try {
+            resultado.setDado(novosDados[4]);
+        } catch (const invalid_argument) {
+            string* newResultado;
+            telaMensagem.apresentar("O Resultado não está em um formato valido");
+            telaCampo.apresentar("Editar Caso de Teste", "5 - Resultado", newResultado);
+            novosDados[4] = *newResultado;
+            continue;
+        }
+
+        CasoDeTeste editedCasoDeTeste;
+        editedCasoDeTeste.setCodigo(casoDeTeste->getCodigo());
+        editedCasoDeTeste.setNome(nome);
+        editedCasoDeTeste.setData(data);
+        editedCasoDeTeste.setAcao(acao);
+        editedCasoDeTeste.setResposta(resposta);
+        editedCasoDeTeste.setResultado(resultado);
+
+        if (cntrServicoCasoDeTeste->editar(editedCasoDeTeste)) {
+            casoDeTeste = &editedCasoDeTeste;
+        } else {
+            telaMensagem.apresentar("Não foi possível Editar o teste, tente novamente.");
+        }
+        return;
+    }
+}
+
+void CntrApresentacaoCasoDeTeste::cadastrar(Codigo codigoTeste) {
+    TelaFormulario telaForm;
+    TelaCampo telaCampo;
+    TelaMensagem telaMensagem;
+
+    Codigo codigo;
+    Texto nome;
+    Data data;
+    Texto acao;
+    Texto resposta;
+    Resultado resultado;
+
+    const vector<string> campos({
+        "1 - Codigo",
+        "2 - Nome",
+        "3 - Data",
+        "4 - Acao",
+        "5 - Resposta",
+        "6 - Resultado",
+    });
+
+    string novosDados[campos.size()];
+
+    telaForm.apresentar("Cadastrar Caso de Teste", campos, novosDados);
+
+    while(true) {
+
+        try {
+            codigo.setDado(novosDados[0]);
+        } catch (const invalid_argument) {
+            string* newCode;
+            telaMensagem.apresentar("0 Codigo não está em um formato valido");
+            telaCampo.apresentar("Cadastrar Caso de Teste", "1 - Codigo", newCode);
+            novosDados[0] = *newCode;
+            continue;
+        }
+
+        try {
+            nome.setDado(novosDados[1]);
+        } catch (const invalid_argument) {
+            string* newName;
+            telaMensagem.apresentar("O Nome não está em um formato valido");
+            telaCampo.apresentar("Cadastrar Caso de Teste", "2 - Nome", newName);
+            novosDados[1] = *newName;
+            continue;
+        }
+
+        try {
+            data.setDado(novosDados[2]);
+        } catch (const invalid_argument) {
+            string* newDate;
+            telaMensagem.apresentar("A Data não está em um formato valido");
+            telaCampo.apresentar("Cadastrar Caso de Teste", "3 - Data", newDate);
+            novosDados[2] = *newDate;
+            continue;
+        }
+
+        try {
+            acao.setDado(novosDados[3]);
+        } catch (const invalid_argument) {
+            string* newAcao;
+            telaMensagem.apresentar("A Acao não está em um formato valido");
+            telaCampo.apresentar("Cadastrar Caso de Teste", "4 - Acao", newAcao);
+            novosDados[3] = *newAcao;
+            continue;
+        }
+
+        try {
+            resposta.setDado(novosDados[4]);
+        } catch (const invalid_argument) {
+            string* newResposta;
+            telaMensagem.apresentar("A Resposta não está em um formato valido");
+            telaCampo.apresentar("Cadastrar Caso de Teste", "5 - Resposta", newResposta);
+            novosDados[4] = *newResposta;
+            continue;
+        }
+
+        try {
+            resultado.setDado(novosDados[5]);
+        } catch (const invalid_argument) {
+            string* newResultado;
+            telaMensagem.apresentar("O Resultado não está em um formato valido");
+            telaCampo.apresentar("Cadastrar Caso de Teste", "6 - Resultado", newResultado);
+            novosDados[5] = *newResultado;
+            continue;
+        }
+
+        CasoDeTeste casoDeTeste;
+        casoDeTeste.setCodigo(codigo);
+        casoDeTeste.setNome(nome);
+        casoDeTeste.setData(data);
+        casoDeTeste.setAcao(acao);
+        casoDeTeste.setResposta(resposta);
+        casoDeTeste.setResultado(resultado);
+
+        if (!cntrServicoCasoDeTeste->cadastrar(casoDeTeste, codigoTeste)) {
+            telaMensagem.apresentar("Não foi possível cadastrar o Caso de Teste, tente novamente.");
+        };
+        return;
+    }
+}
 
 Desenvolvedor CntrServicoAutenticacao::autenticar(Desenvolvedor desenvolvedor) {
     ComandoConsultarDesenvolvedor comandoConsultar(desenvolvedor.getMatricula());
@@ -655,6 +937,18 @@ bool CntrServicoCasoDeTeste::cadastrar(CasoDeTeste casodeteste, Codigo codigo){
 
     try {
         cmdCadastrar.executar();
+    } catch (const EErroPersistencia &exp) {
+        return false;
+    }
+
+    return true;
+};
+
+bool CntrServicoCasoDeTeste::editar(CasoDeTeste casodeteste){
+    ComandoEditarCasoDeTeste cmdEditar(casodeteste);
+
+    try {
+        cmdEditar.executar();
     } catch (const EErroPersistencia &exp) {
         return false;
     }
