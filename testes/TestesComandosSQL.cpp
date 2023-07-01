@@ -175,20 +175,18 @@ TEST(testComandoSQL, consultarTeste) {
   EXPECT_STREQ(testeConsultado.getNome().getDado().c_str(), "Teste do teste");
   EXPECT_STREQ(testeConsultado.getClasse().getDado().c_str(), "FUMACA");
 
-  Matricula matricula;
-  matricula.setDado("1234566");
 
-  ComandoListarTestes comandoConsultarLista(matricula);
+  ComandoConsultarTeste comandoConsultarTeste(codigo);
   try {
-      comandoConsultarLista.executar();
+      comandoConsultarTeste.executar();
   } catch (EErroPersistencia &e) {
       FAIL() << "Erro ao executar\n" << e.what();
   }
 
-  list<Teste> listaDeTestesConsultados;
+  Teste testeConsultado2;
   
   try {
-      listaDeTestesConsultados = comandoConsultarLista.getResultado();
+      testeConsultado2 = comandoConsultarTeste.getResultado();
   } catch (EErroPersistencia &e) {
       FAIL() << "Erro em getResultado\n" << e.what();
   } catch (invalid_argument &e) {
@@ -196,15 +194,15 @@ TEST(testComandoSQL, consultarTeste) {
   }
 
   EXPECT_STREQ(
-    listaDeTestesConsultados.back().getCodigo().getDado().c_str(), 
+    testeConsultado2.getCodigo().getDado().c_str(), 
     testeConsultado.getCodigo().getDado().c_str()
   );
   EXPECT_STREQ(
-    listaDeTestesConsultados.back().getNome().getDado().c_str(), 
+    testeConsultado2.getNome().getDado().c_str(), 
     testeConsultado.getNome().getDado().c_str()
   );
   EXPECT_STREQ(
-    listaDeTestesConsultados.back().getClasse().getDado().c_str(), 
+    testeConsultado2.getClasse().getDado().c_str(), 
     testeConsultado.getClasse().getDado().c_str()
   );
 }
@@ -334,48 +332,46 @@ TEST(testComandoSQL, consultarCasoDeTeste) {
   EXPECT_STREQ(casoDeTesteConsultado.getResposta().getDado().c_str(), "Funciona sempre");
   EXPECT_STREQ(casoDeTesteConsultado.getResultado().getDado().c_str(), "REPROVADO");
 
-  Codigo codigoTeste;
-  codigoTeste.setDado("ASD123");
-
-  ComandoListarCasosDeTeste comandoConsultarLista(codigoTeste);
+  ComandoConsultarCasoDeTeste comandoConsultarCasoDeTeste(codigo);
   try {
-      comandoConsultarLista.executar();
+      comandoConsultarCasoDeTeste.executar();
   } catch (EErroPersistencia &e) {
       FAIL() << "Erro ao executar\n" << e.what();
   }
 
-  list<CasoDeTeste> listaDeCasosDeTesteConsultados;
+  CasoDeTeste CasoDeTesteConsultado2;
   
   try {
-      listaDeCasosDeTesteConsultados = comandoConsultarLista.getResultado();
+      CasoDeTesteConsultado2 = comandoConsultarCasoDeTeste.getResultado();
   } catch (EErroPersistencia &e) {
       FAIL() << "Erro em getResultado\n" << e.what();
   } catch (invalid_argument &e) {
       FAIL() << e.what();
   }
 
+  
   EXPECT_STREQ(
-    listaDeCasosDeTesteConsultados.back().getCodigo().getDado().c_str(), 
+    CasoDeTesteConsultado2.getCodigo().getDado().c_str(), 
     casoDeTesteConsultado.getCodigo().getDado().c_str()
   );
   EXPECT_STREQ(
-    listaDeCasosDeTesteConsultados.back().getNome().getDado().c_str(), 
+    CasoDeTesteConsultado2.getNome().getDado().c_str(), 
     casoDeTesteConsultado.getNome().getDado().c_str()
   );
   EXPECT_STREQ(
-    listaDeCasosDeTesteConsultados.back().getAcao().getDado().c_str(), 
+    CasoDeTesteConsultado2.getAcao().getDado().c_str(), 
     casoDeTesteConsultado.getAcao().getDado().c_str()
   );
   EXPECT_STREQ(
-    listaDeCasosDeTesteConsultados.back().getData().getDado().c_str(), 
+    CasoDeTesteConsultado2.getData().getDado().c_str(), 
     casoDeTesteConsultado.getData().getDado().c_str()
   );
   EXPECT_STREQ(
-    listaDeCasosDeTesteConsultados.back().getResposta().getDado().c_str(), 
+    CasoDeTesteConsultado2.getResposta().getDado().c_str(), 
     casoDeTesteConsultado.getResposta().getDado().c_str()
   );
   EXPECT_STREQ(
-    listaDeCasosDeTesteConsultados.back().getResultado().getDado().c_str(), 
+    CasoDeTesteConsultado2.getResultado().getDado().c_str(), 
     casoDeTesteConsultado.getResultado().getDado().c_str()
   );
 }

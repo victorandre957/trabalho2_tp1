@@ -168,51 +168,6 @@ Teste ComandoConsultarTeste::getResultado() {
     return teste;
 }
 
-ComandoListarTestes::ComandoListarTestes(Matricula matricula) {
-    comandoSQL = "SELECT * FROM Testes WHERE Desenvolvedor = '";
-    comandoSQL += matricula.getDado() + "';";
-}
-
-list<Teste> ComandoListarTestes::getResultado() {
-    ElementoResultado resultado;
-    list<Teste> testes;
-
-    if (listaResultado.empty()) {
-        throw EErroPersistencia("Lista de resultados vazia.");
-    }
-
-    while (!listaResultado.empty()) {
-        Teste teste;
-
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Codigo codigo;
-        codigo.setDado(resultado.getValorColuna());
-        teste.setCodigo(codigo);
-
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Texto nome;
-        nome.setDado(resultado.getValorColuna());
-        teste.setNome(nome);
-
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Classe classe;
-        classe.setDado(resultado.getValorColuna());
-        teste.setClasse(classe);
-
-        // remover matricula
-        listaResultado.pop_back();
-
-        testes.push_back(teste);
-    }
-
-    listaResultado.clear();
-
-    return testes;
-}
-
 ComandoEditarTeste::ComandoEditarTeste(Teste teste) {
     comandoSQL = "UPDATE Testes ";
     comandoSQL += "SET Nome = '" + teste.getNome().getDado();
@@ -293,67 +248,6 @@ CasoDeTeste ComandoConsultarCasoDeTeste::getResultado() {
     return casoDeTeste;
 }
 
-ComandoListarCasosDeTeste::ComandoListarCasosDeTeste(Codigo codigo) {
-    comandoSQL = "SELECT * FROM CasosDeTeste WHERE Teste = '";
-    comandoSQL += codigo.getDado() + "';";
-}
-
-list<CasoDeTeste> ComandoListarCasosDeTeste::getResultado() {
-    ElementoResultado resultado;
-    list<CasoDeTeste> casosDeTeste;
-
-    if (listaResultado.empty()) {
-        throw EErroPersistencia("Lista de resultados vazia.");
-    }
-
-    while (!listaResultado.empty()) {
-        CasoDeTeste casoDeteste;
-
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Codigo codigo;
-        codigo.setDado(resultado.getValorColuna());
-        casoDeteste.setCodigo(codigo);
-
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Texto nome;
-        nome.setDado(resultado.getValorColuna());
-        casoDeteste.setNome(nome);
-
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Data data;
-        data.setDado(resultado.getValorColuna());
-        casoDeteste.setData(data);
-
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Texto acao;
-        acao.setDado(resultado.getValorColuna());
-        casoDeteste.setAcao(acao);
-
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Texto resposta;
-        resposta.setDado(resultado.getValorColuna());
-        casoDeteste.setResposta(resposta);
-
-        resultado = listaResultado.back();
-        listaResultado.pop_back();
-        Resultado resultadoDoCaso;
-        resultadoDoCaso.setDado(resultado.getValorColuna());
-        casoDeteste.setResultado(resultadoDoCaso);
-
-        listaResultado.pop_back();
-
-        casosDeTeste.push_back(casoDeteste);
-    }
-
-    listaResultado.clear();
-
-    return casosDeTeste;
-}
 
 ComandoEditarCasoDeTeste::ComandoEditarCasoDeTeste(CasoDeTeste casoDeTeste) {
     comandoSQL = "UPDATE CasosDeTeste ";

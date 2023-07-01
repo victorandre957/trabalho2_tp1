@@ -88,19 +88,9 @@ class TelaConsultarTeste: public Tela {
     void apresentar(Teste);
 };
 
-class TelaConsultarTestes: public Tela {
-  public:
-    int apresentar(vector<Teste>, bool);
-};
-
 class TelaConsultarCasoDeTeste: public Tela {
   public:
     void apresentar(CasoDeTeste);
-};
-
-class TelaConsultarCasosDeTeste: public Tela {
-  public:
-    int apresentar(vector<CasoDeTeste>, bool);
 };
 
 #endif  //  TELAS_HPP_INCLUDED
