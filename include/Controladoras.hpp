@@ -3,8 +3,6 @@
 
 #include "Interfaces.hpp"
 #include "curses.hpp"
-#include "ComandosSQL.hpp"
-#include "Telas.hpp"
 
 class CntrApresentacaoPrincipal {
     private:

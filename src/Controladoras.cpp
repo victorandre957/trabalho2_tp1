@@ -1,8 +1,6 @@
 #include "Controladoras.hpp"
-
 #include "ComandosSQL.hpp"
-#include "Entidades.hpp"
-#include "Dominios.hpp"
+#include "Telas.hpp"
 
 void CntrApresentacaoPrincipal::executar(){
 
@@ -768,10 +766,12 @@ void CntrApresentacaoCasoDeTeste::cadastrar(Codigo codigoTeste) {
 
 Desenvolvedor CntrServicoAutenticacao::autenticar(Desenvolvedor desenvolvedor) {
     ComandoConsultarDesenvolvedor comandoConsultar(desenvolvedor.getMatricula());
+    TelaMensagem telaMensagem;
+    
     try {
         comandoConsultar.executar();
     } catch (EErroPersistencia &e) {
-        throw invalid_argument("Erro ao consultar Desenvolvedor");
+        telaMensagem.apresentar("Erro ao consultar Desenvolvedor");
     }
 
     Desenvolvedor desenvolvedorConsultado;
@@ -779,9 +779,9 @@ Desenvolvedor CntrServicoAutenticacao::autenticar(Desenvolvedor desenvolvedor) {
     try {
         desenvolvedorConsultado = comandoConsultar.getResultado();
     } catch (EErroPersistencia &e) {
-        throw invalid_argument("Desenvolvedor não encontrado");
+        telaMensagem.apresentar("Desenvolvedor não encontrado");
     } catch (invalid_argument &e) {
-        throw invalid_argument(e.what());
+        telaMensagem.apresentar(e.what());
     }
 
     if (desenvolvedorConsultado.getSenha().getDado() == desenvolvedor.getSenha().getDado()) {

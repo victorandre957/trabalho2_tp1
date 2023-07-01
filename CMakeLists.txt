@@ -26,10 +26,10 @@ FetchContent_MakeAvailable(googletest)
 add_executable(trabalho_2
         main.cpp
         src/Builders.cpp
-        src/Dominios.cpp
-        src/Entidades.cpp
         src/ComandosSQL.cpp
         src/Controladoras.cpp
+        src/Dominios.cpp
+        src/Entidades.cpp
         src/Telas.cpp
         )
 
