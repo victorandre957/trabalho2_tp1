@@ -738,6 +738,11 @@ void CntrApresentacaoCasoDeTeste::cadastrar(Codigo codigoTeste) {
         casoDeTeste.setResposta(resposta);
         casoDeTeste.setResultado(resultado);
 
+        if (!cntrServicoCasoDeTeste->checkQuantidade(codigoTeste)) {
+            telaMensagem.apresentar("Voce nao pode cadastrar mais de 10 casos de teste");
+            return;
+        }
+
         if (!cntrServicoCasoDeTeste->cadastrar(casoDeTeste, codigoTeste)) {
             telaMensagem.apresentar("Nao foi possivel cadastrar o Caso de Teste, tente novamente.");
         } else {
@@ -855,7 +860,7 @@ bool CntrServicoTeste::consultar(Teste* teste, Desenvolvedor desenvolvedor){
 
 };
 
-bool CntrServicoTeste::cadastrar(Teste teste, Matricula matricula){
+bool CntrServicoTeste::cadastrar(Teste teste, Matricula matricula) {
     ComandoCadastrarTeste cmdCadastrar(teste, matricula);
     int consulta;
 
@@ -918,7 +923,33 @@ bool CntrServicoCasoDeTeste::consultar(CasoDeTeste* casoDeTeste, Teste teste) {
     return true;
 };
 
-bool CntrServicoCasoDeTeste::cadastrar(CasoDeTeste casodeteste, Codigo codigo){
+bool CntrServicoCasoDeTeste::checkQuantidade(Codigo codigo) {
+    ComandoContarCasosDeTeste comandoContarCasosDeTeste(codigo);
+
+    try {
+        comandoContarCasosDeTeste.executar();
+    } catch (const EErroPersistencia &exp) {
+        return false;
+    }
+
+    int quantidade;
+
+    try {
+        quantidade = comandoContarCasosDeTeste.getResultado();
+    } catch (const EErroPersistencia &exp) {
+        return false;
+    } catch (invalid_argument &e) {
+        return false;
+    }
+
+    if (quantidade >= 10) {
+        return false;
+    }
+
+    return true;
+}
+
+bool CntrServicoCasoDeTeste::cadastrar(CasoDeTeste casodeteste, Codigo codigo) {
     ComandoCadastrarCasoDeTeste cmdCadastrar(casodeteste, codigo);
 
     try {

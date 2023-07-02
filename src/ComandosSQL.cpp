@@ -185,6 +185,28 @@ ComandoDescadastrarTeste::ComandoDescadastrarTeste(Codigo codigo) {
     comandoSQL += codigo.getDado() + "';";
 }
 
+ComandoContarCasosDeTeste::ComandoContarCasosDeTeste(Codigo codigo) {
+    comandoSQL = "SELECT Count(*) FROM CasosDeTeste WHERE Teste = '";
+    comandoSQL += codigo.getDado() + "' ";
+}
+
+int ComandoContarCasosDeTeste::getResultado() {
+    ElementoResultado resultado;
+    int quantidade;
+
+    if(listaResultado.size() < 1) {
+        throw EErroPersistencia("Lista de resultados vazia.");
+    }
+
+    resultado = listaResultado.back();
+    listaResultado.pop_back();
+    quantidade = stoi(resultado.getValorColuna());
+    listaResultado.clear();
+
+    return quantidade;
+}
+
+
 ComandoCadastrarCasoDeTeste::ComandoCadastrarCasoDeTeste(CasoDeTeste casoDeTeste, Codigo codigo) {
     comandoSQL = "BEGIN; INSERT INTO CasosDeTeste (Codigo, Nome, Data, Acao, Resposta, Resultado, Teste) VALUES(";
     comandoSQL += "'" + (casoDeTeste.getCodigo().getDado()) + "', ";

@@ -324,12 +324,34 @@ TEST(testComandoSQL, cadastrarCasoTeste) {
   Codigo codigoTeste;
   codigoTeste.setDado("ASD123");
 
-  ComandoCadastrarCasoDeTeste comandoCadastrar(casoDeTeste, codigoTeste);
+  ComandoContarCasosDeTeste comandoContarCasosDeTeste(codigoTeste);
+
   try {
-    comandoCadastrar.executar();
+    comandoContarCasosDeTeste.executar();
   } catch (EErroPersistencia &e) {
       FAIL() << "Erro ao executar\n" << e.what();
   }
+
+  int quantidade;
+
+  try {
+      quantidade = comandoContarCasosDeTeste.getResultado();
+  } catch (EErroPersistencia &e) {
+      FAIL() << "Erro em getResultado\n" << e.what();
+  } catch (invalid_argument &e) {
+      FAIL() << e.what();
+  }
+
+  if(quantidade < 10) {
+    ComandoCadastrarCasoDeTeste comandoCadastrar(casoDeTeste, codigoTeste);
+    
+    try {
+      comandoCadastrar.executar();
+    } catch (EErroPersistencia &e) {
+        FAIL() << "Erro ao executar\n" << e.what();
+    }
+  }
+
 }
 
 // Consultar um Caso de Teste no banco

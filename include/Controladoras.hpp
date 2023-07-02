@@ -118,6 +118,7 @@ class CntrServicoTeste: public IServicoTeste {
 
 class CntrServicoCasoDeTeste: public IServicoCasoDeTeste {
         bool consultar(CasoDeTeste*, Teste);
+        bool checkQuantidade(Codigo); // Codigo do teste
         bool cadastrar(CasoDeTeste, Codigo);
         bool editar(CasoDeTeste);
         bool descadastrar(Codigo);

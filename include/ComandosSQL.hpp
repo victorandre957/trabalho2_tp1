@@ -188,6 +188,18 @@ class ComandoDescadastrarTeste:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para cadastrar um caso de teste no banco.
+class ComandoContarCasosDeTeste:public ComandoSQL {
+    public:
+        ///@brief Construtor da classe para cadastrar caso de teste.
+        ///@param Codigo do teste do qual esse caso de teste pertence
+        ComandoContarCasosDeTeste(Codigo);
+
+        ///@brief Retorna um objeto caso de teste com os dados obtidos na consulta.
+        ///@return Retorna o caso de teste encontrado (caso de teste)
+        int getResultado();
+};
+
+///@brief Comando SQL utilizado para cadastrar um caso de teste no banco.
 class ComandoCadastrarCasoDeTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para cadastrar caso de teste.
