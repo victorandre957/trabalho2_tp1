@@ -118,7 +118,7 @@ ComandoDescadastrarDesenvolvedor::ComandoDescadastrarDesenvolvedor(Matricula mat
     comandoSQL = "DELETE FROM CasosDeTeste WHERE Teste IN (SELECT Teste FROM Testes WHERE Desenvolvedor = ";
     comandoSQL += matricula.getDado() + ");";
 
-    comandoSQL = "DELETE FROM Testes WHERE Desenvolvedor = ";
+    comandoSQL += "DELETE FROM Testes WHERE Desenvolvedor = ";
     comandoSQL += matricula.getDado() + ";";
 
     comandoSQL += "DELETE FROM Desenvolvedores WHERE Matricula = ";
