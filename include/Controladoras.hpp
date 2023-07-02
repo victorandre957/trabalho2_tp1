@@ -5,6 +5,7 @@
 #include "Dominios.hpp"
 #include "curses.hpp"
 
+//por: Victor André 211026664
 class CntrApresentacaoPrincipal {
     private:
         Desenvolvedor desenvolvedor;
@@ -32,6 +33,7 @@ inline void CntrApresentacaoPrincipal::setCntrlApresentacaoTeste(IApresentacaoTe
     this->cntrApresentacaoTeste = cntr;
 }
 
+//por: Victor André 211026664
 class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao {
     private:
         IServicoAutenticacao* cntrServicoAutenticacao;
@@ -44,6 +46,7 @@ void inline CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAut
     this->cntrServicoAutenticacao = cntr;
 }
 
+//por: Victor André 211026664
 class CntrApresentacaoDesenvolvedor:public IApresentacaoDesenvolvedor {
 private:
     IServicoDesenvolvedor* cntrServicoDesenvolvedor;
@@ -59,6 +62,7 @@ void inline CntrApresentacaoDesenvolvedor::setCntrServicoDesenvolvedor(IServicoD
     this->cntrServicoDesenvolvedor = cntr;
 }
 
+//por: Victor André 211026664
 class CntrApresentacaoTeste: public IApresentacaoTeste {
     private:
         IServicoTeste* cntrServicoTeste;
@@ -80,6 +84,7 @@ void inline CntrApresentacaoTeste::setCntrlApresentacaoCasoDeTeste(IApresentacao
     this->cntrApresentacaoCasoDeTeste = cntr;
 }
 
+//por: Victor André 211026664
 class CntrApresentacaoCasoDeTeste: public IApresentacaoCasoDeTeste {
     private:
         IServicoCasoDeTeste* cntrServicoCasoDeTeste;
@@ -95,11 +100,13 @@ void inline CntrApresentacaoCasoDeTeste::setCntrServicoCasoDeTeste(IServicoCasoD
     this->cntrServicoCasoDeTeste = cntr;
 }
 
+//por: Luan Guedes 211026628
 class CntrServicoAutenticacao: public IServicoAutenticacao{
     public:
         bool autenticar(Desenvolvedor*);
 };
 
+//por: Luan Guedes 211026628
 class CntrServicoDesenvolvedor: public IServicoDesenvolvedor{
     public:
         bool consultar(Desenvolvedor*);
@@ -108,6 +115,8 @@ class CntrServicoDesenvolvedor: public IServicoDesenvolvedor{
         bool editar(Desenvolvedor);
 
 };
+
+//por: Luan Guedes 211026628
 class CntrServicoTeste: public IServicoTeste {
     public:
         bool consultar(Teste*, Desenvolvedor);
@@ -116,6 +125,7 @@ class CntrServicoTeste: public IServicoTeste {
         bool descadastrar(Codigo);
 };
 
+//por: Luan Guedes 211026628
 class CntrServicoCasoDeTeste: public IServicoCasoDeTeste {
         bool consultar(CasoDeTeste*, Teste);
         bool checkQuantidade(Codigo); // Codigo do teste

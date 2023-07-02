@@ -11,6 +11,7 @@
 using namespace std;
 
 ///@brief Classe de Erro para todos os comandos SQL;
+//por: Victor André 211026664
 class EErroPersistencia {
     private:
         ///@brief Atributo string que repesenta a mensagem do erro ocorrido.
@@ -35,6 +36,7 @@ inline EErroPersistencia::EErroPersistencia(string mensagem){
 }
 
 /// @brief Classe de Resultados para todos os comandos SQL
+//por: Victor André 211026664
 class ElementoResultado {
     private:
         ///@brief Atributo string que armazena o nome da coluna do banco de dados.
@@ -70,6 +72,7 @@ inline string ElementoResultado::getValorColuna() const {
 }
 
 ///@brief Classe base dos comandos SQl para todos os outros comandos a seguir.
+//por: Victor André 211026664
 class ComandoSQL {
     private:
 
@@ -111,6 +114,7 @@ class ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para cadastrar um desenvolvedor no banco.
+//por: Victor André 211026664
 class ComandoCadastrarDesenvolvedor:public ComandoSQL {
     public:
         ///@brief Construtor da classe para cadastrar desenvolvedor.
@@ -119,6 +123,7 @@ class ComandoCadastrarDesenvolvedor:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para consultar um desenvolvedor no banco.
+//por: Victor André 211026664
 class ComandoConsultarDesenvolvedor:public ComandoSQL {
     public:
         ///@brief Construtor da classe para consultar um desenvolvedor pela matricula.
@@ -131,6 +136,7 @@ class ComandoConsultarDesenvolvedor:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para editar um desenvolvedor no banco.
+//por: Victor André 211026664
 class ComandoEditarDesenvolvedor:public ComandoSQL {
     public:
         ///@brief Construtor da classe para editar um desenvolvedor.
@@ -139,6 +145,7 @@ class ComandoEditarDesenvolvedor:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para descadastrar um desenvolvedor no banco.
+//por: Victor André 211026664
 class ComandoDescadastrarDesenvolvedor:public ComandoSQL {
     public:
         ///@brief Construtor da classe para descadastrar um desenvolvedor pela matricula.
@@ -146,10 +153,8 @@ class ComandoDescadastrarDesenvolvedor:public ComandoSQL {
         ComandoDescadastrarDesenvolvedor(Matricula);
 };
 
-
-
-
 ///@brief Comando SQL utilizado para cadastrar um teste no banco.
+//por: Victor André 211026664
 class ComandoCadastrarTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para cadastrar teste.
@@ -159,6 +164,7 @@ class ComandoCadastrarTeste:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para consultar um teste no banco.
+//por: Victor André 211026664
 class ComandoConsultarTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para consultar um teste pelo codigo.
@@ -172,6 +178,7 @@ class ComandoConsultarTeste:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para editar um teste no banco.
+//por: Victor André 211026664
 class ComandoEditarTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para editar um teste.
@@ -180,6 +187,7 @@ class ComandoEditarTeste:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para descadastrar um teste no banco.
+//por: Victor André 211026664
 class ComandoDescadastrarTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para descadastrar um teste pela codigo.
@@ -188,6 +196,7 @@ class ComandoDescadastrarTeste:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para cadastrar um caso de teste no banco.
+//por: Victor André 211026664
 class ComandoContarCasosDeTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para cadastrar caso de teste.
@@ -200,6 +209,7 @@ class ComandoContarCasosDeTeste:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para cadastrar um caso de teste no banco.
+//por: Victor André 211026664
 class ComandoCadastrarCasoDeTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para cadastrar caso de teste.
@@ -209,6 +219,7 @@ class ComandoCadastrarCasoDeTeste:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para consultar um caso de teste no banco.
+//por: Victor André 211026664
 class ComandoConsultarCasoDeTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para consultar um caso de teste pelo codigo.
@@ -222,6 +233,7 @@ class ComandoConsultarCasoDeTeste:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para editar um caso de teste no banco.
+//por: Victor André 211026664
 class ComandoEditarCasoDeTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para editar um caso de teste.
@@ -230,6 +242,7 @@ class ComandoEditarCasoDeTeste:public ComandoSQL {
 };
 
 ///@brief Comando SQL utilizado para descadastrar um caso de teste no banco.
+//por: Victor André 211026664
 class ComandoDescadastrarCasoDeTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para descadastrar um caso de teste pela codigo.

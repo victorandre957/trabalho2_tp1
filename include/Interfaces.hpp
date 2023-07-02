@@ -8,6 +8,7 @@ class IServicoAutenticacao;
 class IServicoDesenvolvedor;
 class IServicoCasoDeTeste;
 class IServicoTeste;
+//por: Victor André 211026664
 class IApresentacaoAutenticacao {
     public:
         virtual bool autenticar(Desenvolvedor*) = 0;
@@ -15,6 +16,7 @@ class IApresentacaoAutenticacao {
         virtual ~IApresentacaoAutenticacao(){}
 };
 
+//por: Victor André 211026664
 class IApresentacaoDesenvolvedor {
     public:
         virtual void executar(Desenvolvedor*) = 0;
@@ -24,6 +26,7 @@ class IApresentacaoDesenvolvedor {
         virtual ~IApresentacaoDesenvolvedor(){}
 };
 
+//por: Victor André 211026664
 class IApresentacaoCasoDeTeste {
     public:
         virtual void executar(Teste*) = 0;
@@ -33,6 +36,7 @@ class IApresentacaoCasoDeTeste {
         virtual ~IApresentacaoCasoDeTeste(){}
 };
 
+//por: Victor André 211026664
 class IApresentacaoTeste {
     public:
         virtual void executar(Desenvolvedor*) = 0;
@@ -43,12 +47,14 @@ class IApresentacaoTeste {
         virtual ~IApresentacaoTeste(){}
 };
 
+//por: Luan Guedes 211026628
 class IServicoAutenticacao {
     public:
         virtual bool autenticar(Desenvolvedor*) = 0;
         virtual ~IServicoAutenticacao(){}
 };
 
+//por: Luan Guedes 211026628
 class IServicoDesenvolvedor {
     public:
         virtual bool consultar(Desenvolvedor*) = 0;
@@ -58,6 +64,7 @@ class IServicoDesenvolvedor {
         virtual ~IServicoDesenvolvedor(){}
 };
 
+//por: Luan Guedes 211026628
 class IServicoTeste {
     public:
         virtual bool consultar(Teste*, Desenvolvedor) = 0;
