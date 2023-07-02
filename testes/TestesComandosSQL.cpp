@@ -40,7 +40,14 @@ TEST(testComandoSQL, consultarDesenvolvedor) {
   Matricula matricula;
   matricula.setDado("1234566");
 
-  ComandoConsultarDesenvolvedor comandoConsultar(matricula);
+  Senha senha;
+  senha.setDado("A1B2C3");
+  
+  Desenvolvedor dev;
+  dev.setMatricula(matricula);
+  dev.setSenha(senha);
+
+  ComandoConsultarDesenvolvedor comandoConsultar(dev);
   try {
     comandoConsultar.executar();
   } catch (EErroPersistencia &e) {
@@ -70,7 +77,15 @@ TEST(testComandoSQL, editarDesenvolvedor) {
   Matricula matricula;
   matricula.setDado("1234566");
 
-  ComandoConsultarDesenvolvedor comandoConsultar(matricula);
+  Senha senha1;
+  senha1.setDado("A1B2C3");
+  
+  Desenvolvedor dev;
+  dev.setMatricula(matricula);
+  dev.setSenha(senha1);
+
+  ComandoConsultarDesenvolvedor comandoConsultar(dev);
+  
   try {
     comandoConsultar.executar();
   } catch (EErroPersistencia &e) {
@@ -96,6 +111,8 @@ TEST(testComandoSQL, editarDesenvolvedor) {
   desenvolvedorEditar.setSenha(senha);
 
   ComandoEditarDesenvolvedor comandoEditar(desenvolvedorEditar);
+  ComandoConsultarDesenvolvedor comandoConsultar2(desenvolvedorEditar);
+
   try {
     comandoEditar.executar();
   } catch (EErroPersistencia &e) {
@@ -104,9 +121,10 @@ TEST(testComandoSQL, editarDesenvolvedor) {
 
   Desenvolvedor desenvolvedorEditado;
 
+  
   try {
-      comandoConsultar.executar();
-      desenvolvedorEditado = comandoConsultar.getResultado();
+      comandoConsultar2.executar();
+      desenvolvedorEditado = comandoConsultar2.getResultado();
   } catch (EErroPersistencia &e) {
       FAIL() << "Erro em getResultado\n" << e.what();
   } catch (invalid_argument &e) {
@@ -154,7 +172,14 @@ TEST(testComandoSQL, consultarTeste) {
   Codigo codigo;
   codigo.setDado("ASD123");
 
-  ComandoConsultarTeste comandoConsultar(codigo);
+  Matricula matricula;
+  matricula.setDado("1234566");
+  
+  Desenvolvedor dev;
+  dev.setMatricula(matricula);
+
+
+  ComandoConsultarTeste comandoConsultar(codigo, dev);
   try {
     comandoConsultar.executar();
   } catch (EErroPersistencia &e) {
@@ -176,7 +201,7 @@ TEST(testComandoSQL, consultarTeste) {
   EXPECT_STREQ(testeConsultado.getClasse().getDado().c_str(), "FUMACA");
 
 
-  ComandoConsultarTeste comandoConsultarTeste(codigo);
+  ComandoConsultarTeste comandoConsultarTeste(codigo, dev);
   try {
       comandoConsultarTeste.executar();
   } catch (EErroPersistencia &e) {
@@ -213,7 +238,13 @@ TEST(testComandoSQL, editarTeste) {
   Codigo codigo;
   codigo.setDado("ASD123");
 
-  ComandoConsultarTeste comandoConsultar(codigo);
+  Matricula matricula;
+  matricula.setDado("1234566");
+  
+  Desenvolvedor dev;
+  dev.setMatricula(matricula);
+
+  ComandoConsultarTeste comandoConsultar(codigo, dev);
   try {
     comandoConsultar.executar();
   } catch (EErroPersistencia &e) {
@@ -308,7 +339,13 @@ TEST(testComandoSQL, consultarCasoDeTeste) {
   Codigo codigo;
   codigo.setDado("ASD321");
 
-  ComandoConsultarCasoDeTeste comandoConsultar(codigo);
+  Codigo codigoTeste;
+  codigoTeste.setDado("ASD123");
+
+  Teste teste;
+  teste.setCodigo(codigoTeste);
+
+  ComandoConsultarCasoDeTeste comandoConsultar(codigo, teste);
   try {
     comandoConsultar.executar();
   } catch (EErroPersistencia &e) {
@@ -332,7 +369,7 @@ TEST(testComandoSQL, consultarCasoDeTeste) {
   EXPECT_STREQ(casoDeTesteConsultado.getResposta().getDado().c_str(), "Funciona sempre");
   EXPECT_STREQ(casoDeTesteConsultado.getResultado().getDado().c_str(), "REPROVADO");
 
-  ComandoConsultarCasoDeTeste comandoConsultarCasoDeTeste(codigo);
+  ComandoConsultarCasoDeTeste comandoConsultarCasoDeTeste(codigo, teste);
   try {
       comandoConsultarCasoDeTeste.executar();
   } catch (EErroPersistencia &e) {
@@ -383,7 +420,13 @@ TEST(testComandoSQL, editarCasoDeTeste) {
   Codigo codigo;
   codigo.setDado("ASD321");
 
-  ComandoConsultarCasoDeTeste comandoConsultar(codigo);
+  Codigo codigoTeste;
+  codigoTeste.setDado("ASD123");
+
+  Teste teste;
+  teste.setCodigo(codigoTeste);
+
+  ComandoConsultarCasoDeTeste comandoConsultar(codigo, teste);
   try {
     comandoConsultar.executar();
   } catch (EErroPersistencia &e) {
@@ -449,6 +492,9 @@ TEST(testComandoSQL, deletarCasoDeTeste) {
   Codigo codigo;
   codigo.setDado("ASD321");
 
+  Teste teste;
+  teste.setCodigo(codigo);
+
   ComandoDescadastrarCasoDeTeste comandoDescadastrar(codigo);
   try {
     comandoDescadastrar.executar();
@@ -456,7 +502,7 @@ TEST(testComandoSQL, deletarCasoDeTeste) {
       FAIL() << "Erro ao executar\n" << e.what();
   }
 
-  ComandoConsultarCasoDeTeste comandoConsultar(codigo);
+  ComandoConsultarCasoDeTeste comandoConsultar(codigo, teste);
   try {
     comandoConsultar.executar();
   } catch (EErroPersistencia &e) {
@@ -473,6 +519,13 @@ TEST(testComandoSQL, deletarTeste) {
   Codigo codigo;
   codigo.setDado("ASD123");
 
+  Matricula matricula;
+  matricula.setDado("1234566");
+
+
+  Desenvolvedor dev;
+  dev.setMatricula(matricula);
+
   ComandoDescadastrarTeste comandoDescadastrar(codigo);
   try {
     comandoDescadastrar.executar();
@@ -480,7 +533,7 @@ TEST(testComandoSQL, deletarTeste) {
       FAIL() << "Erro ao executar\n" << e.what();
   }
 
-  ComandoConsultarTeste comandoConsultar(codigo);
+  ComandoConsultarTeste comandoConsultar(codigo, dev);
   try {
     comandoConsultar.executar();
   } catch (EErroPersistencia &e) {
@@ -497,6 +550,14 @@ TEST(testComandoSQL, descadastrarDesenvolvedor) {
   Matricula matricula;
   matricula.setDado("1234566");
 
+  Senha senha;
+  senha.setDado("A1B2C3");
+
+  Desenvolvedor dev;
+
+  dev.setMatricula(matricula);
+  dev.setSenha(senha);
+
   ComandoDescadastrarDesenvolvedor comandoDescadastrar(matricula);
   try {
     comandoDescadastrar.executar();
@@ -504,7 +565,7 @@ TEST(testComandoSQL, descadastrarDesenvolvedor) {
       FAIL() << "Erro ao executar\n" << e.what();
   }
 
-  ComandoConsultarDesenvolvedor comandoConsultar(matricula);
+  ComandoConsultarDesenvolvedor comandoConsultar(dev);
   try {
     comandoConsultar.executar();
   } catch (EErroPersistencia &e) {

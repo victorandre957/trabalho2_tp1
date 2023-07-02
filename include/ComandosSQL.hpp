@@ -122,8 +122,8 @@ class ComandoCadastrarDesenvolvedor:public ComandoSQL {
 class ComandoConsultarDesenvolvedor:public ComandoSQL {
     public:
         ///@brief Construtor da classe para consultar um desenvolvedor pela matricula.
-        ///@param Matricula: matricula do desenvolvedor que se quer consultar
-        ComandoConsultarDesenvolvedor(Matricula);
+        ///@param Desenvolvedor: objeto do desenvolvedor que se quer consultar
+        ComandoConsultarDesenvolvedor(Desenvolvedor);
 
         ///@brief Retorna um objeto desenvolvedor com os dados obtidos na consulta.
         ///@return Retorna o desenvolvedor encontrado (desenvolvedor)
@@ -163,7 +163,8 @@ class ComandoConsultarTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para consultar um teste pelo codigo.
         ///@param Codigo: codigo do teste que se quer consultar
-        ComandoConsultarTeste(Codigo);
+        ///@param Desenvolvedor: objeto do desenvolvedor dono do teste
+        ComandoConsultarTeste(Codigo, Desenvolvedor);
 
         ///@brief Retorna um objeto teste com os dados obtidos na consulta.
         ///@return Retorna o teste encontrado (teste)
@@ -200,7 +201,8 @@ class ComandoConsultarCasoDeTeste:public ComandoSQL {
     public:
         ///@brief Construtor da classe para consultar um caso de teste pelo codigo.
         ///@param Codigo: codigo do caso de teste que se quer consultar
-        ComandoConsultarCasoDeTeste(Codigo);
+        ///@param Teste: objeto do teste que se quer dono do caso de teste
+        ComandoConsultarCasoDeTeste(Codigo, Teste);
 
         ///@brief Retorna um objeto caso de teste com os dados obtidos na consulta.
         ///@return Retorna o caso de teste encontrado (caso de teste)

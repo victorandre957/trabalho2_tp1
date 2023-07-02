@@ -110,14 +110,14 @@ class CntrServicoDesenvolvedor: public IServicoDesenvolvedor{
 };
 class CntrServicoTeste: public IServicoTeste {
     public:
-        bool consultar(Teste*);
+        bool consultar(Teste*, Desenvolvedor);
         bool cadastrar(Teste, Matricula);
         bool editar(Teste);
         bool descadastrar(Codigo);
 };
 
 class CntrServicoCasoDeTeste: public IServicoCasoDeTeste {
-        bool consultar(CasoDeTeste*);
+        bool consultar(CasoDeTeste*, Teste);
         bool cadastrar(CasoDeTeste, Codigo);
         bool editar(CasoDeTeste);
         bool descadastrar(Codigo);

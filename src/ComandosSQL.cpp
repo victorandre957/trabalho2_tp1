@@ -63,9 +63,10 @@ ComandoCadastrarDesenvolvedor::ComandoCadastrarDesenvolvedor(Desenvolvedor desen
     comandoSQL += "'" + (desenvolvedor.getTelefone().getDado()) + "'); COMMIT";
 }
 
-ComandoConsultarDesenvolvedor::ComandoConsultarDesenvolvedor(Matricula matricula) {
-    comandoSQL = "SELECT * FROM Desenvolvedores WHERE Matricula = ";
-    comandoSQL += matricula.getDado() + ";";
+ComandoConsultarDesenvolvedor::ComandoConsultarDesenvolvedor(Desenvolvedor desenvolvedor) {
+    comandoSQL = "SELECT * FROM Desenvolvedores WHERE Matricula = '";
+    comandoSQL += desenvolvedor.getMatricula().getDado() + "' ";
+    comandoSQL += "AND Senha = '" + desenvolvedor.getSenha().getDado() + "'";
 }
 
 Desenvolvedor ComandoConsultarDesenvolvedor::getResultado() {
@@ -131,9 +132,10 @@ ComandoCadastrarTeste::ComandoCadastrarTeste(Teste teste, Matricula matricula) {
     comandoSQL += "'" + (matricula.getDado()) + "'); COMMIT";
 } 
 
-ComandoConsultarTeste::ComandoConsultarTeste(Codigo codigo) {
+ComandoConsultarTeste::ComandoConsultarTeste(Codigo codigo, Desenvolvedor desenvolvedor) {
     comandoSQL = "SELECT * FROM Testes WHERE Codigo = '";
-    comandoSQL += codigo.getDado() + "';";
+    comandoSQL += codigo.getDado() + "' ";
+    comandoSQL += "AND Desenvolvedor = '" + desenvolvedor.getMatricula().getDado() + "';";
 }
 
 Teste ComandoConsultarTeste::getResultado() {
@@ -194,9 +196,10 @@ ComandoCadastrarCasoDeTeste::ComandoCadastrarCasoDeTeste(CasoDeTeste casoDeTeste
     comandoSQL += "'" + (codigo.getDado()) + "'); COMMIT";
 }
 
-ComandoConsultarCasoDeTeste::ComandoConsultarCasoDeTeste(Codigo codigo) {
+ComandoConsultarCasoDeTeste::ComandoConsultarCasoDeTeste(Codigo codigo, Teste teste) {
     comandoSQL = "SELECT * FROM CasosDeTeste WHERE Codigo = '";
-    comandoSQL += codigo.getDado() + "';";
+    comandoSQL += codigo.getDado() + "' ";
+    comandoSQL += "AND Teste = '" + teste.getCodigo().getDado() + "'";
 }
 
 CasoDeTeste ComandoConsultarCasoDeTeste::getResultado() {

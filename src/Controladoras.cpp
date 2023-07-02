@@ -179,7 +179,7 @@ void CntrApresentacaoDesenvolvedor::editar(Desenvolvedor* desenvolvedor) {
             desenvolvedor->setSenha(senha);
             desenvolvedor->setTelefone(telefone);
         } else {
-            telaMensagem.apresentar("Nao foi possível editar, tente novamente.");
+            telaMensagem.apresentar("Nao foi possivel editar, tente novamente.");
         };
         return;
     }
@@ -246,7 +246,7 @@ void CntrApresentacaoDesenvolvedor::cadastrar() {
         dev.setTelefone(telefone);
 
         if (!cntrServicoDesenvolvedor->cadastrar(dev)) {
-            telaMensagem.apresentar("Nao foi possível cadastrar, tente novamente.");
+            telaMensagem.apresentar("Nao foi possivel cadastrar, tente novamente.");
         } else {
             telaMensagem.apresentar("Desenvolvedor Cadastrado com Sucesso.");
         }
@@ -306,7 +306,7 @@ void CntrApresentacaoTeste::executar(Desenvolvedor* desenvolvedor) {
                     try {
                         codigo->setDado(code);
                         teste->setCodigo(*codigo);
-                        if(!cntrServicoTeste->consultar(teste)) {
+                        if(!cntrServicoTeste->consultar(teste, *desenvolvedor)) {
                             telaMensagem.apresentar("Codigo Nao Encontrado");
                             continue;
                         }
@@ -410,7 +410,7 @@ void CntrApresentacaoTeste::cadastrar(Matricula matricula) {
         teste.setClasse(classe);
 
         if (!cntrServicoTeste->cadastrar(teste, matricula)) {
-            telaMensagem.apresentar("Nao foi possível cadastrar o teste, tente novamente.");
+            telaMensagem.apresentar("Nao foi possivel cadastrar o teste, tente novamente.");
         } else {
             telaMensagem.apresentar("Teste Cadastrado com Sucesso.");
         };
@@ -462,7 +462,7 @@ void CntrApresentacaoTeste::editar(Teste* teste) {
             teste->setNome(nome);
             teste->setClasse(classe);
         } else {
-            telaMensagem.apresentar("Nao foi possível Editar o teste, tente novamente.");
+            telaMensagem.apresentar("Nao foi possivel Editar o teste, tente novamente.");
         }
         return;
     }
@@ -520,7 +520,7 @@ void CntrApresentacaoCasoDeTeste::executar(Teste* teste) {
                     try {
                         codigo->setDado(code);
                         casoDeTeste->setCodigo(*codigo);
-                        if(!cntrServicoCasoDeTeste->consultar(casoDeTeste)) {
+                        if(!cntrServicoCasoDeTeste->consultar(casoDeTeste, *teste)) {
                             telaMensagem.apresentar("Codigo Nao Encontrado");
                             continue;
                         }
@@ -649,7 +649,7 @@ void CntrApresentacaoCasoDeTeste::editar(CasoDeTeste* casoDeTeste) {
             casoDeTeste->setResposta(resposta);
             casoDeTeste->setResultado(resultado);
         } else {
-            telaMensagem.apresentar("Nao foi possível Editar o teste, tente novamente.");
+            telaMensagem.apresentar("Nao foi possivel Editar o teste, tente novamente.");
         }
         return;
     }
@@ -739,7 +739,7 @@ void CntrApresentacaoCasoDeTeste::cadastrar(Codigo codigoTeste) {
         casoDeTeste.setResultado(resultado);
 
         if (!cntrServicoCasoDeTeste->cadastrar(casoDeTeste, codigoTeste)) {
-            telaMensagem.apresentar("Nao foi possível cadastrar o Caso de Teste, tente novamente.");
+            telaMensagem.apresentar("Nao foi possivel cadastrar o Caso de Teste, tente novamente.");
         } else {
             telaMensagem.apresentar("Caso de Teste Cadastrado com Sucesso.");
         };
@@ -748,7 +748,7 @@ void CntrApresentacaoCasoDeTeste::cadastrar(Codigo codigoTeste) {
 }
 
 bool CntrServicoAutenticacao::autenticar(Desenvolvedor* desenvolvedor) {
-    ComandoConsultarDesenvolvedor comandoConsultar(desenvolvedor->getMatricula());
+    ComandoConsultarDesenvolvedor comandoConsultar(*desenvolvedor);
     TelaMensagem telaMensagem;
     Desenvolvedor desenvolvedorVazio;
 
@@ -807,7 +807,7 @@ bool CntrServicoDesenvolvedor::editar(Desenvolvedor desenvolvedor){
 };
 
 bool CntrServicoDesenvolvedor::consultar(Desenvolvedor* desenvolvedor){
-    ComandoConsultarDesenvolvedor cmdConsultar(desenvolvedor->getMatricula());
+    ComandoConsultarDesenvolvedor cmdConsultar(*desenvolvedor);
 
     Desenvolvedor visualizar;
     try {
@@ -831,8 +831,8 @@ bool CntrServicoDesenvolvedor::consultar(Desenvolvedor* desenvolvedor){
 };
 
 
-bool CntrServicoTeste::consultar(Teste* teste){
-    ComandoConsultarTeste cmdConsultar(teste->getCodigo());
+bool CntrServicoTeste::consultar(Teste* teste, Desenvolvedor desenvolvedor){
+    ComandoConsultarTeste cmdConsultar(teste->getCodigo(), desenvolvedor);
     Teste testeConsultado;
 
     try {
@@ -892,8 +892,8 @@ bool CntrServicoTeste::descadastrar(Codigo codigo){
     return true;
 };
 
-bool CntrServicoCasoDeTeste::consultar(CasoDeTeste* casoDeTeste){
-    ComandoConsultarCasoDeTeste cmdConsultar(casoDeTeste->getCodigo());
+bool CntrServicoCasoDeTeste::consultar(CasoDeTeste* casoDeTeste, Teste teste) {
+    ComandoConsultarCasoDeTeste cmdConsultar(casoDeTeste->getCodigo(), teste);
     CasoDeTeste casoTesteConsultado;
 
     try {
