@@ -51,7 +51,11 @@ void CntrApresentacaoPrincipal::menuAutenticado(Desenvolvedor *desenvolvedor) {
 
         switch(opcao) {
         case '1':
-            cntrApresentacaoDesenvolvedor->executar(desenvolvedor);
+            try {
+                cntrApresentacaoDesenvolvedor->executar(desenvolvedor);
+            } catch(const invalid_argument) {
+                return;
+            }
             continue;
         case '2':
             cntrApresentacaoTeste->executar(desenvolvedor);
@@ -89,6 +93,7 @@ bool CntrApresentacaoAutenticacao::autenticar(Desenvolvedor* desenvolvedor){
 
 void CntrApresentacaoDesenvolvedor::executar(Desenvolvedor* desenvolvedor) {
     TelaMenu telaMenu;
+    TelaMensagem telaMensagem;
     TelaConsultarDesenvolvedor telaDev;
     TelaConfirmarDescadastrar telaDescadastrar;
     char opcao;
@@ -111,10 +116,16 @@ void CntrApresentacaoDesenvolvedor::executar(Desenvolvedor* desenvolvedor) {
                 continue;
             case '3':
                 if (telaDescadastrar.apresentar()) {
-                    cntrServicoDesenvolvedor->descadastrar(desenvolvedor->getMatricula());
-                    desenvolvedor = new Desenvolvedor();
-                    break;
+                    if (cntrServicoDesenvolvedor->descadastrar(desenvolvedor->getMatricula())) {
+                        telaMensagem.apresentar("Desenvolvedor Descadastrado com Sucesso.");
+                        desenvolvedor = new Desenvolvedor();
+                        throw invalid_argument("Descadastrado");
+                    } else {
+                        telaMensagem.apresentar("Não foi possivel descadastrar, tente novamente.");
+                        continue;
+                    }
                 }
+                continue;
             case '4':
                 return;
             default:
@@ -178,6 +189,7 @@ void CntrApresentacaoDesenvolvedor::editar(Desenvolvedor* desenvolvedor) {
             desenvolvedor->setNome(nome);
             desenvolvedor->setSenha(senha);
             desenvolvedor->setTelefone(telefone);
+            telaMensagem.apresentar("Desenvolvedor Editado com Sucesso.");
         } else {
             telaMensagem.apresentar("Nao foi possivel editar, tente novamente.");
         };
@@ -336,9 +348,14 @@ void CntrApresentacaoTeste::executar(Desenvolvedor* desenvolvedor) {
                                 continue;
                             case '4':
                                 if (telaDescadastrar.apresentar()) {
-                                    cntrServicoTeste->descadastrar(teste->getCodigo());
-                                    teste = new Teste();
-                                    break;
+                                    if (cntrServicoTeste->descadastrar(teste->getCodigo())) {
+                                        telaMensagem.apresentar("Teste Descadastrado com Sucesso.");
+                                        teste = new Teste();
+                                        return;
+                                    } else {
+                                        telaMensagem.apresentar("Não foi possivel descadastrar, tente novamente.");
+                                        continue;
+                                    }
                                 }
                                 continue;
                             case '5':
@@ -461,6 +478,7 @@ void CntrApresentacaoTeste::editar(Teste* teste) {
         if (cntrServicoTeste->editar(editedTeste)) {
             teste->setNome(nome);
             teste->setClasse(classe);
+            telaMensagem.apresentar("Teste Editado com Sucesso.");
         } else {
             telaMensagem.apresentar("Nao foi possivel Editar o teste, tente novamente.");
         }
@@ -547,9 +565,14 @@ void CntrApresentacaoCasoDeTeste::executar(Teste* teste) {
                                 continue;
                             case '3':
                                 if (telaDescadastrar.apresentar()) {
-                                    cntrServicoCasoDeTeste->descadastrar(casoDeTeste->getCodigo());
-                                    casoDeTeste = new CasoDeTeste();
-                                    break;
+                                    if (cntrServicoCasoDeTeste->descadastrar(casoDeTeste->getCodigo())) {
+                                        telaMensagem.apresentar("Caso de Teste Descadastrado com Sucesso.");
+                                        casoDeTeste = new CasoDeTeste();
+                                        return;
+                                    } else {
+                                        telaMensagem.apresentar("Não foi possivel descadastrar, tente novamente.");
+                                        continue;
+                                    }
                                 }
                                 continue;
                             case '4':
@@ -648,6 +671,7 @@ void CntrApresentacaoCasoDeTeste::editar(CasoDeTeste* casoDeTeste) {
             casoDeTeste->setAcao(acao);
             casoDeTeste->setResposta(resposta);
             casoDeTeste->setResultado(resultado);
+            telaMensagem.apresentar("Caso de Teste Editado com Sucesso.");
         } else {
             telaMensagem.apresentar("Nao foi possivel Editar o teste, tente novamente.");
         }

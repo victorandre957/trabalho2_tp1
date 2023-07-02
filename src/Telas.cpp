@@ -152,8 +152,8 @@ bool TelaConfirmarDescadastrar::apresentar() {
 char TelaControle::apresentar() {
 
     char campo1[]="Seja bem-vindo";
-    char campo2[]="1 - Acessar sistema.";
-    char campo3[]="2 - Cadastrar usuario.";
+    char campo2[]="1 - Acessar plataforma.";
+    char campo3[]="2 - Cadastrar Desenvolvedor.";
     char campo4[]="3 - Sair.";
     char campo5[]="Selecione uma opcao: ";
     char dado1[10];
