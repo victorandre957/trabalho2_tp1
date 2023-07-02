@@ -101,6 +101,8 @@ Desenvolvedor ComandoConsultarDesenvolvedor::getResultado() {
     telefone.setDado(resultado.getValorColuna());
     desenvolvedor.setTelefone(telefone);
 
+    listaResultado.clear();
+
     return desenvolvedor;
 }
 
