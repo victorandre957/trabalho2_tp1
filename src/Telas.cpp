@@ -258,9 +258,9 @@ void TelaConsultarCasoDeTeste::apresentar(CasoDeTeste casoDeTeste) {
     mvprintw(linha/2 - 2,(coluna-strlen(campo2)-codigo.length())/2, "Codigo: %s", codigo.c_str());
     mvprintw(linha/2,(coluna-strlen(campo3)-nome.length())/2, "Nome: %s", nome.c_str());
     mvprintw(linha/2 + 2,(coluna-strlen(campo4)-data.length())/2, "Data: %s", data.c_str());
-    mvprintw(linha/2 + 4,(coluna-strlen(campo4)-acao.length())/2, "Acao: %s", acao.c_str());
-    mvprintw(linha/2 + 6,(coluna-strlen(campo4)-resposta.length())/2, "Resposta: %s", resposta.c_str());
-    mvprintw(linha/2 + 8,(coluna-strlen(campo4)-resultado.length())/2, "Resultado: %s", resultado.c_str());
+    mvprintw(linha/2 + 4,(coluna-strlen(campo5)-acao.length())/2, "Acao: %s", acao.c_str());
+    mvprintw(linha/2 + 6,(coluna-strlen(campo6)-resposta.length())/2, "Resposta: %s", resposta.c_str());
+    mvprintw(linha/2 + 8,(coluna-strlen(campo7)-resultado.length())/2, "Resultado: %s", resultado.c_str());
     mvprintw(linha/2 + 12,(coluna-strlen(campo8))/2, campo8);
 
     getch();
