@@ -458,7 +458,7 @@ void CntrApresentacaoTeste::editar(Teste* teste) {
             nome.setDado(novosDados[0]);
         } catch (const invalid_argument) {
             telaMensagem.apresentar("O Nome nao esta em um formato valido");
-            novosDados[1] = telaCampo.apresentar("Editar Teste", "1 - Nome: ");
+            novosDados[0] = telaCampo.apresentar("Editar Teste", "1 - Nome: ");
             continue;
         }
 
@@ -621,7 +621,7 @@ void CntrApresentacaoCasoDeTeste::editar(CasoDeTeste* casoDeTeste) {
             nome.setDado(novosDados[0]);
         } catch (const invalid_argument) {
             telaMensagem.apresentar("O Nome nao esta em um formato valido");
-            novosDados[1] = telaCampo.apresentar("Editar Caso de Teste", "1 - Nome: ");
+            novosDados[0] = telaCampo.apresentar("Editar Caso de Teste", "1 - Nome: ");
             continue;
         }
 
