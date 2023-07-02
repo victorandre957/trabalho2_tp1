@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<results version="2">
+    <cppcheck version="2.10.3" />
+    <errors>
+        <error id="noConstructor" severity="style" msg="The class &apos;CntrApresentacaoPrincipal&apos; does not declare a constructor although it has private member variables which likely require initialization." verbose="The class &apos;CntrApresentacaoPrincipal&apos; does not declare a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="8" column="1" />
+            <symbol>CntrApresentacaoPrincipal</symbol>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &apos;CntrApresentacaoAutenticacao&apos; does not declare a constructor although it has private member variables which likely require initialization." verbose="The class &apos;CntrApresentacaoAutenticacao&apos; does not declare a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="35" column="1" />
+            <symbol>CntrApresentacaoAutenticacao</symbol>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &apos;CntrApresentacaoDesenvolvedor&apos; does not declare a constructor although it has private member variables which likely require initialization." verbose="The class &apos;CntrApresentacaoDesenvolvedor&apos; does not declare a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="47" column="1" />
+            <symbol>CntrApresentacaoDesenvolvedor</symbol>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &apos;CntrApresentacaoTeste&apos; does not declare a constructor although it has private member variables which likely require initialization." verbose="The class &apos;CntrApresentacaoTeste&apos; does not declare a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="62" column="1" />
+            <symbol>CntrApresentacaoTeste</symbol>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &apos;CntrApresentacaoCasoDeTeste&apos; does not declare a constructor although it has private member variables which likely require initialization." verbose="The class &apos;CntrApresentacaoCasoDeTeste&apos; does not declare a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="83" column="1" />
+            <symbol>CntrApresentacaoCasoDeTeste</symbol>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &apos;BuilderSistema&apos; does not declare a constructor although it has private member variables which likely require initialization." verbose="The class &apos;BuilderSistema&apos; does not declare a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" file0="include/Builders.hpp">
+            <location file="include/Builders.hpp" line="7" column="1" />
+            <symbol>BuilderSistema</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Dominios.hpp" line="60" column="14" info="Function in derived class" />
+            <location file="include/Dominios.hpp" line="20" column="22" info="Virtual function in base class" />
+            <symbol>validar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Dominios.hpp" line="75" column="14" info="Function in derived class" />
+            <location file="include/Dominios.hpp" line="20" column="22" info="Virtual function in base class" />
+            <symbol>validar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Dominios.hpp" line="93" column="14" info="Function in derived class" />
+            <location file="include/Dominios.hpp" line="20" column="22" info="Virtual function in base class" />
+            <symbol>validar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Dominios.hpp" line="109" column="14" info="Function in derived class" />
+            <location file="include/Dominios.hpp" line="20" column="22" info="Virtual function in base class" />
+            <symbol>validar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Dominios.hpp" line="120" column="14" info="Function in derived class" />
+            <location file="include/Dominios.hpp" line="20" column="22" info="Virtual function in base class" />
+            <symbol>validar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Dominios.hpp" line="133" column="14" info="Function in derived class" />
+            <location file="include/Dominios.hpp" line="20" column="22" info="Virtual function in base class" />
+            <symbol>validar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Dominios.hpp" line="144" column="14" info="Function in derived class" />
+            <location file="include/Dominios.hpp" line="20" column="22" info="Virtual function in base class" />
+            <symbol>validar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;validar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Dominios.hpp" line="164" column="14" info="Function in derived class" />
+            <location file="include/Dominios.hpp" line="20" column="22" info="Virtual function in base class" />
+            <symbol>validar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;autenticar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;autenticar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="39" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="13" column="22" info="Virtual function in base class" />
+            <symbol>autenticar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;setCntrServicoAutenticacao&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;setCntrServicoAutenticacao&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="40" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="14" column="22" info="Virtual function in base class" />
+            <symbol>setCntrServicoAutenticacao</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;executar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;executar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="52" column="10" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="20" column="22" info="Virtual function in base class" />
+            <symbol>executar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="53" column="10" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="21" column="22" info="Virtual function in base class" />
+            <symbol>cadastrar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;setCntrServicoDesenvolvedor&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;setCntrServicoDesenvolvedor&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="55" column="10" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="22" column="22" info="Virtual function in base class" />
+            <symbol>setCntrServicoDesenvolvedor</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;executar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;executar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="67" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="38" column="22" info="Virtual function in base class" />
+            <symbol>executar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="68" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="40" column="22" info="Virtual function in base class" />
+            <symbol>cadastrar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;editar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;editar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="69" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="39" column="22" info="Virtual function in base class" />
+            <symbol>editar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;setCntrServicoTeste&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;setCntrServicoTeste&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="71" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="41" column="22" info="Virtual function in base class" />
+            <symbol>setCntrServicoTeste</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;setCntrlApresentacaoCasoDeTeste&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;setCntrlApresentacaoCasoDeTeste&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="72" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="42" column="22" info="Virtual function in base class" />
+            <symbol>setCntrlApresentacaoCasoDeTeste</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;executar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;executar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="87" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="29" column="22" info="Virtual function in base class" />
+            <symbol>executar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="88" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="31" column="22" info="Virtual function in base class" />
+            <symbol>cadastrar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;editar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;editar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="89" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="30" column="22" info="Virtual function in base class" />
+            <symbol>editar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;setCntrServicoCasoDeTeste&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;setCntrServicoCasoDeTeste&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="91" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="32" column="22" info="Virtual function in base class" />
+            <symbol>setCntrServicoCasoDeTeste</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;autenticar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;autenticar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="100" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="48" column="22" info="Virtual function in base class" />
+            <symbol>autenticar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;consultar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;consultar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="105" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="54" column="22" info="Virtual function in base class" />
+            <symbol>consultar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="106" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="55" column="22" info="Virtual function in base class" />
+            <symbol>cadastrar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;descadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;descadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="107" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="56" column="22" info="Virtual function in base class" />
+            <symbol>descadastrar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;editar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;editar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="108" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="57" column="22" info="Virtual function in base class" />
+            <symbol>editar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;consultar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;consultar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="113" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="63" column="22" info="Virtual function in base class" />
+            <symbol>consultar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="114" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="64" column="22" info="Virtual function in base class" />
+            <symbol>cadastrar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;editar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;editar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="115" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="65" column="22" info="Virtual function in base class" />
+            <symbol>editar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;descadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;descadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="116" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="66" column="22" info="Virtual function in base class" />
+            <symbol>descadastrar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;consultar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;consultar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="120" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="72" column="22" info="Virtual function in base class" />
+            <symbol>consultar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;checkQuantidade&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;checkQuantidade&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="121" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="74" column="22" info="Virtual function in base class" />
+            <symbol>checkQuantidade</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;cadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="122" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="73" column="22" info="Virtual function in base class" />
+            <symbol>cadastrar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;editar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;editar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="123" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="75" column="22" info="Virtual function in base class" />
+            <symbol>editar</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The function &apos;descadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." verbose="The function &apos;descadastrar&apos; overrides a function in a base class but is not marked with a &apos;override&apos; specifier." file0="include/Builders.hpp">
+            <location file="include/Controladoras.hpp" line="124" column="14" info="Function in derived class" />
+            <location file="include/Interfaces.hpp" line="76" column="22" info="Virtual function in base class" />
+            <symbol>descadastrar</symbol>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;ComandoSQL::bd&apos; is not initialized in the constructor." verbose="Member variable &apos;ComandoSQL::bd&apos; is not initialized in the constructor." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="105" column="9" />
+            <symbol>ComandoSQL::bd</symbol>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;ComandoSQL::mensagem&apos; is not initialized in the constructor." verbose="Member variable &apos;ComandoSQL::mensagem&apos; is not initialized in the constructor." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="105" column="9" />
+            <symbol>ComandoSQL::mensagem</symbol>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;ComandoSQL::rc&apos; is not initialized in the constructor." verbose="Member variable &apos;ComandoSQL::rc&apos; is not initialized in the constructor." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="105" column="9" />
+            <symbol>ComandoSQL::rc</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EErroPersistencia&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EErroPersistencia&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="22" column="9" />
+            <symbol>EErroPersistencia</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ComandoCadastrarDesenvolvedor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ComandoCadastrarDesenvolvedor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="118" column="9" />
+            <symbol>ComandoCadastrarDesenvolvedor</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ComandoConsultarDesenvolvedor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ComandoConsultarDesenvolvedor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="126" column="9" />
+            <symbol>ComandoConsultarDesenvolvedor</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ComandoEditarDesenvolvedor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ComandoEditarDesenvolvedor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="138" column="9" />
+            <symbol>ComandoEditarDesenvolvedor</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ComandoDescadastrarDesenvolvedor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ComandoDescadastrarDesenvolvedor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="146" column="9" />
+            <symbol>ComandoDescadastrarDesenvolvedor</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ComandoEditarTeste&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ComandoEditarTeste&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="179" column="9" />
+            <symbol>ComandoEditarTeste</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ComandoDescadastrarTeste&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ComandoDescadastrarTeste&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="187" column="9" />
+            <symbol>ComandoDescadastrarTeste</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ComandoContarCasosDeTeste&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ComandoContarCasosDeTeste&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="195" column="9" />
+            <symbol>ComandoContarCasosDeTeste</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ComandoEditarCasoDeTeste&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ComandoEditarCasoDeTeste&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="229" column="9" />
+            <symbol>ComandoEditarCasoDeTeste</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;ComandoDescadastrarCasoDeTeste&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;ComandoDescadastrarCasoDeTeste&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="237" column="9" />
+            <symbol>ComandoDescadastrarCasoDeTeste</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;mensagem&apos; should be passed by const reference." verbose="Parameter &apos;mensagem&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="include/ComandosSQL.hpp">
+            <location file="include/ComandosSQL.hpp" line="33" column="52" />
+            <symbol>mensagem</symbol>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;SQLITE_INT64_TYPE&apos; since the value of &apos;SQLITE_INT64_TYPE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;SQLITE_INT64_TYPE&apos; since the value of &apos;SQLITE_INT64_TYPE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="include/sqlite3.hpp" line="246" column="0" />
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;SQLITE_INT64_TYPE&apos; since the value of &apos;SQLITE_INT64_TYPE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;SQLITE_INT64_TYPE&apos; since the value of &apos;SQLITE_INT64_TYPE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="include/sqlite3.hpp" line="247" column="0" />
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;PDC_VERSION::flags&apos; is never used." verbose="struct member &apos;PDC_VERSION::flags&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="108" column="11" />
+            <symbol>PDC_VERSION::flags</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;PDC_VERSION::build&apos; is never used." verbose="struct member &apos;PDC_VERSION::build&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="109" column="11" />
+            <symbol>PDC_VERSION::build</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;PDC_VERSION::major&apos; is never used." verbose="struct member &apos;PDC_VERSION::major&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="110" column="19" />
+            <symbol>PDC_VERSION::major</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;PDC_VERSION::minor&apos; is never used." verbose="struct member &apos;PDC_VERSION::minor&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="111" column="19" />
+            <symbol>PDC_VERSION::minor</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;PDC_VERSION::csize&apos; is never used." verbose="struct member &apos;PDC_VERSION::csize&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="112" column="19" />
+            <symbol>PDC_VERSION::csize</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;PDC_VERSION::bsize&apos; is never used." verbose="struct member &apos;PDC_VERSION::bsize&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="113" column="19" />
+            <symbol>PDC_VERSION::bsize</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;MEVENT::id&apos; is never used." verbose="struct member &apos;MEVENT::id&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="245" column="11" />
+            <symbol>MEVENT::id</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;MEVENT::x&apos; is never used." verbose="struct member &apos;MEVENT::x&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="246" column="9" />
+            <symbol>MEVENT::x</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;MEVENT::y&apos; is never used." verbose="struct member &apos;MEVENT::y&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="246" column="12" />
+            <symbol>MEVENT::y</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;MEVENT::z&apos; is never used." verbose="struct member &apos;MEVENT::z&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="246" column="15" />
+            <symbol>MEVENT::z</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_cury&apos; is never used." verbose="struct member &apos;_win::_cury&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="274" column="11" />
+            <symbol>_win::_cury</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_curx&apos; is never used." verbose="struct member &apos;_win::_curx&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="275" column="11" />
+            <symbol>_win::_curx</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_maxy&apos; is never used." verbose="struct member &apos;_win::_maxy&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="276" column="11" />
+            <symbol>_win::_maxy</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_maxx&apos; is never used." verbose="struct member &apos;_win::_maxx&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="277" column="11" />
+            <symbol>_win::_maxx</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_begy&apos; is never used." verbose="struct member &apos;_win::_begy&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="278" column="11" />
+            <symbol>_win::_begy</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_begx&apos; is never used." verbose="struct member &apos;_win::_begx&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="279" column="11" />
+            <symbol>_win::_begx</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_flags&apos; is never used." verbose="struct member &apos;_win::_flags&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="280" column="11" />
+            <symbol>_win::_flags</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_clear&apos; is never used." verbose="struct member &apos;_win::_clear&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="283" column="11" />
+            <symbol>_win::_clear</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_leaveit&apos; is never used." verbose="struct member &apos;_win::_leaveit&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="284" column="11" />
+            <symbol>_win::_leaveit</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_scroll&apos; is never used." verbose="struct member &apos;_win::_scroll&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="285" column="11" />
+            <symbol>_win::_scroll</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_nodelay&apos; is never used." verbose="struct member &apos;_win::_nodelay&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="286" column="11" />
+            <symbol>_win::_nodelay</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_immed&apos; is never used." verbose="struct member &apos;_win::_immed&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="287" column="11" />
+            <symbol>_win::_immed</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_sync&apos; is never used." verbose="struct member &apos;_win::_sync&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="288" column="11" />
+            <symbol>_win::_sync</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_use_keypad&apos; is never used." verbose="struct member &apos;_win::_use_keypad&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="289" column="11" />
+            <symbol>_win::_use_keypad</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_y&apos; is never used." verbose="struct member &apos;_win::_y&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="290" column="14" />
+            <symbol>_win::_y</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_firstch&apos; is never used." verbose="struct member &apos;_win::_firstch&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="291" column="12" />
+            <symbol>_win::_firstch</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_lastch&apos; is never used." verbose="struct member &apos;_win::_lastch&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="292" column="12" />
+            <symbol>_win::_lastch</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_tmarg&apos; is never used." verbose="struct member &apos;_win::_tmarg&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="293" column="11" />
+            <symbol>_win::_tmarg</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_bmarg&apos; is never used." verbose="struct member &apos;_win::_bmarg&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="294" column="11" />
+            <symbol>_win::_bmarg</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_delayms&apos; is never used." verbose="struct member &apos;_win::_delayms&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="295" column="11" />
+            <symbol>_win::_delayms</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_parx&apos; is never used." verbose="struct member &apos;_win::_parx&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="296" column="11" />
+            <symbol>_win::_parx</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_pary&apos; is never used." verbose="struct member &apos;_win::_pary&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="296" column="18" />
+            <symbol>_win::_pary</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;_win::_parent&apos; is never used." verbose="struct member &apos;_win::_parent&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="297" column="18" />
+            <symbol>_win::_parent</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::alive&apos; is never used." verbose="struct member &apos;SCREEN::alive&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="305" column="11" />
+            <symbol>SCREEN::alive</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::autocr&apos; is never used." verbose="struct member &apos;SCREEN::autocr&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="306" column="11" />
+            <symbol>SCREEN::autocr</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::cbreak&apos; is never used." verbose="struct member &apos;SCREEN::cbreak&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="307" column="11" />
+            <symbol>SCREEN::cbreak</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::echo&apos; is never used." verbose="struct member &apos;SCREEN::echo&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="308" column="11" />
+            <symbol>SCREEN::echo</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::raw_inp&apos; is never used." verbose="struct member &apos;SCREEN::raw_inp&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="309" column="11" />
+            <symbol>SCREEN::raw_inp</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::raw_out&apos; is never used." verbose="struct member &apos;SCREEN::raw_out&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="310" column="11" />
+            <symbol>SCREEN::raw_out</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::audible&apos; is never used." verbose="struct member &apos;SCREEN::audible&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="311" column="11" />
+            <symbol>SCREEN::audible</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::mono&apos; is never used." verbose="struct member &apos;SCREEN::mono&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="312" column="11" />
+            <symbol>SCREEN::mono</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::resized&apos; is never used." verbose="struct member &apos;SCREEN::resized&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="313" column="11" />
+            <symbol>SCREEN::resized</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::orig_attr&apos; is never used." verbose="struct member &apos;SCREEN::orig_attr&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="314" column="11" />
+            <symbol>SCREEN::orig_attr</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::orig_fore&apos; is never used." verbose="struct member &apos;SCREEN::orig_fore&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="315" column="11" />
+            <symbol>SCREEN::orig_fore</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::orig_back&apos; is never used." verbose="struct member &apos;SCREEN::orig_back&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="316" column="11" />
+            <symbol>SCREEN::orig_back</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::cursrow&apos; is never used." verbose="struct member &apos;SCREEN::cursrow&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="317" column="11" />
+            <symbol>SCREEN::cursrow</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::curscol&apos; is never used." verbose="struct member &apos;SCREEN::curscol&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="318" column="11" />
+            <symbol>SCREEN::curscol</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::visibility&apos; is never used." verbose="struct member &apos;SCREEN::visibility&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="319" column="11" />
+            <symbol>SCREEN::visibility</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::orig_cursor&apos; is never used." verbose="struct member &apos;SCREEN::orig_cursor&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="320" column="11" />
+            <symbol>SCREEN::orig_cursor</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::lines&apos; is never used." verbose="struct member &apos;SCREEN::lines&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="321" column="11" />
+            <symbol>SCREEN::lines</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::cols&apos; is never used." verbose="struct member &apos;SCREEN::cols&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="322" column="11" />
+            <symbol>SCREEN::cols</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::mouse_wait&apos; is never used." verbose="struct member &apos;SCREEN::mouse_wait&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="324" column="11" />
+            <symbol>SCREEN::mouse_wait</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::slklines&apos; is never used." verbose="struct member &apos;SCREEN::slklines&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="327" column="11" />
+            <symbol>SCREEN::slklines</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::slk_winptr&apos; is never used." verbose="struct member &apos;SCREEN::slk_winptr&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="328" column="13" />
+            <symbol>SCREEN::slk_winptr</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::linesrippedoff&apos; is never used." verbose="struct member &apos;SCREEN::linesrippedoff&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="329" column="11" />
+            <symbol>SCREEN::linesrippedoff</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::linesrippedoffontop&apos; is never used." verbose="struct member &apos;SCREEN::linesrippedoffontop&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="330" column="11" />
+            <symbol>SCREEN::linesrippedoffontop</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::delaytenths&apos; is never used." verbose="struct member &apos;SCREEN::delaytenths&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="332" column="11" />
+            <symbol>SCREEN::delaytenths</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::_preserve&apos; is never used." verbose="struct member &apos;SCREEN::_preserve&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="334" column="11" />
+            <symbol>SCREEN::_preserve</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::_restore&apos; is never used." verbose="struct member &apos;SCREEN::_restore&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="336" column="11" />
+            <symbol>SCREEN::_restore</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::key_modifiers&apos; is never used." verbose="struct member &apos;SCREEN::key_modifiers&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="338" column="19" />
+            <symbol>SCREEN::key_modifiers</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::return_key_modifiers&apos; is never used." verbose="struct member &apos;SCREEN::return_key_modifiers&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="340" column="11" />
+            <symbol>SCREEN::return_key_modifiers</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::key_code&apos; is never used." verbose="struct member &apos;SCREEN::key_code&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="342" column="11" />
+            <symbol>SCREEN::key_code</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::mouse_status&apos; is never used." verbose="struct member &apos;SCREEN::mouse_status&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="344" column="18" />
+            <symbol>SCREEN::mouse_status</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::line_color&apos; is never used." verbose="struct member &apos;SCREEN::line_color&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="354" column="11" />
+            <symbol>SCREEN::line_color</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::lastscr&apos; is never used." verbose="struct member &apos;SCREEN::lastscr&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="356" column="13" />
+            <symbol>SCREEN::lastscr</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::dbfp&apos; is never used." verbose="struct member &apos;SCREEN::dbfp&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="357" column="11" />
+            <symbol>SCREEN::dbfp</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::color_started&apos; is never used." verbose="struct member &apos;SCREEN::color_started&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="358" column="11" />
+            <symbol>SCREEN::color_started</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::dirty&apos; is never used." verbose="struct member &apos;SCREEN::dirty&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="359" column="11" />
+            <symbol>SCREEN::dirty</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::sel_start&apos; is never used." verbose="struct member &apos;SCREEN::sel_start&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="360" column="11" />
+            <symbol>SCREEN::sel_start</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::sel_end&apos; is never used." verbose="struct member &apos;SCREEN::sel_end&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="361" column="11" />
+            <symbol>SCREEN::sel_end</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::sb_on&apos; is never used." verbose="struct member &apos;SCREEN::sb_on&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="346" column="11" />
+            <symbol>SCREEN::sb_on</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::sb_viewport_y&apos; is never used." verbose="struct member &apos;SCREEN::sb_viewport_y&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="347" column="11" />
+            <symbol>SCREEN::sb_viewport_y</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::sb_viewport_x&apos; is never used." verbose="struct member &apos;SCREEN::sb_viewport_x&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="348" column="11" />
+            <symbol>SCREEN::sb_viewport_x</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::sb_total_y&apos; is never used." verbose="struct member &apos;SCREEN::sb_total_y&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="349" column="11" />
+            <symbol>SCREEN::sb_total_y</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::sb_total_x&apos; is never used." verbose="struct member &apos;SCREEN::sb_total_x&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="350" column="11" />
+            <symbol>SCREEN::sb_total_x</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::sb_cur_y&apos; is never used." verbose="struct member &apos;SCREEN::sb_cur_y&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="351" column="11" />
+            <symbol>SCREEN::sb_cur_y</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;SCREEN::sb_cur_x&apos; is never used." verbose="struct member &apos;SCREEN::sb_cur_x&apos; is never used." cwe="563" file0="include/curses.hpp">
+            <location file="include/curses.hpp" line="352" column="11" />
+            <symbol>SCREEN::sb_cur_x</symbol>
+        </error>
+        <error id="publicAllocationError" severity="warning" msg="Possible leak in public function. The pointer &apos;cntrApresentacaoControle&apos; is not deallocated before it is allocated." verbose="Possible leak in public function. The pointer &apos;cntrApresentacaoControle&apos; is not deallocated before it is allocated." cwe="398" file0="src/Builders.cpp">
+            <location file="src/Builders.cpp" line="8" column="5" />
+            <symbol>cntrApresentacaoControle</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;desenvolvedor&apos; should be passed by const reference." verbose="Parameter &apos;desenvolvedor&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="58" column="76" />
+            <symbol>desenvolvedor</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;desenvolvedor&apos; should be passed by const reference." verbose="Parameter &apos;desenvolvedor&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="66" column="76" />
+            <symbol>desenvolvedor</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;desenvolvedor&apos; should be passed by const reference." verbose="Parameter &apos;desenvolvedor&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="107" column="70" />
+            <symbol>desenvolvedor</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;matricula&apos; should be passed by const reference." verbose="Parameter &apos;matricula&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="115" column="78" />
+            <symbol>matricula</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;teste&apos; should be passed by const reference." verbose="Parameter &apos;teste&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="127" column="52" />
+            <symbol>teste</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;matricula&apos; should be passed by const reference." verbose="Parameter &apos;matricula&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="127" column="69" />
+            <symbol>matricula</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;codigo&apos; should be passed by const reference." verbose="Parameter &apos;codigo&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="135" column="53" />
+            <symbol>codigo</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;desenvolvedor&apos; should be passed by const reference." verbose="Parameter &apos;desenvolvedor&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="135" column="75" />
+            <symbol>desenvolvedor</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;teste&apos; should be passed by const reference." verbose="Parameter &apos;teste&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="173" column="46" />
+            <symbol>teste</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;codigo&apos; should be passed by const reference." verbose="Parameter &apos;codigo&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="180" column="59" />
+            <symbol>codigo</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;codigo&apos; should be passed by const reference." verbose="Parameter &apos;codigo&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="188" column="61" />
+            <symbol>codigo</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;casoDeTeste&apos; should be passed by const reference." verbose="Parameter &apos;casoDeTeste&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="210" column="70" />
+            <symbol>casoDeTeste</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;codigo&apos; should be passed by const reference." verbose="Parameter &apos;codigo&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="210" column="90" />
+            <symbol>codigo</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;codigo&apos; should be passed by const reference." verbose="Parameter &apos;codigo&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="221" column="65" />
+            <symbol>codigo</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;teste&apos; should be passed by const reference." verbose="Parameter &apos;teste&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="221" column="79" />
+            <symbol>teste</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;casoDeTeste&apos; should be passed by const reference." verbose="Parameter &apos;casoDeTeste&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="277" column="64" />
+            <symbol>casoDeTeste</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;codigo&apos; should be passed by const reference." verbose="Parameter &apos;codigo&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="287" column="71" />
+            <symbol>codigo</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;NotUsed&apos; is assigned a value that is never used." verbose="Variable &apos;NotUsed&apos; is assigned a value that is never used." cwe="563" file0="src/ComandosSQL.cpp">
+            <location file="src/ComandosSQL.cpp" line="45" column="12" />
+            <symbol>NotUsed</symbol>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 19 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="src/Controladoras.cpp" line="0" column="0" />
+        </error>
+        <error id="redundantContinue" severity="style" msg="&apos;continue&apos; is redundant since it is the last statement in a loop." verbose="&apos;continue&apos; is redundant since it is the last statement in a loop." cwe="561" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="351" column="21" />
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;opcaoControle&apos; can be reduced." verbose="The scope of the variable &apos;opcaoControle&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="9" column="10" />
+            <symbol>opcaoControle</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;opcao&apos; can be reduced." verbose="The scope of the variable &apos;opcao&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="42" column="10" />
+            <symbol>opcao</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;opcao&apos; can be reduced." verbose="The scope of the variable &apos;opcao&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="94" column="10" />
+            <symbol>opcao</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;opcaoMenuPricipal&apos; can be reduced." verbose="The scope of the variable &apos;opcaoMenuPricipal&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="263" column="10" />
+            <symbol>opcaoMenuPricipal</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;opcaoMenuPricipal&apos; can be reduced." verbose="The scope of the variable &apos;opcaoMenuPricipal&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="477" column="10" />
+            <symbol>opcaoMenuPricipal</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;e&apos; can be declared as reference to const" verbose="Variable &apos;e&apos; can be declared as reference to const" cwe="398" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="762" column="33" info="Variable &apos;e&apos; can be declared as reference to const" />
+            <symbol>e</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;e&apos; can be declared as reference to const" verbose="Variable &apos;e&apos; can be declared as reference to const" cwe="398" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="768" column="33" info="Variable &apos;e&apos; can be declared as reference to const" />
+            <symbol>e</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;e&apos; can be declared as reference to const" verbose="Variable &apos;e&apos; can be declared as reference to const" cwe="398" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="770" column="32" info="Variable &apos;e&apos; can be declared as reference to const" />
+            <symbol>e</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;e&apos; can be declared as reference to const" verbose="Variable &apos;e&apos; can be declared as reference to const" cwe="398" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="941" column="32" info="Variable &apos;e&apos; can be declared as reference to const" />
+            <symbol>e</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: opcaoMenu" verbose="Unused variable: opcaoMenu" cwe="563" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="10" column="10" />
+            <symbol>opcaoMenu</symbol>
+        </error>
+        <error id="unassignedVariable" severity="style" msg="Variable &apos;telaMenu&apos; is not assigned a value." verbose="Variable &apos;telaMenu&apos; is not assigned a value." cwe="665" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="41" column="14" />
+            <symbol>telaMenu</symbol>
+        </error>
+        <error id="unassignedVariable" severity="style" msg="Variable &apos;telaMenu&apos; is not assigned a value." verbose="Variable &apos;telaMenu&apos; is not assigned a value." cwe="665" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="91" column="14" />
+            <symbol>telaMenu</symbol>
+        </error>
+        <error id="unassignedVariable" severity="style" msg="Variable &apos;telaMenu&apos; is not assigned a value." verbose="Variable &apos;telaMenu&apos; is not assigned a value." cwe="665" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="258" column="14" />
+            <symbol>telaMenu</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: codigo" verbose="Unused variable: codigo" cwe="563" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="426" column="12" />
+            <symbol>codigo</symbol>
+        </error>
+        <error id="unassignedVariable" severity="style" msg="Variable &apos;telaMenu&apos; is not assigned a value." verbose="Variable &apos;telaMenu&apos; is not assigned a value." cwe="665" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="472" column="14" />
+            <symbol>telaMenu</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: telaMensagem" verbose="Unused variable: telaMensagem" cwe="563" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="757" column="18" />
+            <symbol>telaMensagem</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: desenvolvedorVazio" verbose="Unused variable: desenvolvedorVazio" cwe="563" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="758" column="19" />
+            <symbol>desenvolvedorVazio</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: consulta" verbose="Unused variable: consulta" cwe="563" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="779" column="9" />
+            <symbol>consulta</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: consulta" verbose="Unused variable: consulta" cwe="563" file0="src/Controladoras.cpp">
+            <location file="src/Controladoras.cpp" line="865" column="9" />
+            <symbol>consulta</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;dado&apos; should be passed by const reference." verbose="Parameter &apos;dado&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Dominios.cpp">
+            <location file="src/Dominios.cpp" line="12" column="30" />
+            <symbol>dado</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;linhas&apos; should be passed by const reference." verbose="Parameter &apos;linhas&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="19" column="41" />
+            <symbol>linhas</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;titulo&apos; should be passed by const reference." verbose="Parameter &apos;titulo&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="23" column="36" />
+            <symbol>titulo</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;opcoes&apos; should be passed by const reference." verbose="Parameter &apos;opcoes&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="23" column="59" />
+            <symbol>opcoes</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;titulo&apos; should be passed by const reference." verbose="Parameter &apos;titulo&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="40" column="37" />
+            <symbol>titulo</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;campo&apos; should be passed by const reference." verbose="Parameter &apos;campo&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="40" column="52" />
+            <symbol>campo</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;titulo&apos; should be passed by const reference." verbose="Parameter &apos;titulo&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="83" column="40" />
+            <symbol>titulo</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;mensagem&apos; should be passed by const reference." verbose="Parameter &apos;mensagem&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="98" column="38" />
+            <symbol>mensagem</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;mensagens&apos; should be passed by const reference." verbose="Parameter &apos;mensagens&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="110" column="47" />
+            <symbol>mensagens</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;desenvolvedor&apos; should be passed by const reference." verbose="Parameter &apos;desenvolvedor&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="177" column="59" />
+            <symbol>desenvolvedor</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;teste&apos; should be passed by const reference." verbose="Parameter &apos;teste&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="207" column="43" />
+            <symbol>teste</symbol>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;casoDeTeste&apos; should be passed by const reference." verbose="Parameter &apos;casoDeTeste&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="src/Telas.cpp">
+            <location file="src/Telas.cpp" line="234" column="55" />
+            <symbol>casoDeTeste</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;what&apos; is never used." verbose="The function &apos;what&apos; is never used." cwe="561">
+            <location file="include/ComandosSQL.hpp" line="29" column="0" />
+            <symbol>what</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;getNomeColuna&apos; is never used." verbose="The function &apos;getNomeColuna&apos; is never used." cwe="561">
+            <location file="include/ComandosSQL.hpp" line="64" column="0" />
+            <symbol>getNomeColuna</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config." />
+    </errors>
+</results>
