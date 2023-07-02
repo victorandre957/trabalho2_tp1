@@ -6,7 +6,7 @@
 	"Controladoras.hpp"
 	"Builders.hpp"
 
-1688257989 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Interfaces.hpp
+1688267869 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Interfaces.hpp
 	"Entidades.hpp"
 	"Dominios.hpp"
 
@@ -16,7 +16,7 @@
 1688249962 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Dominios.hpp
 	<string>
 
-1688257983 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Controladoras.hpp
+1688267880 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Controladoras.hpp
 	"Interfaces.hpp"
 	"Dominios.hpp"
 	"curses.hpp"
@@ -28,7 +28,7 @@
 	<wchar.h>
 	<stdbool.h>
 
-1688237284 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Builders.hpp
+1688267727 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Builders.hpp
 	"Interfaces.hpp"
 	"Controladoras.hpp"
 
