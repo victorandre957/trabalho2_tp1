@@ -1,0 +1,83 @@
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:193: warning: The following parameter of CasoDeTeste::setAcao(const Texto &acao) is not documented:
+  parameter 'acao'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:166: warning: The following parameter of CasoDeTeste::setCodigo(const Codigo &codigo) is not documented:
+  parameter 'codigo'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:184: warning: The following parameter of CasoDeTeste::setData(const Data &data) is not documented:
+  parameter 'data'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:175: warning: The following parameter of CasoDeTeste::setNome(const Texto &nome) is not documented:
+  parameter 'nome'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:202: warning: The following parameter of CasoDeTeste::setResposta(const Texto &resposta) is not documented:
+  parameter 'resposta'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:211: warning: The following parameter of CasoDeTeste::setResultado(const Resultado &resultado) is not documented:
+  parameter 'resultado'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:206: warning: argument 'CasoDeTeste' of command @param is not found in the argument list of ComandoCadastrarCasoDeTeste::ComandoCadastrarCasoDeTeste(CasoDeTeste casoDeTeste, Codigo codigo)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:206: warning: argument 'Codigo' of command @param is not found in the argument list of ComandoCadastrarCasoDeTeste::ComandoCadastrarCasoDeTeste(CasoDeTeste casoDeTeste, Codigo codigo)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:206: warning: The following parameters of ComandoCadastrarCasoDeTeste::ComandoCadastrarCasoDeTeste(CasoDeTeste casoDeTeste, Codigo codigo) are not documented:
+  parameter 'casoDeTeste'
+  parameter 'codigo'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:117: warning: argument 'Desenvolvedor' of command @param is not found in the argument list of ComandoCadastrarDesenvolvedor::ComandoCadastrarDesenvolvedor(Desenvolvedor desenvolvedor)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:117: warning: The following parameter of ComandoCadastrarDesenvolvedor::ComandoCadastrarDesenvolvedor(Desenvolvedor desenvolvedor) is not documented:
+  parameter 'desenvolvedor'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:156: warning: argument 'Teste' of command @param is not found in the argument list of ComandoCadastrarTeste::ComandoCadastrarTeste(Teste teste, Matricula matricula)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:156: warning: argument 'Matricula' of command @param is not found in the argument list of ComandoCadastrarTeste::ComandoCadastrarTeste(Teste teste, Matricula matricula)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:156: warning: The following parameters of ComandoCadastrarTeste::ComandoCadastrarTeste(Teste teste, Matricula matricula) are not documented:
+  parameter 'teste'
+  parameter 'matricula'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:215: warning: argument 'Codigo' of command @param is not found in the argument list of ComandoConsultarCasoDeTeste::ComandoConsultarCasoDeTeste(Codigo codigo, Teste teste)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:215: warning: argument 'Teste' of command @param is not found in the argument list of ComandoConsultarCasoDeTeste::ComandoConsultarCasoDeTeste(Codigo codigo, Teste teste)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:215: warning: The following parameters of ComandoConsultarCasoDeTeste::ComandoConsultarCasoDeTeste(Codigo codigo, Teste teste) are not documented:
+  parameter 'codigo'
+  parameter 'teste'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:125: warning: argument 'Desenvolvedor' of command @param is not found in the argument list of ComandoConsultarDesenvolvedor::ComandoConsultarDesenvolvedor(Desenvolvedor desenvolvedor)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:125: warning: The following parameter of ComandoConsultarDesenvolvedor::ComandoConsultarDesenvolvedor(Desenvolvedor desenvolvedor) is not documented:
+  parameter 'desenvolvedor'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:165: warning: argument 'Codigo' of command @param is not found in the argument list of ComandoConsultarTeste::ComandoConsultarTeste(Codigo codigo, Desenvolvedor desenvolvedor)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:165: warning: argument 'Desenvolvedor' of command @param is not found in the argument list of ComandoConsultarTeste::ComandoConsultarTeste(Codigo codigo, Desenvolvedor desenvolvedor)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:165: warning: The following parameters of ComandoConsultarTeste::ComandoConsultarTeste(Codigo codigo, Desenvolvedor desenvolvedor) are not documented:
+  parameter 'codigo'
+  parameter 'desenvolvedor'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:194: warning: argument 'Codigo' of command @param is not found in the argument list of ComandoContarCasosDeTeste::ComandoContarCasosDeTeste(Codigo codigo)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:194: warning: The following parameter of ComandoContarCasosDeTeste::ComandoContarCasosDeTeste(Codigo codigo) is not documented:
+  parameter 'codigo'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:236: warning: argument 'Codigo' of command @param is not found in the argument list of ComandoDescadastrarCasoDeTeste::ComandoDescadastrarCasoDeTeste(Codigo codigo)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:236: warning: The following parameter of ComandoDescadastrarCasoDeTeste::ComandoDescadastrarCasoDeTeste(Codigo codigo) is not documented:
+  parameter 'codigo'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:145: warning: argument 'Matricula' of command @param is not found in the argument list of ComandoDescadastrarDesenvolvedor::ComandoDescadastrarDesenvolvedor(Matricula matricula)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:145: warning: The following parameter of ComandoDescadastrarDesenvolvedor::ComandoDescadastrarDesenvolvedor(Matricula matricula) is not documented:
+  parameter 'matricula'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:186: warning: argument 'Codigo' of command @param is not found in the argument list of ComandoDescadastrarTeste::ComandoDescadastrarTeste(Codigo codigo)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:186: warning: The following parameter of ComandoDescadastrarTeste::ComandoDescadastrarTeste(Codigo codigo) is not documented:
+  parameter 'codigo'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:228: warning: argument 'CasoDeTeste' of command @param is not found in the argument list of ComandoEditarCasoDeTeste::ComandoEditarCasoDeTeste(CasoDeTeste casoDeTeste)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:228: warning: The following parameter of ComandoEditarCasoDeTeste::ComandoEditarCasoDeTeste(CasoDeTeste casoDeTeste) is not documented:
+  parameter 'casoDeTeste'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:137: warning: argument 'Desenvolvedor' of command @param is not found in the argument list of ComandoEditarDesenvolvedor::ComandoEditarDesenvolvedor(Desenvolvedor desenvolvedor)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:137: warning: The following parameter of ComandoEditarDesenvolvedor::ComandoEditarDesenvolvedor(Desenvolvedor desenvolvedor) is not documented:
+  parameter 'desenvolvedor'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:178: warning: argument 'Teste' of command @param is not found in the argument list of ComandoEditarTeste::ComandoEditarTeste(Teste teste)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:178: warning: The following parameter of ComandoEditarTeste::ComandoEditarTeste(Teste teste) is not documented:
+  parameter 'teste'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:23: warning: The following parameter of Desenvolvedor::setMatricula(const Matricula &matricula) is not documented:
+  parameter 'matricula'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:32: warning: The following parameter of Desenvolvedor::setNome(const Texto &nome) is not documented:
+  parameter 'nome'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:41: warning: The following parameter of Desenvolvedor::setSenha(const Senha &senha) is not documented:
+  parameter 'senha'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:50: warning: The following parameter of Desenvolvedor::setTelefone(const Telefone &telefone) is not documented:
+  parameter 'telefone'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Dominios.hpp:30: warning: found documented return type for Dominio::setDado that does not return anything
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:21: warning: argument 'parâmetro' of command @param is not found in the argument list of EErroPersistencia::EErroPersistencia(string mensagem)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:21: warning: The following parameter of EErroPersistencia::EErroPersistencia(string mensagem) is not documented:
+  parameter 'mensagem'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:48: warning: argument 'referência' of command @param is not found in the argument list of ElementoResultado::setNomeColuna(const string &nomeColuna)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:48: warning: The following parameter of ElementoResultado::setNomeColuna(const string &nomeColuna) is not documented:
+  parameter 'nomeColuna'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:56: warning: argument 'referência' of command @param is not found in the argument list of ElementoResultado::setValorColuna(const string &valorColuna)
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp:56: warning: The following parameter of ElementoResultado::setValorColuna(const string &valorColuna) is not documented:
+  parameter 'valorColuna'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:119: warning: The following parameter of Teste::setClasse(const Classe &classe) is not documented:
+  parameter 'classe'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:101: warning: The following parameter of Teste::setCodigo(const Codigo &codigo) is not documented:
+  parameter 'codigo'
+/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp:110: warning: The following parameter of Teste::setNome(const Texto &nome) is not documented:
+  parameter 'nome'
