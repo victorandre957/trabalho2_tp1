@@ -1,65 +1,62 @@
 # depslib dependency file v1.0
-1688237453 source:/home/victor_moraes/Documentos/Unb/TP1/trabalho_2/src/Builders.cpp
-	"Builders.hpp"
-
-1688237284 /home/victor_moraes/Documentos/Unb/TP1/trabalho_2/include/Builders.hpp
-	"Interfaces.hpp"
-	"Controladoras.hpp"
-
-1688257989 /home/victor_moraes/Documentos/Unb/TP1/trabalho_2/include/Interfaces.hpp
-	"Entidades.hpp"
-	"Dominios.hpp"
-
-1688242133 /home/victor_moraes/Documentos/Unb/TP1/trabalho_2/include/Entidades.hpp
-	"Dominios.hpp"
-
-1688249962 /home/victor_moraes/Documentos/Unb/TP1/trabalho_2/include/Dominios.hpp
-	<string>
-
-1688257983 /home/victor_moraes/Documentos/Unb/TP1/trabalho_2/include/Controladoras.hpp
-	"Interfaces.hpp"
-	"Dominios.hpp"
-	"curses.hpp"
-
-1688237009 /home/victor_moraes/Documentos/Unb/TP1/trabalho_2/include/curses.hpp
-	<stdarg.h>
-	<stddef.h>
-	<stdio.h>
-	<wchar.h>
-	<stdbool.h>
-
-1681221709 source:/home/victor_moraes/Documentos/Unb/TP1/trabalho_2/src/Entidades.cpp
-	"Entidades.hpp"
-
-1688252499 source:/home/victor_moraes/Documentos/Unb/TP1/trabalho_2/main.cpp
+1688252499 source:/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/main.cpp
 	<string.h>
 	<stdexcept>
 	"Interfaces.hpp"
 	"Controladoras.hpp"
 	"Builders.hpp"
 
-1688257522 source:/home/victor_moraes/Documentos/Unb/TP1/trabalho_2/src/ComandosSQL.cpp
+1688257989 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Interfaces.hpp
+	"Entidades.hpp"
+	"Dominios.hpp"
+
+1688242133 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Entidades.hpp
+	"Dominios.hpp"
+
+1688249962 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Dominios.hpp
+	<string>
+
+1688257983 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Controladoras.hpp
+	"Interfaces.hpp"
+	"Dominios.hpp"
+	"curses.hpp"
+
+1688237009 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/curses.hpp
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+	<stdbool.h>
+
+1688237284 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Builders.hpp
+	"Interfaces.hpp"
+	"Controladoras.hpp"
+
+1688237453 source:/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/src/Builders.cpp
+	"Builders.hpp"
+
+1688261529 source:/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/src/ComandosSQL.cpp
 	"ComandosSQL.hpp"
 	<iostream>
 	<string>
 	<algorithm>
 
-1688257365 /home/victor_moraes/Documentos/Unb/TP1/trabalho_2/include/ComandosSQL.hpp
+1688257365 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/ComandosSQL.hpp
 	<list>
 	<string>
 	<iostream>
 	"sqlite3.hpp"
 	"Entidades.hpp"
 
-1685224629 /home/victor_moraes/Documentos/Unb/TP1/trabalho_2/include/sqlite3.hpp
+1685224629 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/sqlite3.hpp
 	<stdarg.h>
 
-1688258116 source:/home/victor_moraes/Documentos/Unb/TP1/trabalho_2/src/Controladoras.cpp
+1688258116 source:/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/src/Controladoras.cpp
 	"Controladoras.hpp"
 	"ComandosSQL.hpp"
 	"Telas.hpp"
 
-1688254330 /home/victor_moraes/Documentos/Unb/TP1/trabalho_2/include/Telas.hpp
+1688254330 /home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/include/Telas.hpp
 	<map>
 	<iostream>
 	<string>
@@ -71,7 +68,7 @@
 	"curses.hpp"
 	<ncurses.h>
 
-1688254223 source:/home/victor_moraes/Documentos/Unb/TP1/trabalho_2/src/Dominios.cpp
+1688254223 source:/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/src/Dominios.cpp
 	"Dominios.hpp"
 	<iostream>
 	<string>
@@ -80,7 +77,10 @@
 	<unordered_set>
 	<regex>
 
-1688258668 source:/home/victor_moraes/Documentos/Unb/TP1/trabalho_2/src/Telas.cpp
+1681221709 source:/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/src/Entidades.cpp
+	"Entidades.hpp"
+
+1688258668 source:/home/victor_moraes/Documentos/Unb/TP1/T2-TP1-211026628-211026664/trabalho_2/src/Telas.cpp
 	"Telas.hpp"
 	"Entidades.hpp"
 	"Dominios.hpp"

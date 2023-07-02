@@ -19,7 +19,6 @@
 				<Linker>
 					<Add library="ncurses-6.4/lib/libncurses.a" />
 					<Add library="sqlite3" />
-					<Add library="pdcurses.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -35,7 +34,6 @@
 					<Add option="-s" />
 					<Add library="ncurses-6.4/lib/libncurses.a" />
 					<Add library="sqlite3" />
-					<Add library="pdcurses.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -45,7 +43,6 @@
 		<Linker>
 			<Add library="ncurses-6.4/lib/libncurses.a" />
 			<Add library="sqlite3" />
-			<Add library="pdcurses.a" />
 		</Linker>
 		<Unit filename="include/Builders.hpp" />
 		<Unit filename="include/ComandosSQL.hpp" />
